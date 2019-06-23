@@ -1,0 +1,27 @@
+<ion-header class="menu-header">
+  <ion-navbar>
+  </ion-navbar>
+  <div class="wrapper2-3">
+    <input type="text" class="txt2-3" [(ngModel)]="txtSearch" (keyup.enter)="seachThongBao(txtSearch)" placeholder="Tìm kiếm thông báo" />
+    <span class="btn2-4">
+      <ion-icon name="search"></ion-icon>
+    </span>
+  </div>
+</ion-header>
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="Kéo để làm mới" refreshingSpinner="circles" refreshingText="Làm mới..."></ion-refresher-content>
+  </ion-refresher>
+  <ion-list class="lst2-1">
+    <ion-item class="item2-1 style2-1" *ngFor="let item of lstThongBao" (click)="goPage(item.ThongBaoNoiBoID)">
+      <span class=" img2-1 iconsprite2-2"></span>
+      <div class="wrapper2-4">
+        <span class="lbl2-5">{{item.TieuDe}}</span>
+        <span class="lbl2-6">{{item.NgayBatDau}}</span>
+      </div>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="loadDS($event)" *ngIf="!isLoadMore">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Đang tải dữ liệu..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

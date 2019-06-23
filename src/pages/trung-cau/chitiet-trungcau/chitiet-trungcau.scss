@@ -1,0 +1,75 @@
+page-chitiet-trungcau {
+  .scroll-content {
+    background: #fff;
+  }
+
+  .container2-1 {
+    padding: 1rem 0;
+  }
+
+  .lbl2-10 {
+    font-style: italic;
+    font-size: 1.3rem;
+    margin-bottom: .5rem;
+    color: #f59300;
+    padding: 0 1.5rem;
+  }
+
+  .lbl2-11 {
+    font-weight: 600;
+    color: #333;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 1rem 0;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    padding: 0 1.5rem;
+  }
+
+  .lbl2-12 {
+    font-weight: 600;
+    color: #333;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0 1.5rem;
+  }
+
+  .wrapper-chart {
+    position: relative;
+    width: 100%;
+    height: 300px;
+
+    &.style2-1 {
+      margin-top: 1.5rem;
+      height: 400px;
+      width: calc(100% - 3rem);
+      margin-right: 3rem;
+    }
+  }
+
+  .lbl2-5 {
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    color: #666;
+  }
+
+  .chart-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  @media(min-width: 767px) {
+    .container2-1 {
+      padding: 1rem 15%;
+    }
+  }
+}

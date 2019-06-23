@@ -1,0 +1,67 @@
+<ion-header class="menu-header">
+  <ion-navbar>
+    <ion-title>Chi tiết phản ánh</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="truyna" *ngIf="chitietPA">
+  <div class="wrapper2-1">
+    <p class="lbl2-1">{{chitietPA.TieuDe}}</p>
+    <div class="wrapper2-1b">
+      <p class="lbl2-2">Ngày tạo: {{chitietPA.NgayTao}}</p>
+      <p class="lbl2-2">Địa chỉ: {{chitietPA.DiaChiNguoiHoi}}</p>
+    </div>
+  </div>
+
+  <div class="group2-4">
+    <div class="wrapper2-2">
+      <p class="header2-2">
+        <ion-icon class="icon2-5 chatbubbles style2-1" name="md-chatbubbles"></ion-icon>
+        <span class="title2-2">Nội dung câu hỏi</span>
+      </p>
+      <div class="row2-2 style2-2">{{chitietPA.NoiDungHtml}}</div>
+    </div>
+    <div class="wrapper2-2">
+      <p class="header2-2">
+        <ion-icon class="icon2-5 bookmarks" name="md-bookmarks"></ion-icon>
+        <span class="title2-2">Thông tin người đáp</span>
+      </p>
+      <div class="row2-2">
+        <span class="lbl2-5">Người trả lời</span>
+        <span class="lbl2-6">{{chitietPA.TenNguoiTraLoi}}</span>
+      </div>
+      <div class="row2-2">
+        <span class="lbl2-5">Ngày trả lời</span>
+        <span class="lbl2-6">{{chitietPA.NgayTraLoi}}</span>
+      </div>
+      <div class="row2-2">
+        <span class="lbl2-5">Chức vụ</span>
+        <span class="lbl2-6">{{chitietPA.ChucVuNguoiTraLoi}}</span>
+      </div>
+    </div>
+    <div class="wrapper2-2">
+      <p class="header2-2">
+        <ion-icon class="icon2-5 chatbubbles" name="md-chatbubbles"></ion-icon>
+        <span class="title2-2">Nội dung trả lời</span>
+      </p>
+      <div class="row2-2" [innerHtml]="chitietPA.NoiDungTraLoiHtml"></div>
+    </div>
+    <div class="wrapper2-2">
+      <p class="header2-2">
+        <ion-icon class="icon2-5 document" name="md-document"></ion-icon>
+        <span class="title2-2">Tài liệu đính kèm</span>
+      </p>
+      <div class="lst2-5">
+        <button class="group2-3" *ngFor="let file of chitietPA.ListFile" [attr.data-type]="file.fileType"
+          (click)="openFile(file)">
+          <span class="icon2-4 iconsprite2-4"></span>
+          <p class="lbl2-6">{{file.fileName}}</p>
+        </button>
+        <button class="group2-3" *ngFor="let file of chitietPA.ListFileTL" [attr.data-type]="file.fileType"
+          (click)="openFile(file)">
+          <span class="icon2-4 iconsprite2-4"></span>
+          <p class="lbl2-6">{{file.fileName}}</p>
+        </button>
+      </div>
+    </div>
+  </div>
+</ion-content>

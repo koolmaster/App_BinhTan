@@ -1,0 +1,27 @@
+<div class="content">
+  <div class="pbody">
+    <div class="group2-1">
+      <p class="lbl2-1">Hồ Sơ</p>
+      <ion-icon class="icon2-1" name="briefcase"></ion-icon>
+      <ion-input type="text" [(ngModel)]="txtNhadautu" class="txt2-1" placeholder="Tên"></ion-input>
+    </div>
+    <div class="group2-1">
+      <p class="lbl2-1">Tình trạng</p>
+      <ion-list class="lst2-1" radio-group [(ngModel)]="tinhtrang">
+        <ion-item class="item2-1">
+          <ion-label class="iconbfsprite2-tt">Tất cả</ion-label>
+          <ion-radio [value]="0"></ion-radio>
+        </ion-item>
+        <ion-item class="item2-1">
+          <span class="icon2-2 iconsprite2-chuanop"></span>
+          <ion-label>Chưa nộp</ion-label>
+          <ion-radio [value]="1"></ion-radio>
+        </ion-item>
+      </ion-list>
+    </div>
+    <button class="btn-submit" (click)="submit()">
+      <ion-icon class="icon2-3" name="search"></ion-icon>
+      Tìm kiếm
+    </button>
+  </div>
+</div>

@@ -1,0 +1,136 @@
+ion-icon {
+    &[class*="custom-"] {
+        background-image: url(../assets/imgs/main2.png);
+        background-repeat: no-repeat;
+        background-size: 350px 350px;
+    }
+
+    &[class*="tracuu"][ng-reflect-is-active="true"] {
+        background-position: -70px -258px;
+    }
+
+    &[class*="tracuu"][ng-reflect-is-active="false"] {
+        background-position: -70px -258px;
+    }
+}
+
+.ion-ios-albums:before,
+.ion-ios-albums-outline:before {
+    content: "\f275";
+}
+
+.ion-ios-archive:before,
+.ion-ios-archive-outline:before {
+    content: "\f27c";
+}
+
+.ion-ios-person:before,
+.ion-ios-person-outline:before {
+    content: "\f345";
+}
+
+.ion-ios-folder-outline:before {
+    content: "\f435";
+}
+
+.tabs-md {
+    .tabbar {
+        background: #fff;
+    }
+
+    .tab-button {
+        padding-top: .5rem;
+    }
+
+    .tab-button-icon {
+        margin-top: 4px;
+        margin-bottom: 1px;
+        min-width: 35px;
+        height: 30px;
+        font-size: 30px;
+        color: #8c8c8c;
+    }
+
+    ion-icon[class*="tracuu"][ng-reflect-is-active="false"] {
+        background-position: -82px -293px;
+        background-size: 400px 400px;
+    }
+}
+
+.tabbar.show-tabbar {
+    background: #fff;
+    padding-bottom: 0;
+    justify-content: center;
+    border-top: 0.55px solid rgba(0, 0, 0, 0.12);
+
+    .tab-button {
+        position: relative;
+        overflow: hidden;
+        transform: translate3d(0, 0, 0);
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle, #34d3ec 10%, transparent 10.01%);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            transform: scale(10, 10);
+            opacity: 0;
+            transition: transform .5s, opacity 1s;
+        }
+
+        &.activated:after {
+            transform: scale(0, 0);
+            opacity: .3;
+            transition: 0s;
+        }
+    }
+
+    .tab-button .tab-button-icon {
+        font-size: 2.8rem;
+    }
+
+    .tab-button .tab-button-text {
+        font-size: 1.2rem;
+    }
+
+    .tab-button:nth-child(1)[aria-selected=true],
+    .tab-button:nth-child(1)[aria-selected=true] .tab-button-icon {
+        color: #14cbfa;
+    }
+
+    .tab-button:nth-child(2)[aria-selected=true],
+    .tab-button:nth-child(2)[aria-selected=true] .tab-button-icon {
+        color: #34d3ec;
+    }
+
+    .tab-button:nth-child(3) {
+        background: #fff;
+        width: 65px;
+        max-width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        margin-top: -20px;
+        border-top: 3px solid #00C9FF;
+    }
+
+    .tab-button:nth-child(4)[aria-selected=true],
+    .tab-button:nth-child(4)[aria-selected=true] .tab-button-icon {
+        color: #4fded9;
+    }
+
+    .tab-button:nth-child(5)[aria-selected=true],
+    .tab-button:nth-child(5)[aria-selected=true] .tab-button-icon {
+        color: #61e5ca;
+    }
+}
+
+.style2-1.tabs .tab-button[aria-selected=true] .tab-button-icon.ion-md-trungcau {
+    background-position: -33px -219px;
+}

@@ -1,0 +1,97 @@
+body,
+ion-app.ios,
+ion-app.md,
+ion-app.wp {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+[class*="iconsprite2-"],
+[class*="iconbfsprite2-"]:before,
+[class*="iconafsprite2-"]:after {
+    background-image: url(../assets/imgs/main2.png);
+    background-repeat: no-repeat;
+    background-size: 350px 350px;
+}
+
+.menu-header {
+    background: #00C9FF;
+    background: -webkit-linear-gradient(to right, #00C9FF, #62e6ca);
+    background: linear-gradient(to right, #00C9FF, #62e6ca);
+}
+
+.toolbar {
+    .toolbar-title {
+        color: #fff;
+    }
+
+    .toolbar-background {
+        @extend .menu-header;
+    }
+
+    .back-button {
+        color: #fff;
+
+        &.back-button-md {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    &.toolbar-md+.wrapper2-3 {
+        top: 13px;
+    }
+}
+
+.clear {
+    clear: both;
+}
+
+.lbl2-2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 1rem 0;
+}
+
+.scroll-content {
+    background: #F0EFF5;
+}
+
+.item.item-block {
+    border: none;
+    padding: 0;
+
+    &:first-child {
+        border-top: none;
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    .item-inner {
+        padding: 0;
+        border-bottom: none;
+
+        .label {
+            margin: 0;
+        }
+    }
+}
+
+.pie-grid.chart .label.ng-star-inserted:nth-child(4) {
+    display: none !important;
+}
+
+
+//alert show 
+.error-msg .toast-wrapper {
+    background: #C1272D;
+}
+
+.success-msg .toast-wrapper {
+    background: #22B573;
+}
+
+.warning-msg .toast-wrapper {
+    background: #FEC552;
+}

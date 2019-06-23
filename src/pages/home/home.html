@@ -1,0 +1,65 @@
+<ion-header class="menu-header">
+  <div class="box2-1">
+    <div class="row2-1">
+      <img src="assets/imgs/logo.jpg" alt="" class="img2-1">
+      <div class="group2-1">
+        <p class="lbl2-1">
+          <span class="lbl2-1a">Ứng dụng Công dân</span>
+          <ion-icon class="icon2-1" name="notifications" (click)="goPage(3)">
+            <!-- <span class="bage2-1">!</span> -->
+          </ion-icon>
+        </p>
+        <p class="lbl2-2">FPT Information System</p>
+      </div>
+    </div>
+  </div>
+</ion-header>
+<ion-content class="has-header" #pageTop>
+  <div class="row2-3">
+    <button class="btn2-1" (click)="goPage(4)">
+      <span class="icon2-2 iconsprite2-2"></span>
+      <span class="lbl2-3">Phản ánh</span>
+    </button>
+    <button class="btn2-1" (click)="goPage(5)">
+      <span class="icon2-2 iconsprite2-3"></span>
+      <span class="lbl2-3">Trưng cầu</span>
+    </button>
+  </div>
+  <div class="row2-4">
+    <p class="lbl2-4">
+      <span class="lbl2-4a">An ninh trật tự</span>
+      <button class="btn2-4" (click)="goPage(2)">Xem thêm<ion-icon name="arrow-forward"></ion-icon></button>
+    </p>
+    <ion-list class="lst2-3">
+      <ion-item class="item2-3" *ngFor="let item of lstANTT" (click)="goPage1(item.AnNinhTratTuID,item.LoaiAnNinh,0)">
+        <img class="img2-2" [src]="item.AnhDaiDien">
+        <span class="icon2-4 iconsprite2-3" [attr.data-type]="item.LoaiAnNinh"></span>
+        <span class="lbl2-5">{{item.TieuDe}}</span>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="row2-5">
+    <p class="lbl2-4">
+      <span class="lbl2-4a">Tin tức sự kiện</span>
+    </p>
+    <ion-list class="lst2-4">
+      <ion-item class="item2-1" [ngClass]="{'style2-1': i%10 == 0}" *ngFor="let item of lstTinTuc,let i=index"
+        (click)="goPage(1,item.TinTucSuKienID)">
+        <img [src]="item.AnhDaiDien" alt="Tin tức" class="img2-1">
+        <p class="lbl2-1">
+          <span class="lbl2-1b">{{item.NgayBatDau}}</span>
+          {{item.TieuDe}}
+        </p>
+      </ion-item>
+    </ion-list>
+  </div>
+  <ion-fab right bottom (click)="pageScroller()" *ngIf="pageIndex > 2">
+    <button ion-fab class="fab2-1">
+      <ion-icon name="arrow-up"></ion-icon>
+    </button>
+  </ion-fab>
+  <ion-infinite-scroll (ionInfinite)="loadDSTinTuc($event)" *ngIf="!noMoreItemsAvailable">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Đang tải dữ liệu...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

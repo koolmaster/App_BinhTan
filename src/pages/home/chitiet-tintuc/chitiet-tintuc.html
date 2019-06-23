@@ -1,0 +1,26 @@
+<ion-header class="menu-header">
+  <ion-navbar>
+    <ion-title>Chi tiết</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding *ngIf="chitietTT">
+  <div class="title2-1">{{chitietTT.TieuDe}}</div>
+  <p class="lbl2-1">{{chitietTT.NgayBatDau}}</p>
+  <div class="info" [innerHtml]="chitietTT.NoiDung">
+  </div>
+  <div class="clear"></div>
+  <div class="row2-1">
+    <p class="lbl2-3">Tin liên quan</p>
+    <ion-list class="lst2-1">
+      <ion-item class="item2-1" *ngFor="let item of lstTinTuc" (click)="goPage(item.TinTucSuKienID)">
+        <div class="right-1">
+          <p class="lbl2-1">{{item.TieuDe}}</p>
+          <span class="lbl2-2">{{item.NgayBatDau}}</span>
+        </div>
+        <div class="left2-1">
+          <img [src]="item.AnhDaiDien" alt="Tin tức" class="img2-1">
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "CongDan",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

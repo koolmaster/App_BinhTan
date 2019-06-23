@@ -1,0 +1,101 @@
+<ion-header class="menu-header">
+  <ion-navbar>
+    <ion-title>Tạo mới phản ánh</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list class="lst2-6">
+    <div class="wrapper2-2">
+      <span class="icon2-5 iconsprite2-10"></span>
+      <ion-item class="row2-2">
+        <ion-label floating class="lbl2-5">Tiêu Đề</ion-label>
+        <ion-input class="lbl2-6" [(ngModel)]="txtTieuDe" type="text"></ion-input>
+      </ion-item>
+    </div>
+    <div class="wrapper2-2">
+      <span class="icon2-5 iconsprite2-11"></span>
+      <ion-item class="row2-2">
+        <ion-label floating class="lbl2-5">Họ Tên</ion-label>
+        <ion-input class="lbl2-6" [(ngModel)]="txtHoTen" type="text"></ion-input>
+      </ion-item>
+    </div>
+    <div class="wrapper2-2">
+      <span class="icon2-5 iconsprite2-12"></span>
+      <ion-item class="row2-2">
+        <ion-label floating class="lbl2-5">Điện Thoại</ion-label>
+        <ion-input class="lbl2-6" [(ngModel)]="txtDienThoai" type="number"></ion-input>
+      </ion-item>
+    </div>
+    <div class="wrapper2-2">
+      <span class="icon2-5 iconsprite2-13"></span>
+      <ion-item class="row2-2">
+        <ion-label floating class="lbl2-5">Email</ion-label>
+        <ion-input class="lbl2-6" [(ngModel)]="txtEmail" type="text"></ion-input>
+      </ion-item>
+    </div>
+    <div class="wrapper2-2 style2-1">
+      <span class="icon2-5 iconsprite2-14"></span>
+      <ion-item class="row2-2">
+        <ion-label floating class="lbl2-5">Số nhà, đường</ion-label>
+        <ion-input class="lbl2-6" [(ngModel)]="txtSoNha" type="text"></ion-input>
+      </ion-item>
+    </div>
+    <div class="wrapper2-2 select2-1">
+      <span class="icon2-5 iconsprite2-15"></span>
+      <ion-item class="row2-2">
+        <ion-label floating class="lbl2-5">Quận/Huyện</ion-label>
+        <select-searchable class="searchable2-1" item-content [(ngModel)]="txtQuanHuyen" [isMultiple]="false" [items]="lstQuanHuyen"
+          itemValueField="QuanHuyenID" itemTextField="TenQuanHuyen" [canSearch]="true" [canClear]="false"
+          closeButtonText="Đóng" okButtonText="Đồng ý" searchPlaceholder="Tìm kiếm" [searchFailText]="'Không có dữ liệu'"
+          (onChange)="changePhuongXa(txtQuanHuyen)">
+        </select-searchable>
+      </ion-item>
+    </div>
+    <div class="wrapper2-2 select2-1" *ngIf="txtQuanHuyen">
+      <span class="icon2-5 iconsprite2-15"></span>
+      <ion-item class="row2-2">
+        <ion-label floating class="lbl2-5">Phường/Xã</ion-label>
+        <select-searchable class="searchable2-1" item-content [(ngModel)]="txtPhuongXa" [isMultiple]="false" [items]="lstPhuongXa"
+          itemValueField="PhuongXaID" itemTextField="TenPhuongXa" [canSearch]="true" [canClear]="false" closeButtonText="Đóng"
+          okButtonText="Đồng ý" searchPlaceholder="Tìm kiếm" [searchFailText]="'Không có dữ liệu'">
+        </select-searchable>
+      </ion-item>
+    </div>
+    <div class="wrapper2-2 select2-1">
+      <span class="icon2-5 iconsprite2-16"></span>
+      <ion-item class="row2-2">
+        <ion-label floating class="lbl2-5">Lĩnh vực</ion-label>
+        <select-searchable class="searchable2-1" item-content [(ngModel)]="txtLinhVuc" [isMultiple]="false" [items]="lstLinhVuc"
+          itemValueField="PAKNLoaiID" itemTextField="Ten" [canSearch]="true" [canClear]="false" closeButtonText="Đóng"
+          okButtonText="Đồng ý" searchPlaceholder="Tìm kiếm" [searchFailText]="'Không có dữ liệu '">
+        </select-searchable>
+      </ion-item>
+    </div>
+    <div class="wrapper2-2">
+      <span class="icon2-5 iconsprite2-17"></span>
+      <ion-item class="row2-2">
+        <ion-label floating class="lbl2-5">Nội dung câu hỏi</ion-label>
+        <ion-textarea [(ngModel)]="txtNoiDung" autosize class="lbl2-6 style2-1"></ion-textarea>
+      </ion-item>
+    </div>
+    <div class="wrapper2-2 style2-2">
+      <span class="icon2-5 iconsprite2-18"></span>
+      <ion-item class="row2-2">
+        <ion-label floating class="lbl2-5">Tệp tin đính kèm</ion-label>
+      </ion-item>
+      <div class="lst2-5">
+        <label class="btn2-3">
+          <span class="icon2-4 iconsprite2-19"></span>
+          <span class="lbl2-13">Thêm ảnh, tập tin</span>
+          <ion-input type="file" class="file2-1" files-input multiple autofocus [(ngModel)]="inputfile" (ionChange)="addfile($event)"></ion-input>
+        </label>
+        <button class="group2-3" [attr.data-type]="listFile.Type" *ngFor="let listFile of fileNames;let i = index">
+          <span class="icon2-4 iconsprite2-4"></span>
+          <p class="lbl2-6">{{listFile.fileName}}</p>
+          <p class="btn2-delete" (click)="removeFile(i)">x</p>
+        </button>
+      </div>
+    </div>
+    <button class="btn2-8" (click)="addNewPhanAnh()">Tạo mới</button>
+  </ion-list>
+</ion-content>

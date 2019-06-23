@@ -1,0 +1,82 @@
+<ion-content class="login">
+  <img class="img2-1" src="../../assets/imgs/logo.png" alt="">
+  <div class="wrapper2-2" *ngIf="show == 0">
+      <form class="form" [formGroup]="loginForm" (ngSubmit)="tryLogin(loginForm.value)">
+    <div class="row2-1">
+      <ion-icon class="icon2-1" name="contact-outline"></ion-icon>
+      <ion-input type="text" formControlName="email" class="txt2-1" placeholder="Tên đăng nhập"></ion-input>
+    </div>
+    <div class="row2-1">
+      <ion-icon class="icon2-1" name="lock-outline"></ion-icon>
+      <ion-input type="password" formControlName="password" class="txt2-1" placeholder="Mật khẩu"></ion-input>
+    </div>
+    <button class="btn2-1" type="submit">Đăng Nhập</button>
+    <!-- <label class="error-message">{{errorMessage}}</label> -->
+    <div class="row2-1 style2-1">
+      <button class="btn2-2" (click)="goAround(1)">Đăng ký</button>
+      <button class="btn2-2" (click)="goAround(2)">Quên mật khẩu</button>
+    </div>
+    <p class="lbl2-3">Hoặc</p>
+    <div class="row2-1 style2-2">
+      <button class="btn2-3 iconbfsprite2-1" (click)="tryFacebookLogin()"></button>
+      <button class="btn2-3 iconbfsprite2-2" (click)="tryGoogleLogin()"></button>
+    </div>
+  </form>
+  </div>
+  <div class="wrapper2-2" *ngIf="show == 1">
+    <div class=" row2-1" *ngIf="check == 'phone'">
+      <ion-icon class="icon2-1" name="phone-portrait-outline"></ion-icon>
+      <ion-input type="text" [(ngModel)]="txtTaikhoan" class="txt2-1" placeholder="Số điện thoại"></ion-input>
+    </div>
+    <div class="row2-1" *ngIf="check == 'email'">
+      <ion-icon class="icon2-1" ios="ios-mail-outline" md="ios-mail-outline"></ion-icon>
+      <ion-input type="text" [(ngModel)]="txtTaikhoan" class="txt2-1" placeholder="Email"></ion-input>
+    </div>
+    <div class="row2-1">
+      <ion-icon class="icon2-1" name="lock-outline"></ion-icon>
+      <ion-input type="password" [(ngModel)]="txtPassword" class="txt2-1" placeholder="Mật khẩu"></ion-input>
+    </div>
+    <div class="row2-1">
+      <ion-icon class="icon2-1" name="lock-outline"></ion-icon>
+      <ion-input type="password" [(ngModel)]="txtRepeatPassword" class="txt2-1" placeholder="Nhập lại mật khẩu"></ion-input>
+    </div>
+    <ion-list class="lst2-7" radio-group [(ngModel)]="check">
+      <ion-item>
+        <ion-label>Số điện thoại</ion-label>
+        <ion-radio value="phone" checked></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-radio value="email"></ion-radio>
+      </ion-item>
+    </ion-list>
+    <button class="btn2-1" (click)="tryRegister()">Đăng Ký</button>
+    <button class="btn2-2 style2-1" (click)="goAround(0)">Quay lại trang nhập</button>
+  </div>
+  <div class="wrapper2-2" *ngIf="show == 2">
+    <div class=" row2-1" *ngIf="check == 'phone'">
+      <ion-icon class="icon2-1" name="phone-portrait-outline"></ion-icon>
+      <ion-input type="text" [(ngModel)]="txtTaikhoan" class="txt2-1" placeholder="Số điện thoại"></ion-input>
+    </div>
+    <div class="row2-1" *ngIf="check == 'email'">
+      <ion-icon class="icon2-1" ios="ios-mail-outline" md="ios-mail-outline"></ion-icon>
+      <ion-input type="text" [(ngModel)]="txtTaikhoan" class="txt2-1" placeholder="Email"></ion-input>
+    </div>
+    <ion-list class="lst2-7" radio-group [(ngModel)]="check">
+      <ion-item>
+        <ion-label>Số điện thoại</ion-label>
+        <ion-radio value="phone" checked></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-radio value="email"></ion-radio>
+      </ion-item>
+    </ion-list>
+    <div class="row2-1">
+      <div class="captcha-img">{{iNumber}}</div>
+      <ion-input class="input-captcha" type="text" placeholder="Nhập mã captcha"></ion-input>
+    </div>
+    <button class="btn2-1" (click)="login()">Gửi</button>
+    <button class="btn2-2 style2-1" (click)="goAround(0)">Quay lại trang nhập</button>
+  </div>
+</ion-content>

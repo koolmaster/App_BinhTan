@@ -1,0 +1,148 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Nộp hồ sơ</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-simple-wizard [(step)]="step" [showSteps]="true" (finish)="onFinish()" [finishIcon]="'done-all'"
+    [(stepCondition)]="stepCondition" *ngIf="hosodetail">
+    <ion-wizard-step>
+      <div class="wrapper2-2">
+        <div class="group2-2">
+          <span class="icon2-1 icon2-register"></span>
+        </div>
+      </div>
+      <p class="lbl2-1">Thông tin người đứng tên hồ sơ</p>
+      <label class="group2-1">
+        <input type="text" class="txt2-1" placeholder="Tên người đứng tên hồ sơ" [(ngModel)]="hosodetail.HoTenNguoiNop"
+          (input)="checkInput()" [attr.disabled]="disabled ? '' : null">
+        <span class="lbl2-2">Họ và tên
+          <i class="lbl2-2b">(*)</i>
+        </span>
+      </label>
+      <div class="wrapper2-3">
+        <label class="group2-1">
+          <ion-select class="txt2-1" [(ngModel)]="hosodetail.GioiTinh" interface="popover" [disabled]="disabled">
+            <ion-option value="0">Nam</ion-option>
+            <ion-option value="1">Nữ</ion-option>
+            <ion-option value="2">Khác</ion-option>
+          </ion-select>
+          <span class="lbl2-2">Giới tính</span>
+        </label>
+        <label class="group2-1">
+          <ion-datetime class="txt2-1" displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="myDate"
+            cancelText="Đóng" doneText="Đồng ý" [disabled]="disabled"></ion-datetime>
+          <span class="lbl2-2">Ngày sinh</span>
+        </label>
+      </div>
+      <label class="group2-1">
+        <input type="text" class="txt2-1" (keypress)="keyPress($event)" minlength=10 maxlength=10
+          placeholder="Số điện thoại" [(ngModel)]="hosodetail.DienThoaiNguoiNop" (input)="checkInput()"
+          [attr.disabled]="disabled ? '' : null">
+        <span class="lbl2-2">Số điện thoại
+          <i class="lbl2-2b">(*)</i>
+        </span>
+      </label>
+      <label class="group2-1">
+        <input type="text" class="txt2-1" placeholder="Thư điện tử" [(ngModel)]="hosodetail.EmailNguoiNop"
+          [attr.disabled]="disabled ? '' : null">
+        <span class="lbl2-2">Thư điện tử</span>
+      </label>
+      <div class="wrapper2-3">
+        <label class="group2-1">
+          <ion-select class="txt2-1" [(ngModel)]="hosodetail.LoaiGiayToID" interface="action-sheet"
+            [disabled]="disabled">
+            <ion-option value="1" selected>Chứng minh nhân dân</ion-option>
+            <ion-option value="2">Hộ chiếu</ion-option>
+            <ion-option value="3">Chứng minh quân đội</ion-option>
+            <ion-option value="4">Chứng minh sĩ quan</ion-option>
+            <ion-option value="5">Căn cước công dân</ion-option>
+          </ion-select>
+          <span class="lbl2-2">Loại giấy tờ
+            <i class="lbl2-2b">(*)</i>
+          </span>
+        </label>
+        <label class="group2-1">
+          <input type="text" class="txt2-1" [(ngModel)]="hosodetail.SoGiayToTuyThan" (input)="checkInput()"
+            [attr.disabled]="disabled ? '' : null">
+          <span class="lbl2-2">Số giấy tờ
+            <i class="lbl2-2b">(*)</i>
+          </span>
+        </label>
+      </div>
+      <label class="group2-1 style2-1">
+        <input type="text" class="txt2-1" placeholder="Hộ khẩu thường trú" [(ngModel)]="hosodetail.HoKhauThuongTru"
+          [attr.disabled]="disabled ? '' : null">
+        <span class="lbl2-2">Hộ khẩu thường trú</span>
+      </label>
+    </ion-wizard-step>
+    <ion-wizard-step>
+      <div class="wrapper2-2">
+        <div class="group2-2">
+          <span class="icon2-1 icon2-address"></span>
+        </div>
+      </div>
+      <p class="lbl2-1">Địa chỉ đăng ký</p>
+      <label class="group2-1">
+        <input type="text" class="txt2-1" placeholder="Số nhà" [(ngModel)]="hosodetail.SoNha"
+          [attr.disabled]="disabled ? '' : null">
+        <span class="lbl2-2">Số nhà</span>
+      </label>
+      <div class="wrapper2-3">
+        <label class="group2-1">
+          <input type="text" class="txt2-1" [(ngModel)]="hosodetail.PhuongID" [attr.disabled]="disabled ? '' : null">
+          <span class="lbl2-2">Phường/Xã</span>
+        </label>
+        <label class="group2-1">
+          <input type="text" class="txt2-1" [(ngModel)]="hosodetail.QuanID" [attr.disabled]="disabled ? '' : null">
+          <span class="lbl2-2">Quận/Huyện</span>
+        </label>
+      </div>
+      <label class="group2-1">
+        <input type="text" class="txt2-1" placeholder="Tỉnh/Thành phố" [(ngModel)]="hosodetail.QuocGiaID"
+          (input)="textChange()" [attr.disabled]="disabled ? '' : null">
+        <span class="lbl2-2">Tỉnh/Thành phố</span>
+      </label>
+    </ion-wizard-step>
+    <ion-wizard-step>
+      <div class="wrapper2-2">
+        <div class="group2-2">
+          <span class="icon2-1 icon2-folder"></span>
+        </div>
+      </div>
+      <p class="lbl2-1">Hồ sơ kèm theo</p>
+      <div class="lst2-4">
+        <label class="item2-4">
+          <input type="file" class="file2-1">
+          <span class="lbl2-18">- Giấy đề nghị (theo mẩu)</span>
+          <span class="icon2-1 icon2-5"></span>
+        </label>
+        <label class="item2-4">
+          <input type="file" class="file2-1">
+          <span class="lbl2-18">- Chứng minh nhân dân</span>
+          <span class="icon2-1 icon2-5"></span>
+        </label>
+        <label class="item2-4">
+          <input type="file" class="file2-1">
+          <span class="lbl2-18">- Chứng chỉ hành nghề</span>
+          <span class="icon2-1 icon2-5"></span>
+        </label>
+        <label class="item2-4">
+          <input type="file" class="file2-1">
+          <span class="lbl2-18">- Giấy ủy quyền</span>
+          <span class="icon2-1 icon2-5"></span>
+        </label>
+        <label class="item2-4">
+          <input type="file" class="file2-1">
+          <span class="lbl2-18">- Sơ đồ bố trí phòng NET</span>
+          <span class="icon2-1 icon2-5"></span>
+        </label>
+        <label class="item2-4">
+          <input type="file" class="file2-1">
+          <span class="lbl2-18">- Hợp đồng mua bán căn hộ</span>
+          <span class="icon2-1 icon2-5"></span>
+        </label>
+      </div>
+    </ion-wizard-step>
+  </ion-simple-wizard>
+</ion-content>

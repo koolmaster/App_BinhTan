@@ -1,0 +1,17 @@
+<ion-menu #myMenu class="submenu" swipeEnabled="false" [content]="mycontent">
+  <ion-content>
+    <div class="lst2-menu">
+      <button [class.activePageHighlight]="checkActive(p)" menuClose ion-item *ngFor="let p of pages" [class.noicon]="p.index == 9"
+        (click)="openPage(p)">
+        <ion-icon item-start [class]="p.icon"></ion-icon>
+        <div class="lbl2-menu">{{p.title}}</div>
+      </button>
+      <button class="icon2-2 last" (click)="logout()" menuClose ion-item>
+        <ion-icon item-start name="power" class="icon2-4"></ion-icon>
+      </button>
+    </div>
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #mycontent swipeBackEnabled="false"></ion-nav>
+

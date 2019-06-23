@@ -1,0 +1,149 @@
+thongtin-taikhoan {
+  .lbl2-1 {
+    margin: .8rem 0 0;
+    font-size: 2rem;
+    color: #fff;
+  }
+  .img2-2 {
+    width: 10rem;
+    height: 10rem;
+    background: #fff;
+    border-radius: 50%;
+  }
+  .lbl2-2 {
+    margin: 0;
+    color: #f5f5f5;
+    font-size: 1.3rem;
+    margin-top: .3rem;
+  }
+
+  .wrapper2-2 {
+    background: #fff;
+    height: calc(100vh - 240px);
+    padding: 1.5rem 3rem;
+  }
+
+  .row2-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.19);
+
+    &.style2-1 {
+      flex-direction: row;
+    }
+  }
+
+  .group2-1 {
+    @extend .row2-2;
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .lbl2-5 {
+    color: #046b42;
+    font-size: 1.3rem;
+    margin-bottom: .3rem;
+  }
+
+  .lbl2-6 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .group2-2 {
+    display: flex;
+    align-items: center;
+    color: #046b42;
+    font-size: 2.6rem;
+
+    .icon2-2 {
+      margin-right: 2rem;
+    }
+  }
+
+  .wrapper2-1 {
+    padding: 3rem 1.5rem;
+    text-align: center;
+
+    .wrapper2-1b {
+      width: 100%;
+      height: 100px;
+      position: relative;
+
+      .fab2-1 {
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+
+      button.fab {
+        width: 100px;
+        height: 100px;
+        padding: 0;
+        background: rgba(255, 255, 255, 0.2);
+
+        ion-icon {
+          line-height: 100px;
+          font-size: 5.4rem;
+        }
+      }
+
+      ion-fab-list[side=left] {
+        margin: 0 116px;
+        right: 0;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        min-width: 40px;
+        min-height: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        justify-content: center;
+
+        ion-icon {
+          font-size: 1.7em;
+        }
+      }
+
+      ion-fab-list[side=right] {
+        margin: 0 116px;
+        left: 0;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        min-width: 40px;
+        min-height: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        justify-content: center;
+      }
+
+      .btn2-3 {
+        background: transparent;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        color: #fff;
+      }
+    }
+  }
+
+
+  @media (min-width: 480px) {
+    .wrapper2-2 {
+      height: auto;
+      padding: 1.5rem 10%;
+    }
+  }
+
+  @media (min-width: 767px) {
+    .wrapper2-2 {
+      height: calc(100vh - 240px);
+      padding: 1.5rem 20%;
+    }
+  }
+}

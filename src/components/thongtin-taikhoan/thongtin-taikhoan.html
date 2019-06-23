@@ -1,0 +1,48 @@
+<ion-header class="menu-header">
+  <ion-navbar>
+    <ion-title>Thông tin tài khoản</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="wrapper2-1">
+    <div class="wrapper2-1b">
+      <ion-fab class="fab2-1">
+        <button ion-fab>
+          <img src="{{userinfo.UrlImage}}" class="img2-2">
+        </button>
+        <ion-fab-list side="left">
+          <button class="btn2-3">
+            <ion-icon name="camera"></ion-icon>
+          </button>
+        </ion-fab-list>
+      </ion-fab>
+    </div>
+  </div>
+  <div class="wrapper2-2">
+    <div class="row2-2">
+      <span class="lbl2-5">Tên đăng nhập</span>
+      <span class="lbl2-6"></span>
+    </div>
+    <div class="row2-2">
+      <span class="lbl2-5">Họ Tên</span>
+      <span class="lbl2-6">{{userinfo.HoTen}}</span>
+    </div>
+    <div class="row2-2">
+      <span class="lbl2-5">Giới Tính</span>
+      <span class="lbl2-6">{{userinfo.Gender==0?'Nam':'Nu'}}</span>
+    </div>
+    <div class="row2-2 style2-1">
+      <div class="group2-1">
+        <span class="lbl2-5">Sđt</span>
+        <span class="lbl2-6">{{userinfo.SoDienThoai}}</span>
+      </div>
+    </div>
+    <div class="row2-2 style2-1">
+      <div class="group2-1">
+        <span class="lbl2-5">Email</span>
+        <span class="lbl2-6">{{userinfo.Email}}</span>
+      </div>
+    </div>
+ 
+  </div>
+</ion-content>

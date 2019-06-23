@@ -1,0 +1,70 @@
+<ion-header class="menu-header">
+  <ion-navbar>
+    <ion-title>Trưng cầu ý kiến</ion-title>
+  </ion-navbar>
+  <ion-segment class="row2-2" [(ngModel)]="tabs">
+    <ion-segment-button class="btn2-1" value="0" (click)="onTabChange(0)">Trưng cầu ý kiến</ion-segment-button>
+    <ion-segment-button class="btn2-1" value="1" (click)="onTabChange(1)">Kết quả trưng cầu ý kiến</ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content #pageTop>
+  <ion-slides #Slides (ionSlideWillChange)="moveTab($event)">
+    <ion-slide class="slide2-1">
+      <ion-list class="lst2-1">
+        <ion-item class="item2-1" *ngFor="let item of lstTrungCau,let i = index">
+          <p class="lbl2-10">{{item.NgayKetThuc}}</p>
+          <p class="lbl2-11">{{item.TieuDe}}</p>
+          <div class="wrapper2-3">
+            <label class="btn-radio" (click)="item.type = 1">
+              <input type="radio" value="1" [name]="item.RowNo">
+              <svg width="20px" height="20px" viewBox="0 0 20 20">
+                <circle cx="10" cy="10" r="9"></circle>
+                <path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z"
+                  class="inner"></path>
+                <path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z"
+                  class="outer"></path>
+              </svg>
+              <span>Đồng ý</span>
+              <span class="lbl2-4">{{item.DongY}}</span>
+            </label>
+            <label class="btn-radio" (click)="item.type = 0">
+              <input type="radio" value="0" [name]="item.RowNo">
+              <svg width="20px" height="20px" viewBox="0 0 20 20">
+                <circle cx="10" cy="10" r="9"></circle>
+                <path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z"
+                  class="inner"></path>
+                <path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z"
+                  class="outer"></path>
+              </svg>
+              <span>Không đồng ý</span>
+              <span class="lbl2-4 style2-1">{{item.KhongDongY}}</span>
+            </label>
+          </div>
+          <div class="wrapper2-btn">
+            <button class="btn2-1" (click)="bieuQuyet(item)">Biểu quyết</button>
+            <button class="btn2-1" (click)="goDetail(item.TrungCauYKienID)">Xem kết quả</button>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+    <ion-slide class="slide2-1">
+      <ion-list class="lst2-1">
+        <ion-item class="item2-1" *ngFor="let item of lstChart" (click)="goDetail(item.TrungCauYKienID)">
+          <p class="lbl2-10">{{item.NgayKetThuc}}</p>
+          <p class="lbl2-11">{{item.TieuDe}}</p>
+          <div class="wrapper-chart">
+            <ngx-charts-pie-grid #PieGrid class="chart-container" (window:resize)="onResize($event)" [view]="view"
+              [results]="item.dataChart" [scheme]="colorScheme"
+              [results]="single"
+              (select)="onSelect($event)">
+            </ngx-charts-pie-grid>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+  </ion-slides>
+  <ion-infinite-scroll (ionInfinite)="loadDS($event)" *ngIf="!isLoadMore">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Đang tải dữ liệu..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

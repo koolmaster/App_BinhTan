@@ -1,0 +1,77 @@
+<ion-header class="menu-header">
+  <ion-navbar></ion-navbar>
+  <div class="wrapper2-3">
+    <input type="text" class="txt2-3" [(ngModel)]="txtSearch" placeholder="Tìm kiếm tin an ninh" />
+    <span class="btn2-4">
+      <ion-icon name="search"></ion-icon>
+    </span>
+  </div>
+  <ion-segment class="row2-2" [(ngModel)]="tabs">
+    <ion-segment-button class="btn2-1" value="0" (click)="onTabChange(0)">Truy nã</ion-segment-button>
+    <ion-segment-button class="btn2-1" value="1" (click)="onTabChange(1)">Tuyên truyền</ion-segment-button>
+    <ion-segment-button class="btn2-1" value="2" (click)="onTabChange(2)">ATGT</ion-segment-button>
+    <ion-segment-button class="btn2-1" value="3" (click)="onTabChange(3)">Hướng dẫn </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="Kéo để làm mới" refreshingSpinner="circles" refreshingText="Làm mới...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-slides [ngClass]="{'first': firstLoad}" #Slides (ionSlideWillChange)="moveTab($event)">
+    <ion-slide class="slide2-1">
+      <ion-list class="lst2-1">
+        <ion-item class="item2-1" *ngFor="let item of lstTruyNa" (click)="goPage(item.AnNinhTratTuID,item.LoaiAnNinh)">
+          <img [src]="item.AnhDaiDien" alt="" class="img2-1">
+          <div class="wrapper2-4">
+            <span class="lbl2-5">{{item.HoTen}}</span>
+            <span class="lbl2-6">Hành vi phạm tội <b class="lbl2-6b">{{item.TenHanhVi}}</b></span>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+    <ion-slide class="slide2-1">
+      <ion-list class="lst2-1">
+        <ion-item class="item2-1" *ngFor="let item of lstTuyenTruyen"
+          (click)="goPage(item.AnNinhTratTuID,item.LoaiAnNinh)">
+          <span class="img2-1 iconsprite2-1"></span>
+          <div class="wrapper2-4">
+            <span class="lbl2-5">{{item.TieuDe}}</span>
+            <span class="lbl2-6">{{item.MoTa}}</span>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+    <ion-slide class="slide2-1">
+      <ion-list class="lst2-1">
+        <ion-item class="item2-1 style2-1" *ngFor="let item of lstATGT"
+          (click)="goPage(item.AnNinhTratTuID,item.LoaiAnNinh)">
+          <span class=" img2-1 iconsprite2-2"></span>
+          <div class="wrapper2-4">
+            <span class="lbl2-5">{{item.TieuDe}}</span>
+            <span class="lbl2-6">{{item.MoTa}}</span>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+    <ion-slide class="slide2-1">
+      <ion-list class="lst2-1">
+        <ion-item class="item2-1 style2-1" *ngFor="let item of lstHuongDan"
+          (click)="goPage(item.AnNinhTratTuID,item.LoaiAnNinh)">
+          <span class=" img2-1 iconsprite2-3"></span>
+          <div class="wrapper2-4">
+            <span class="lbl2-5">{{item.TieuDe}}</span>
+            <span class="lbl2-6">{{item.MoTa}}</span>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+  </ion-slides>
+  <div *ngIf="tabs == '0'">
+    <ion-infinite-scroll (ionInfinite)="loadDanhSachGiaoViecDuocGiao($event)" *ngIf="!loadMoreTruyNa">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Đang tải dữ liệu...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+</ion-content>

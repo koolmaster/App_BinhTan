@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Tra cứu hồ sơ</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="group2-1">
+    <ion-icon name="barcode"></ion-icon>
+    <ion-input type="text" [(ngModel)]="txtVBPL" class="txt2-1" (ionChange)="changeText()" placeholder="Mã số tra cứu hoặc số biên nhận">
+    </ion-input>
+  </div>
+  <div class="section2-1" *ngIf="!show">
+    <img src="assets/imgs/qr.png" class="img2-1">
+    <div class="group2-2">
+      <p class="lbl2-5">Nhập số biên bản ,
+        mã tra cứu mà bạn nhận được từ hệ thống hoặc
+        cơ quan chức năng sau khi đăng ký hồ sơ thành công
+      </p>
+      <p class="lbl2-6">HOẶC</p>
+      <p class="lbl2-5">
+        Bấm vào biểu tượng QR để quét mã
+      </p>
+      <p class="lbl2-6">HOẶC</p>
+      <span class="lbl2-7">Soạn tin nhắn với cú pháp: <b>TC 00.54.H29</b> gửi đến <b>1022</b></span>
+    </div>
+  </div>
+  <div class="section2-2" *ngIf="show">
+    <span class="title2-1">Thông tin tra cứu</span>
+    <div class="group2-3">
+      <div class="group2-4">
+        <span class="lbl2-1">Số biên nhận</span>
+        <span class="lbl2-1">777022014KT04123</span>
+      </div>
+      <div class="group2-4">
+        <span class="lbl2-1">Mã tra cứu</span>
+        <span class="lbl2-1">777022014KT04123</span>
+      </div>
+      <div class="group2-4">
+        <span class="lbl2-1">Lĩnh vực</span>
+        <span class="lbl2-1">Lĩnh vực kinh tế</span>
+      </div>
+      <div class="group2-4">
+        <span class="lbl2-1">Thủ tục</span>
+        <span class="lbl2-1">Cấp giấy phép chứng nhận đăng ký hộ kinh doanh</span>
+      </div>
+    </div>
+    <div class="group2-3">
+      <div class="group2-4">
+        <span class="lbl2-1">Ngày nhận</span>
+        <span class="lbl2-1">03/12/2014</span>
+      </div>
+      <div class="group2-4">
+        <span class="lbl2-1">Ngày hẹn trả</span>
+        <span class="lbl2-1">17/12/2014</span>
+      </div>
+      <div class="group2-4">
+        <span class="lbl2-1">Ngày hoàn thành</span>
+        <span class="lbl2-1">04/12/2014</span>
+      </div>
+      <div class="group2-4">
+        <span class="lbl2-1">Tình trạng</span>
+        <span class="lbl2-1">Hồ sơ đã trả</span>
+      </div>
+    </div>
+    <div class="group2-4">
+      <span class="lbl2-1">Phòng ban xử lý</span>
+      <span class="lbl2-1">ỦY BAN NHÂN DÂN QUẬN BÌNH TÂN - Chi Cục Thuế Bình tân</span>
+    </div>
+    <div class="group2-4">
+      <span class="lbl2-1">Người xử lý</span>
+      <span class="lbl2-1">Dương thanh tùng</span>
+    </div>
+    <div class="group2-4">
+      <span class="lbl2-1">Kết quả xử lý</span>
+      <span class="lbl2-1">Tốt</span>
+    </div>
+  </div>
+</ion-content>
