@@ -13,10 +13,22 @@ ion-app.wp {
     background-size: 350px 350px;
 }
 
+.toolbar-md {
+  padding: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  min-height: 44px;
+}
+
 .menu-header {
     background: #00C9FF;
     background: -webkit-linear-gradient(to right, #00C9FF, #62e6ca);
     background: linear-gradient(to right, #00C9FF, #62e6ca);
+
+
+    .ion-md-funnel:before {
+      content: "\f182";
+    }
 }
 
 .toolbar {

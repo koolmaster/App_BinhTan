@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides, Navbar, PopoverController } from 'ionic-angular';
-import { FilterHsPage } from '../../popups/filter-hs/filter-hs';
 
 @IonicPage()
 @Component({
@@ -54,10 +53,18 @@ export class HosoCuatoiPage {
   }
 
   presentPopover(myEvent, txtSearch) {
-    let popover = this.popoverCtrl.create('FilterHsPage',{search: txtSearch});
+    let popover = this.popoverCtrl.create('FilterHsPage', { search: txtSearch });
     popover.present({
       ev: myEvent
     });
+  }
+
+  goPage() {
+    if (this.tabs == '0') {
+      this.navCtrl.push('CapgiayChungnhanPage');
+    } else {
+      this.navCtrl.push('ChitietHosocuatoiPage');
+    }
   }
 
 }

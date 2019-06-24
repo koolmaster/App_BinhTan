@@ -1,0 +1,111 @@
+page-chitiet-hosocuatoi {
+  .toolbar .toolbar-background {
+    border-bottom: none;
+  }
+
+  .scroll-content {
+    background: rgba(227, 233, 249, .5);
+  }
+
+  .lbl2-10 {
+    padding: 1.5rem;
+    background: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #666;
+  }
+
+  .group2-1 {
+    margin: 1.5rem 1rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 10px;
+  }
+
+  .header2-1 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px dotted #ddd;
+    padding-bottom: .5rem;
+
+    .icon2-11 {
+      width: 30px;
+      height: 30px;
+      display: block;
+      margin-right: .5rem;
+    }
+
+    .iconsprite2-thongtin {
+      background-position: -3px -32px;
+    }
+
+    .iconsprite2-noidung {
+      background-position: -37px -32px;
+    }
+
+    .iconsprite2-traodoi {
+      background-position: -72px -34px;
+    }
+
+    .lbl2-11 {
+      color: #666;
+      font-weight: 500;
+      font-size: 1.5rem;
+    }
+  }
+
+  .content2-1 {
+    padding: 1.5rem 0 0;
+
+    &.style2-1 {
+      font-size: 1.5rem;
+      line-height: 2.2rem;
+      color: #312c4c;
+    }
+
+    .wrapper2-1 {
+      display: flex;
+      align-content: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+      font-size: 1.5rem;
+    }
+
+    .group2-2 {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 2rem;
+
+      .wrapper2-1 {
+        width: 50%;
+        flex-wrap: wrap;
+      }
+
+      .lbl2-12 {
+        margin-bottom: .8rem;
+      }
+
+      .lbl2-12,
+      .lbl2-13 {
+        width: 100%;
+        display: block;
+        text-align: left;
+      }
+    }
+
+    .lbl2-12 {
+      color: #a0a0a0;
+      width: 110px;
+      margin-right: .5rem;
+    }
+
+    .lbl2-13 {
+      font-weight: 600;
+      color: #312c4c;
+      text-align: right;
+      width: calc(100% - 115px);
+    }
+  }
+}
