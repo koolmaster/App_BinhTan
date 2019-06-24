@@ -2,15 +2,15 @@ body,
 ion-app.ios,
 ion-app.md,
 ion-app.wp {
-    font-family: 'Roboto', sans-serif !important;
+  font-family: 'Roboto', sans-serif !important;
 }
 
 [class*="iconsprite2-"],
 [class*="iconbfsprite2-"]:before,
 [class*="iconafsprite2-"]:after {
-    background-image: url(../assets/imgs/main2.png);
-    background-repeat: no-repeat;
-    background-size: 350px 350px;
+  background-image: url(../assets/imgs/main2.png);
+  background-repeat: no-repeat;
+  background-size: 350px 350px;
 }
 
 .toolbar-md {
@@ -20,90 +20,94 @@ ion-app.wp {
   min-height: 44px;
 }
 
+.popover-md ion-backdrop {
+  opacity: 0.08;
+}
+
 .menu-header {
-    background: #00C9FF;
-    background: -webkit-linear-gradient(to right, #00C9FF, #62e6ca);
-    background: linear-gradient(to right, #00C9FF, #62e6ca);
+  background: #00C9FF;
+  background: -webkit-linear-gradient(to right, #00C9FF, #62e6ca);
+  background: linear-gradient(to right, #00C9FF, #62e6ca);
 
 
-    .ion-md-funnel:before {
-      content: "\f182";
-    }
+  .ion-md-funnel:before {
+    content: "\f182";
+  }
 }
 
 .toolbar {
-    .toolbar-title {
-        color: #fff;
-    }
+  .toolbar-title {
+    color: #fff;
+  }
 
-    .toolbar-background {
-        @extend .menu-header;
-    }
+  .toolbar-background {
+    @extend .menu-header;
+  }
 
-    .back-button {
-        color: #fff;
+  .back-button {
+    color: #fff;
 
-        &.back-button-md {
-            padding: 0;
-            margin: 0;
-        }
+    &.back-button-md {
+      padding: 0;
+      margin: 0;
     }
+  }
 
-    &.toolbar-md+.wrapper2-3 {
-        top: 13px;
-    }
+  &.toolbar-md+.wrapper2-3 {
+    top: 13px;
+  }
 }
 
 .clear {
-    clear: both;
+  clear: both;
 }
 
 .lbl2-2 {
-    font-size: 1.6rem;
-    font-weight: 500;
-    margin: 1rem 0;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 1rem 0;
 }
 
 .scroll-content {
-    background: #F0EFF5;
+  background: #F0EFF5;
 }
 
 .item.item-block {
-    border: none;
+  border: none;
+  padding: 0;
+
+  &:first-child {
+    border-top: none;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .item-inner {
     padding: 0;
+    border-bottom: none;
 
-    &:first-child {
-        border-top: none;
+    .label {
+      margin: 0;
     }
-
-    &:last-child {
-        border-bottom: none;
-    }
-
-    .item-inner {
-        padding: 0;
-        border-bottom: none;
-
-        .label {
-            margin: 0;
-        }
-    }
+  }
 }
 
 .pie-grid.chart .label.ng-star-inserted:nth-child(4) {
-    display: none !important;
+  display: none !important;
 }
 
 
 //alert show 
 .error-msg .toast-wrapper {
-    background: #C1272D;
+  background: #C1272D;
 }
 
 .success-msg .toast-wrapper {
-    background: #22B573;
+  background: #22B573;
 }
 
 .warning-msg .toast-wrapper {
-    background: #FEC552;
+  background: #FEC552;
 }

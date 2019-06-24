@@ -1,0 +1,112 @@
+<ion-header class="menu-header">
+  <ion-navbar>
+    <div class="wrapper2-3">
+      <input type="text" class="txt2-3" [(ngModel)]="txtSearch" [placeholder]="placeholder" />
+      <span class="btn2-4">
+        <ion-icon name="search"></ion-icon>
+      </span>
+    </div>
+    <ion-buttons end class="btn-filter">
+      <button (click)="presentPopover($event,txtSearch)">
+        <ion-icon name="funnel"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-segment class="row2-2" [(ngModel)]="tabs">
+    <ion-segment-button class="btn2-1" value="0" (click)="onTabChange(0)">Tất cả</ion-segment-button>
+    <ion-segment-button class="btn2-1" value="1" (click)="onTabChange(1)">Mới thay đổi</ion-segment-button>
+  </ion-segment>
+</ion-header>
+<ion-content>
+  <ion-slides [ngClass]="{'first': firstLoad}" #Slides (ionSlideWillChange)="moveTab($event)">
+    <ion-slide class="slide2-1">
+      <ion-list class="lst2-1">
+        <ion-list-header class="header2-2">Tôn giáo</ion-list-header>
+        <ion-item class="item2-1" (click)="goPage()">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn giáo
+          cơ sở</ion-item>
+        <ion-item class="item2-1" (click)="goPage()">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn giáo
+          cơ sở</ion-item>
+        <ion-item class="item2-1" (click)="goPage()">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn giáo
+          cơ sở</ion-item>
+        <ion-item class="item2-1" (click)="goPage()">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn
+          giáo cơ sở</ion-item>
+        <ion-item class="item2-1" (click)="goPage()">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn
+          giáo
+          cơ sở</ion-item>
+        <ion-item class="item2-1" (click)="goPage()">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn
+          giáo
+          cơ sở</ion-item>
+      </ion-list>
+      <ion-list class="lst2-1">
+        <ion-list-header class="header2-2">Trách nhiệm bồi thường của nhà nước trong hoạt động quản lý hành chính</ion-list-header>
+        <ion-item class="item2-1" (click)="goPage()">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn giáo
+          cơ sở</ion-item>
+        <ion-item class="item2-1" (click)="goPage()">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn giáo
+          cơ sở</ion-item>
+        <ion-item class="item2-1" (click)="goPage()">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn giáo
+          cơ sở</ion-item>
+        <ion-item class="item2-1" (click)="goPage()">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn
+          giáo cơ sở</ion-item>
+        <ion-item class="item2-1" (click)="goPage()">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn
+          giáo
+          cơ sở</ion-item>
+        <ion-item class="item2-1" (click)="goPage()">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn
+          giáo
+          cơ sở</ion-item>
+      </ion-list>
+    </ion-slide>
+    <ion-slide class="slide2-1 style2-2">
+      <ion-list class="lst2-1">
+        <ion-item class="item2-1" data-type="1" (click)="goPage()">
+          <div class="wrapper2-1">
+            <span class="lbl2-1">Thành lập và phát triển doanh nghiệp</span>
+            <span class="lbl2-2">Cấp mới giấp phép kinh doanh</span>
+          </div>
+          <span class="lbl2-3">Đã nộp (Chờ xác nhận)</span>
+        </ion-item>
+        <ion-item class="item2-1" data-type="1">
+          <div class="wrapper2-1">
+            <span class="lbl2-1">Thành lập và phát triển doanh nghiệp</span>
+            <span class="lbl2-2">Cấp mới giấp phép kinh doanh</span>
+          </div>
+          <span class="lbl2-3">Đã nộp (Chờ xác nhận)</span>
+        </ion-item>
+        <ion-item class="item2-1" data-type="1">
+          <div class="wrapper2-1">
+            <span class="lbl2-1">Thành lập và phát triển doanh nghiệp</span>
+            <span class="lbl2-2">Cấp mới giấp phép kinh doanh</span>
+          </div>
+          <span class="lbl2-3">Đã nộp (Chờ xác nhận)</span>
+        </ion-item>
+        <ion-item class="item2-1" data-type="1">
+          <div class="wrapper2-1">
+            <span class="lbl2-1">Thành lập và phát triển doanh nghiệp</span>
+            <span class="lbl2-2">Cấp mới giấp phép kinh doanh</span>
+          </div>
+          <span class="lbl2-3">Đã nộp (Chờ xác nhận)</span>
+        </ion-item>
+        <ion-item class="item2-1" data-type="1">
+          <div class="wrapper2-1">
+            <span class="lbl2-1">Thành lập và phát triển doanh nghiệp</span>
+            <span class="lbl2-2">Cấp mới giấp phép kinh doanh</span>
+          </div>
+          <span class="lbl2-3">Đã nộp (Chờ xác nhận)</span>
+        </ion-item>
+        <ion-item class="item2-1" data-type="1">
+          <div class="wrapper2-1">
+            <span class="lbl2-1">Thành lập và phát triển doanh nghiệp</span>
+            <span class="lbl2-2">Cấp mới giấp phép kinh doanh</span>
+          </div>
+          <span class="lbl2-3">Đã nộp (Chờ xác nhận)</span>
+        </ion-item>
+        <ion-item class="item2-1" data-type="1">
+          <div class="wrapper2-1">
+            <span class="lbl2-1">Thành lập và phát triển doanh nghiệp</span>
+            <span class="lbl2-2">Cấp mới giấp phép kinh doanh</span>
+          </div>
+          <span class="lbl2-3">Đã nộp (Chờ xác nhận)</span>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

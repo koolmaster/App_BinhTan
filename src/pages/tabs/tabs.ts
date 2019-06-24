@@ -8,7 +8,7 @@ import { NavParams, IonicPage } from 'ionic-angular';
 export class TabsPage {
   selectedTabIndex = 3;
   hoso: any = 'HosoCuatoiPage';
-  thutuc: any = 'HomePage';
+  thutuc: any = 'ThutucHanhchinhPage';
   tracuu: any = 'TracuuHosoPage';
   nophoso: any = 'NophosoPage';
   profile: any = 'ProfilePage';
