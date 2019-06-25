@@ -52,7 +52,6 @@ export class ProfilePage {
   goPage(type) {
     switch (type) {
       case 0:
-        this.navCtrl.push(CanhanPage, null, {animate: true, animation: "transition"});
         break;
     
       default:
