@@ -24,6 +24,14 @@ ion-app.wp {
   opacity: 0.08;
 }
 
+[class*="iconsprite1-"],
+[class*="iconbfsprite1-"]:before,
+[class*="iconafsprite1-"]:after {
+    background-image: url(../assets/imgs/main1.png);
+    background-repeat: no-repeat;
+    background-size: 350px 350px;
+}
+
 .menu-header {
   background: #00C9FF;
   background: -webkit-linear-gradient(to right, #00C9FF, #62e6ca);

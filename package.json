@@ -45,6 +45,7 @@
     "com.telerik.plugins.nativepagetransitions": "git+https://github.com/Telerik-Verified-Plugins/NativePageTransitions.git#0.6.5",
     "cordova-android": "^6.3.0",
     "cordova-android-support-gradle-release": "^1.4.7",
+    "cordova-browser": "5.0.4",
     "cordova-plugin-advanced-http": "^1.11.1",
     "cordova-plugin-app-launcher": "^0.4.0",
     "cordova-plugin-badge": "^0.8.8",
@@ -110,7 +111,8 @@
       "com.telerik.plugins.nativepagetransitions": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "browser"
     ]
   }
 }

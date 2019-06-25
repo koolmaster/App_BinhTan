@@ -1,3 +1,4 @@
+import { CanhanPage } from './../pages/canhan/canhan';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -59,6 +60,11 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     ChitietTrungcauPage,
     PhanAnhPage,
     ChitietPhananhPage,
+<<<<<<< HEAD
+=======
+    CanhanPage,
+    KhacPage,
+>>>>>>> 969b3af7f47801a5b7d42bd0c5223557249f1819
 
     Autosize,
 
@@ -89,6 +95,11 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     ChitietTrungcauPage,
     PhanAnhPage,
     ChitietPhananhPage,
+<<<<<<< HEAD
+=======
+    KhacPage,
+    CanhanPage,
+>>>>>>> 969b3af7f47801a5b7d42bd0c5223557249f1819
 
     ThemPhananhComponent,
     ThongtinTaikhoanComponent
