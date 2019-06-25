@@ -23,7 +23,7 @@
   <ion-slides [ngClass]="{'first': firstLoad}" #Slides (ionSlideWillChange)="moveTab($event)">
     <ion-slide class="slide2-1">
       <ion-list class="lst2-1">
-        <ion-item class="item2-1" data-type="0">
+        <ion-item class="item2-1" data-type="0" (click)="goPage()">
           <div class="wrapper2-1">
             <span class="lbl2-1">Thành lập và phát triển doanh nghiệp</span>
             <span class="lbl2-2">It is a long established fact that a reader will be distracted by the readable content
@@ -71,7 +71,7 @@
     </ion-slide>
     <ion-slide class="slide2-1 style2-2">
       <ion-list class="lst2-1">
-        <ion-item class="item2-1" data-type="1">
+        <ion-item class="item2-1" data-type="1" (click)="goPage()">
           <div class="wrapper2-1">
             <span class="lbl2-1">Thành lập và phát triển doanh nghiệp</span>
             <span class="lbl2-2">Cấp mới giấp phép kinh doanh</span>
