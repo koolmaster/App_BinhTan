@@ -15,7 +15,7 @@ export class ThutucHanhchinhPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public popoverCtrl: PopoverController
+    public popoverCtrl: PopoverController,
   ) {
   }
 
@@ -44,14 +44,15 @@ export class ThutucHanhchinhPage {
   }
 
   presentPopover(myEvent, txtSearch) {
-    let popover = this.popoverCtrl.create('FilterHsPage', { search: txtSearch });
+    let popover = this.popoverCtrl.create('FilterThutucPage', { search: txtSearch });
     popover.present({
       ev: myEvent
     });
   }
 
   goPage() {
-
+    this.navCtrl.push('ChitietThutuchanhchinhPage');
   }
+
 
 }

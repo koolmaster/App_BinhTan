@@ -1,16 +1,16 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, Navbar } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Navbar, ModalController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-chitiet-hosocuatoi',
-  templateUrl: 'chitiet-hosocuatoi.html',
+  selector: 'page-chitiet-thutuchanhchinh',
+  templateUrl: 'chitiet-thutuchanhchinh.html',
 })
-export class ChitietHosocuatoiPage {
+export class ChitietThutuchanhchinhPage {
   @ViewChild(Navbar) navBar: Navbar;
   elements = document.querySelectorAll(".tabbar");
   showTab = false;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController) {
     if (this.elements != null) {
       Object.keys(this.elements).map((key) => {
         this.elements[key].style.display = 'none';
@@ -32,4 +32,11 @@ export class ChitietHosocuatoiPage {
       this.navCtrl.pop();
     };
   }
+
+
+  presentFilterModal() {
+    let profileModal = this.modalCtrl.create('PopupGopyPage');
+    profileModal.present();
+  }
+
 }

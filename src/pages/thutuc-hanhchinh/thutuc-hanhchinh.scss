@@ -158,11 +158,13 @@ page-thutuc-hanhchinh {
     .lst2-1 {
       border-bottom: 1px solid #ddd;
       position: relative;
-      counter-reset: mycounter;
+      margin-bottom: 2rem;
+      margin-top: 0;
     }
 
     .item2-1 {
       padding-left: 1.5rem;
+      position: relative;
 
       ion-label.label {
         white-space: normal;
@@ -171,27 +173,25 @@ page-thutuc-hanhchinh {
         color: #666;
         font-weight: 500;
         border-bottom: 1px dotted #ddd;
-        position: relative;
-        counter-increment: mycounter;
+      }
 
-        &::before {
-          content: counter(mycounter);
-          color: #fcd000;
-          font-size: 1.5rem;
-          font-weight: bold;
-          position: absolute;
-          --size: 32px;
-          left: calc(-1 * var(--size) + 35px);
-          line-height: var(--size);
-          width: var(--size);
-          height: var(--size);
-          top: 50%;
-          transform: rotate(-10deg) translateY(-50%);
-          background: black;
-          border-radius: 50%;
-          text-align: center;
-          box-shadow: 1px 1px 0 #999;
-        }
+      &::before {
+        content: attr(data-count);
+        color: #fcd000;
+        font-size: 1.5rem;
+        font-weight: bold;
+        position: absolute;
+        --size: 32px;
+        left: calc(-1 * var(--size) + 50px);
+        line-height: var(--size);
+        width: var(--size);
+        height: var(--size);
+        top: 50%;
+        transform: rotate(-10deg) translateY(-50%);
+        background: black;
+        border-radius: 50%;
+        text-align: center;
+        box-shadow: 1px 1px 0 #999;
       }
 
       &:last-child ion-label.label {

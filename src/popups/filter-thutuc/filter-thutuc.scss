@@ -1,0 +1,167 @@
+.popover-wrapper .popover-content {
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 320px;
+    color: #000;
+    background: #fff;
+}
+
+page-filter-thutuc {
+    .group2-1 {
+        margin-bottom: 3rem;
+        position: relative;
+
+        [class*="lbl2-"] {
+            margin: 0;
+        }
+
+        .lbl2-1 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #999;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .icon2-1 {
+            position: absolute;
+            width: 40px;
+            height: 38px;
+            text-align: center;
+            line-height: 38px;
+            background-color: #14cbfa;
+            color: #fff;
+            font-size: 1.8rem;
+            z-index: 99;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .txt2-1 {
+            width: 100%;
+            max-width: 100%;
+            padding: 1rem 0 1rem 5rem;
+            border: 1px solid #ddd;
+            min-height: 3.8rem;
+            max-height: 3.8rem;
+            border-radius: 5px;
+
+            .text-input {
+                margin: 0;
+            }
+
+            .select-icon {
+                position: relative;
+                width: 12px;
+                height: 18px;
+                margin-right: 15px;
+            }
+        }
+
+        .lst2-1 {
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            ion-item.item2-1 {
+                width: 33.333333%;
+                text-align: center;
+                margin-bottom: 1.5rem;
+
+                .label {
+                    color: #666;
+                    font-size: 1.2rem;
+
+                    &::before {
+                        content: "";
+                        display: block;
+                        width: 35px;
+                        max-height: 35px;
+                        min-height: 35px;
+                        text-align: center;
+                        background-color: #ccc;
+                        margin: 0 auto 1.2rem;
+                        font-size: 1.4rem;
+                        border-radius: 5px;
+                    }
+
+                    &.iconbfsprite2-tatca:before {
+                        background-position: -35px 3px;
+                    }
+
+                    &.iconbfsprite2-chuanop:before {
+                        background-position: 0px 2px;
+                    }
+
+                    &.iconbfsprite2-tuchoigiaiquyet:before {
+                        background-position: -69px 2px;
+                    }
+
+                    &.iconbfsprite2-chogiaiquyet:before {
+                        background-position: -105px 2px;
+                    }
+
+                    &.iconbfsprite2-dacoketqua:before {
+                        background-position: -141px 2px;
+                    }
+                }
+
+                &:first-child {
+                    border-top: none;
+                }
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &.item-radio-checked .label.iconbfsprite2-tatca:before {
+                    background-color: #f65314;
+                }
+
+                &.item-radio-checked .label.iconbfsprite2-chuanop:before {
+                    background-color: #14cbfa;
+                }
+
+                &.item-radio-checked .label.iconbfsprite2-tuchoigiaiquyet:before {
+                    background-color: #ea4335;
+                }
+
+                &.item-radio-checked .label.iconbfsprite2-chogiaiquyet:before {
+                    background-color: #cda466;
+                }
+
+                &.item-radio-checked .label.iconbfsprite2-dacoketqua:before {
+                    background-color: #00c851;
+                }
+            }
+
+            ion-radio.radio {
+                margin: 0;
+                width: 0;
+                height: 0;
+            }
+        }
+    }
+
+    .btn-submit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.2rem 1rem;
+        position: absolute;
+        width: 100%;
+        font-size: 1.4rem;
+        color: #fff;
+        position: sticky;
+        bottom: 0;
+        background: #00C9FF;
+        background: -webkit-gradient(linear, left top, right top, from(#00C9FF), to(#62e6ca));
+        background: linear-gradient(to right, #00C9FF, #62e6ca);
+
+        ion-icon.icon2-3 {
+            padding-right: 1rem;
+            font-size: 1.8rem;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="back()" class="my-style-for-modal">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Đóng góp ý kiến</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="wrapper2-2">
+    <div class="group2-2">
+      <span class="icon2-1 iconsprite2-gopy"></span>
+    </div>
+  </div>
+  <label class="group2-1">
+    <input type="text" class="txt2-1" placeholder="Họ và tên">
+    <span class="lbl2-2">Họ và tên
+      <i class="lbl2-2b">(*)</i>
+    </span>
+  </label>
+  <div class="wrapper2-3">
+    <label class="group2-1">
+      <input type="number" class="txt2-1" minlength=10 maxlength=10 placeholder="Số điện thoại">
+      <span class="lbl2-2">Số điện thoại
+        <i class="lbl2-2b">(*)</i>
+      </span>
+    </label>
+    <label class="group2-1">
+      <input type="text" class="txt2-1" placeholder="Thư điện tử">
+      <span class="lbl2-2">Thư điện tử</span>
+    </label>
+  </div>
+  <label class="group2-1">
+    <input type="text" class="txt2-1" placeholder="Tiêu đề">
+    <span class="lbl2-2">Tiêu đề</span>
+  </label>
+  <ion-item class="group2-1">
+    <ion-label floating class="lbl2-2">Nội dung đóng góp ý kiến...</ion-label>
+    <ion-textarea class="txt2-1" #msgInput id="myInput" rows="1" maxLength="500" (keyup)="resize()"></ion-textarea>
+  </ion-item>
+  <button class="btn2-1">Tạo mới</button>
+</ion-content>
