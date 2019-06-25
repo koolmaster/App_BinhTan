@@ -9,7 +9,7 @@ import { IonicPage, NavController, NavParams, Navbar, Slides, PopoverController 
 export class ThutucHanhchinhPage {
   @ViewChild(Slides) slides: Slides;
   @ViewChild(Navbar) navBar: Navbar;
-  tabs = "0";
+  tabhanhchinh = "0";
   txtSearch = '';
   placeholder = "Tìm kiếm thủ tục";
   constructor(
@@ -24,15 +24,15 @@ export class ThutucHanhchinhPage {
 
   onTabChange(val) {
     this.slides.slideTo(val, 300);
-    let temp = document.querySelector('.row2-2');
+    let temp = document.querySelector('.tab-thutuc');
     temp.setAttribute('style', '--i:' + val);
   }
 
   moveTab($event) {
-    this.tabs = $event._snapIndex.toString();
-    let temp = document.querySelector('.row2-2');
+    this.tabhanhchinh = $event._snapIndex.toString();
+    let temp = document.querySelector('.tab-thutuc');
     temp.setAttribute('style', '--i:' + $event._snapIndex);
-    switch (this.tabs) {
+    switch (this.tabhanhchinh) {
       case '1':
         this.placeholder = "Tìm kiếm thủ tục mới thay đổi";
         break;

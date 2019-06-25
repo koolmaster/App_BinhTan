@@ -19,6 +19,7 @@ export class NophosoPage {
   hosodetail: any;
   myDate = "2019-06-19";
   disabled = false;
+  hosotab = "0";
   constructor(
     public navCtrl: NavController,
     public params: NavParams,
@@ -132,6 +133,11 @@ export class NophosoPage {
     if (event.keyCode != 8 && !pattern.test(inputChar)) {
       event.preventDefault();
     }
+  }
+
+  onTabChange(val) {
+    let temp = document.querySelector('.row2-2');
+    temp.setAttribute('style', '--k:' + val);
   }
 
 }

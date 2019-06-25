@@ -1,8 +1,6 @@
-import { ProfilePage } from './../profile/profile';
 import { LoginService } from './../../providers/service/loginService';
 import { Component } from '@angular/core';
 import { IonicPage,App, NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
 import { AlertService } from "../../providers/service/alertService";
 import { TabsPage } from './../tabs/tabs';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';

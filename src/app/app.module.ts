@@ -13,9 +13,6 @@ import { HttpModule } from '@angular/http';
 import { HTTP } from '@ionic-native/http';
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
-import { AnninhTrattuPage } from '../pages/anninh-trattu/anninh-trattu';
-import { ChitietTintucPage } from '../pages/home/chitiet-tintuc/chitiet-tintuc';
-import { ChitietAnninhtrattuPage } from '../pages/anninh-trattu/chitiet-anninhtrattu/chitiet-anninhtrattu';
 import { ThongbaoPage } from '../pages/thongbao/thongbao';
 import { ChitietThongbaoPage } from '../pages/thongbao/chitiet-thongbao/chitiet-thongbao';
 import { TrungCauPage } from '../pages/trung-cau/trung-cau';
@@ -49,7 +46,6 @@ import { UserService } from '../pages/core/user.service';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environment/environment';
-import { KhacPage } from '../pages/khac/khac';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
@@ -57,16 +53,12 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
   declarations: [
     MyApp,
     LoginPage,
-    ChitietTintucPage,
-    AnninhTrattuPage,
-    ChitietAnninhtrattuPage,
     ThongbaoPage,
     ChitietThongbaoPage,
     TrungCauPage,
     ChitietTrungcauPage,
     PhanAnhPage,
     ChitietPhananhPage,
-    KhacPage,
 
     Autosize,
 
@@ -91,16 +83,12 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
   entryComponents: [
     MyApp,
     LoginPage,
-    ChitietTintucPage,
-    AnninhTrattuPage,
-    ChitietAnninhtrattuPage,
     ThongbaoPage,
     ChitietThongbaoPage,
     TrungCauPage,
     ChitietTrungcauPage,
     PhanAnhPage,
     ChitietPhananhPage,
-    KhacPage,
 
     ThemPhananhComponent,
     ThongtinTaikhoanComponent

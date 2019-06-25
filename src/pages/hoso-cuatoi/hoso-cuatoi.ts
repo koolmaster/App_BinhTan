@@ -25,14 +25,14 @@ export class HosoCuatoiPage {
 
   onTabChange(val) {
     this.slides.slideTo(val, 300);
-    let temp = document.querySelector('.row2-2');
-    temp.setAttribute('style', '--i:' + val);
+    let temp = document.querySelector('.tab-hoso');
+    temp.setAttribute('style', '--j:' + val);
   }
 
   moveTab($event) {
     this.tabs = $event._snapIndex.toString();
-    let temp = document.querySelector('.row2-2');
-    temp.setAttribute('style', '--i:' + $event._snapIndex);
+    let temp = document.querySelector('.tab-hoso');
+    temp.setAttribute('style', '--j:' + $event._snapIndex);
     switch (this.tabs) {
       case '1':
         this.placeholder = "Tìm kiếm hồ sơ chờ giải quyết";
