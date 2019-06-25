@@ -1,0 +1,155 @@
+<ion-header class="menu-header">
+  <ion-navbar>
+      <div class="wrapper2-3">
+    <ion-title>Thông tin tài khoản</ion-title>
+  <span class="btn2-4">
+    <ion-icon ios="ios-more" md="md-more"></ion-icon>
+  </span>
+    </div>
+  </ion-navbar>
+
+  <div class="wrapper2-1">
+    <div class="wrapper2-1b">
+      <ion-fab class="fab2-1">
+        <button ion-fab>
+          <img src="https://cdn1.iconfinder.com/data/icons/avatar-3/512/Manager-512.png" class="img2-2">
+        </button>
+        <button class="button1-1" ion-button round outline small>đã xác thực</button>
+        <ion-fab-list side="left">
+          <button class="btn2-3">
+            <ion-icon name="camera"></ion-icon>
+          </button>
+        </ion-fab-list>
+      </ion-fab>
+    </div>
+    <span class="lbl2-7">Nguyễn Trọng Giáp</span>
+   
+  </div>
+  <ion-segment class="row2-2" [(ngModel)]="tabs">
+    <ion-segment-button class="btn2-1" value="0" (click)="onTabChange(0)">Cài đặt</ion-segment-button>
+    <ion-segment-button class="btn2-1" value="1" (click)="onTabChange(1)">Thông tin</ion-segment-button>
+    <ion-segment-button class="btn2-1" value="2" (click)="onTabChange(2)">Lịch sử</ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+  <ion-content>
+
+    <!--  -->
+    <ion-slides [ngClass]="{'first': firstLoad}" #Slides (ionSlideWillChange)="moveTab($event)">
+        <ion-slide class="slide2-1" >
+            <ion-card class="card1-1" >
+            <ion-list  no-border class="list1-1">
+                <ion-list-header>
+                    Ứng dụng
+                  </ion-list-header>
+                <ion-item>
+                    <ion-toggle checked="false"></ion-toggle>
+                    <ion-label>
+                      Hiển thị thông báo
+                    </ion-label>
+                    <ion-icon name='ios-notifications-outline' item-start></ion-icon>
+                  </ion-item>
+                <ion-item>
+                  <ion-icon name='ios-color-palette-outline' item-start></ion-icon>
+                  Màu ứng dụng
+                  <ion-icon name='rose' item-end color="primary"></ion-icon>
+                </ion-item>
+            
+                <ion-item>
+                    <ion-icon name='md-globe' item-start></ion-icon>
+                    Ngôn ngữ hiển thị
+                    <ion-note item-end>
+                    Tiếng Việt
+                    </ion-note>
+                  </ion-item>
+                  <ion-list-header>
+                      Thông tin
+                    </ion-list-header>
+                  <ion-item>
+                    <ion-icon name='md-star-outline' item-start></ion-icon>
+                    Xếp hạng ứng dụng
+                    <ion-icon name='md-arrow-dropright' item-end color="primary"></ion-icon>
+                  </ion-item>
+              
+                  <ion-item>
+                    <ion-icon name='ios-help-circle-outline' item-start></ion-icon>
+                    Trung tâm hỗ trợ
+                    <ion-icon name='md-arrow-dropright' item-end color="primary"></ion-icon>
+                  </ion-item>
+                     
+                <ion-item>
+                    <ion-icon name='ios-information-circle-outline' item-start></ion-icon>
+                    Thông tin ứng dụng
+                    <ion-icon name='md-arrow-dropright' item-end color="primary"></ion-icon>
+                 
+                  </ion-item>  
+            
+              </ion-list>
+            </ion-card>
+            
+        </ion-slide>
+        <ion-slide class="slide2-1">
+            <ion-card class="card1-1" >
+          <div class="wrapper2-2">
+              <div class="row2-3">
+                <span class="lbl2-5">Tên đăng nhập</span>
+                <span class="lbl2-6">Nguyentronggiap95</span>
+              </div>
+              <div class="row2-3">
+                <span class="lbl2-5">Họ Tên</span>
+                <span class="lbl2-6">Nguyen Trong Giap</span>
+              </div>
+              <div class="row2-3">
+                <span class="lbl2-5">Giới Tính</span>
+                <span class="lbl2-6">Nam</span>
+              </div>
+              <div class="row2-3 style2-1">
+                <div class="group2-1">
+                  <span class="lbl2-5">Số điện thoại</span>
+                  <span class="lbl2-6">0968471379</span>
+                </div>
+              </div>
+              <div class="row2-3 style2-1">
+                <div class="group2-1">
+                  <span class="lbl2-5">Email</span>
+                  <span class="lbl2-6">nguyentronggiap95@gmail.com</span>
+                </div>
+              </div>
+              <div class="row2-3 style2-1">
+                  <button ion-button full icon-start>
+                      <ion-icon name="log-out"></ion-icon>
+                      Đăng xuất
+                    </button>
+              </div>
+           
+            </div>
+          </ion-card>
+        </ion-slide>
+        <ion-slide class="slide2-1">
+          <ion-list class="lst2-1">
+            <ion-item class="item2-1">
+              <div class="wrapper2-4">
+                <div class="lbl2-1 style2-1">Số văn bản: 1156/STC-QHPX</div>
+                <div class="lbl2-3 style2-1">Giấy nghỉ phép Bà Nguyễn Thị Ngọc Sa - Phó Trưởng phòng y tế quận</div>
+                <div class="lbl2-2 style2-1">Nội dung chỉ đạo: </div>
+                <div class="lbl2-2 style2-1">Hạn xủ lý: </div>
+              </div>
+            </ion-item>
+            <ion-item class="item2-1">
+              <div class="wrapper2-4">
+                <div class="lbl2-1">
+                  Mã văn bản: 223332
+                  <span class="lbl2-1b">15/05/2019</span>
+                </div>
+                <div class="lbl2-2">Hạn xử lý: </div>
+                <div class="lbl2-3">Giấy nghỉ phép Bà Nguyễn Thị Ngọc Sa - Phó Trưởng phòng y tế quận</div>
+              </div>
+            </ion-item>
+
+  
+          </ion-list>
+        </ion-slide>
+      </ion-slides>
+<!--  -->
+  
+</ion-content>

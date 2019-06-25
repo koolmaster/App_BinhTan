@@ -1,3 +1,4 @@
+import { CanhanPage } from './../canhan/canhan';
 import { AuthService } from './../core/auth.service';
 import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
@@ -51,7 +52,7 @@ export class ProfilePage {
   goPage(type) {
     switch (type) {
       case 0:
-        this.navCtrl.push(ThongtinTaikhoanComponent, null, {animate: true, animation: "transition"});
+        this.navCtrl.push(CanhanPage, null, {animate: true, animation: "transition"});
         break;
     
       default:

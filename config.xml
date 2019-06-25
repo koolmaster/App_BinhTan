@@ -119,4 +119,5 @@
     <plugin name="cordova-plugin-app-launcher" spec="^0.4.0" />
     <plugin name="com.telerik.plugins.nativepagetransitions" spec="https://github.com/Telerik-Verified-Plugins/NativePageTransitions#0.6.5" />
     <engine name="android" spec="6.3.0" />
+    <engine name="browser" spec="5.0.4" />
 </widget>
