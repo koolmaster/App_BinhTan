@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams, Slides, Navbar, Content } from 'io
 import { isEmpty, isNil } from 'lodash';
 import { TrungCauService } from '../../providers/service/trungCauService';
 import { AlertService } from '../../providers/service/alertService';
-import { ChitietTrungcauPage } from './chitiet-trungcau/chitiet-trungcau';
 @IonicPage()
 @Component({
   selector: 'page-trung-cau',
@@ -13,6 +12,7 @@ export class TrungCauPage {
   @ViewChild(Slides) slides: Slides;
   @ViewChild(Navbar) navBar: Navbar;
   @ViewChild('pageTop') pageTop: Content;
+  elements = document.querySelectorAll(".tabbar");
   view: any;
   tabs = "0";
   flag = 0;
@@ -22,7 +22,7 @@ export class TrungCauPage {
   lstTrungCau = [];
   lstChart = [];
   colorScheme = {
-    domain: ['#0099FF', '#00CC66']
+    domain: ['#14cbfa', '#62e6ca']
   };
   constructor(
     public navCtrl: NavController,
@@ -31,13 +31,31 @@ export class TrungCauPage {
     public alert: AlertService
   ) {
     this.view = [innerWidth / 1.1, 300];
+    if (this.elements != null) {
+      Object.keys(this.elements).map((key) => {
+        this.elements[key].style.display = 'none';
+      });
+    }
   }
+
+  ionViewWillLeave() {
+    if (this.showTab) {
+      Object.keys(this.elements).map((key) => {
+        this.elements[key].style.display = 'flex';
+      });
+    }
+  }
+
 
   onResize(event) {
     this.view = [event.target.innerWidth / 1.1, 300];
   }
 
   ionViewDidLoad() {
+    this.navBar.backButtonClick = (ev: UIEvent) => {
+      this.showTab = true;
+      this.navCtrl.pop();
+    };
     this.loadDS();
   }
 
@@ -46,7 +64,6 @@ export class TrungCauPage {
   }
 
   loadDS(scroll?: any) {
-    // debugger;
     if (!this.isLoadMore) {
       let param = {
         nam: 0,
@@ -82,7 +99,6 @@ export class TrungCauPage {
               ]
             }
             this.lstChart.push(itemChart);
-            console.log(this.lstChart);
           }
           this.slides.resize();
           this.slides.update();
@@ -121,17 +137,17 @@ export class TrungCauPage {
 
   onTabChange(val) {
     this.slides.slideTo(val, 300);
-    let temp = document.querySelector('.row2-2');
+    let temp = document.querySelector('.tab-trungcau');
     temp.setAttribute('style', '--i:' + val);
   }
 
   moveTab($event) {
     this.tabs = $event._snapIndex.toString();
-    let temp = document.querySelector('.row2-2');
+    let temp = document.querySelector('.tab-trungcau');
     temp.setAttribute('style', '--i:' + $event._snapIndex);
   }
 
   goDetail(id) {
-    this.navCtrl.push(ChitietTrungcauPage, {TrungCauYKienID:id})
+    this.navCtrl.push('ChitietTrungcauPage', {TrungCauYKienID:id})
   }
 }

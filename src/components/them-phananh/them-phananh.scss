@@ -229,7 +229,9 @@ them-phananh {
   .btn2-8 {
     width: 100%;
     margin-top: 3rem;
-    background: #f59300;
+    background: #00C9FF;
+    background: -webkit-gradient(linear, left top, right top, from(#00C9FF), to(#62e6ca));
+    background: linear-gradient(to right, #00C9FF, #62e6ca);
     padding: 1.5rem;
     color: #fff;
     font-size: 1.8rem;

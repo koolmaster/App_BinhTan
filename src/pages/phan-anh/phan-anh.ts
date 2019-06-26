@@ -1,7 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Navbar } from 'ionic-angular';
 import { isEmpty, isNil } from 'lodash';
-import { ChitietPhananhPage } from './chitiet-phananh/chitiet-phananh';
 import { ThemPhananhComponent } from '../../components/them-phananh/them-phananh';
 import { PhanAnhService } from '../../providers/service/phanAnhService';
 import { AlertService } from '../../providers/service/alertService';
@@ -132,7 +131,7 @@ export class PhanAnhPage {
 
 
   goPage(hoiDapID) {
-    this.navCtrl.push(ChitietPhananhPage, { hoiDapID: hoiDapID})
+    this.navCtrl.push('ChitietPhananhPage', { hoiDapID: hoiDapID})
   }
 
   addPhanAnh() {

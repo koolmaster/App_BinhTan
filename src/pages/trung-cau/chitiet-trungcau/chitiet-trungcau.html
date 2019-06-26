@@ -3,37 +3,31 @@
     <ion-title>Chi tiết trưng cầu</ion-title>
   </ion-navbar>
 </ion-header>
-
-
 <ion-content>
   <div class="container2-1" *ngIf="chitietTC">
-    <p class="lbl2-10">{{chitietTC.NgayKetThuc}}</p>
-    <p class="lbl2-11">{{chitietTC.TieuDe}}</p>
-    <p class="lbl2-12">Nội dung trưng cầu</p>
-    <div class="lbl2-5" [innerHTML]="chitietTC.NoiDung"></div>
-    <p class="lbl2-12">Kết quả trưng cầu</p>
-    <div class="wrapper-chart">
-      <ngx-charts-pie-grid 
-        class="chart-container" 
-        [results]="dataChart" 
-        [scheme]="colorScheme" 
-        [results]="single"
-      >
-      </ngx-charts-pie-grid>
+    <div class="lbl2-10">{{chitietTC.TieuDe}}</div>
+    <div class="group2-1">
+      <div class="header2-1">
+        <span class="icon2-11 iconsprite2-trinhtu"></span>
+        <span class="lbl2-11">Nội dung trưng cầu</span>
+      </div>
+      <div class="content2-1 style2-1" [innerHTML]="chitietTC.NoiDung"></div>
     </div>
-    <div class="wrapper-chart style2-1">
-      <ngx-charts-bar-vertical
-        [scheme]="colorScheme"
-        [results]="dataChart"
-        [xAxis]="true"
-        [yAxis]="true"
-        [legend]="false"
-        [showXAxisLabel]="true"
-        [showYAxisLabel]="true"
-        [showDataLabel]="true"
-        [barPadding]="128"
-      >
-      </ngx-charts-bar-vertical>
+    <div class="group2-1">
+      <div class="header2-1">
+        <span class="icon2-11 iconsprite2-ketqua"></span>
+        <span class="lbl2-11">Kết quả trưng cầu</span>
+      </div>
+      <div class="wrapper-chart">
+        <ngx-charts-pie-grid class="chart-container" [results]="dataChart" [scheme]="colorScheme" [results]="single">
+        </ngx-charts-pie-grid>
+      </div>
+      <div class="wrapper-chart style2-1">
+        <ngx-charts-bar-vertical [scheme]="colorScheme" [results]="dataChart" [xAxis]="true" [yAxis]="true"
+          [legend]="false" [showXAxisLabel]="true" [showYAxisLabel]="true" [showDataLabel]="true" [barPadding]="128">
+        </ngx-charts-bar-vertical>
+      </div>
     </div>
+
   </div>
 </ion-content>

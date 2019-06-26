@@ -12,44 +12,46 @@
     </div>
   </div>
 
-  <div class="group2-4">
-    <div class="wrapper2-2">
-      <p class="header2-2">
-        <ion-icon class="icon2-5 chatbubbles style2-1" name="md-chatbubbles"></ion-icon>
-        <span class="title2-2">Nội dung câu hỏi</span>
-      </p>
-      <div class="row2-2 style2-2">{{chitietPA.NoiDungHtml}}</div>
+  <div class="group2-1">
+    <div class="header2-1">
+      <span class="icon2-11 iconsprite2-trinhtu"></span>
+      <span class="lbl2-11">Nội dung câu hỏi</span>
     </div>
-    <div class="wrapper2-2">
-      <p class="header2-2">
-        <ion-icon class="icon2-5 bookmarks" name="md-bookmarks"></ion-icon>
-        <span class="title2-2">Thông tin người đáp</span>
-      </p>
-      <div class="row2-2">
-        <span class="lbl2-5">Người trả lời</span>
-        <span class="lbl2-6">{{chitietPA.TenNguoiTraLoi}}</span>
+    <div class="content2-1 style2-1">{{chitietPA.NoiDungHtml}}</div>
+  </div>
+  <div class="group2-1">
+    <div class="header2-1">
+      <span class="icon2-11 iconsprite2-thongtin"></span>
+      <span class="lbl2-11">Thông tin người đáp</span>
+    </div>
+    <div class="content2-1">
+      <div class="wrapper2-1" *ngIf="chitietPA.TenNguoiTraLoi">
+        <span class="lbl2-12">Người trả lời</span>
+        <span class="lbl2-13">{{chitietPA.TenNguoiTraLoi}}</span>
       </div>
-      <div class="row2-2">
-        <span class="lbl2-5">Ngày trả lời</span>
-        <span class="lbl2-6">{{chitietPA.NgayTraLoi}}</span>
+      <div class="wrapper2-1" *ngIf="chitietPA.NgayTraLoi">
+        <span class="lbl2-12">Ngày trả lời</span>
+        <span class="lbl2-13">{{chitietPA.NgayTraLoi}}</span>
       </div>
-      <div class="row2-2">
-        <span class="lbl2-5">Chức vụ</span>
-        <span class="lbl2-6">{{chitietPA.ChucVuNguoiTraLoi}}</span>
+      <div class="wrapper2-1" *ngIf="chitietPA.ChucVuNguoiTraLoi">
+        <span class="lbl2-12">Chức vụ</span>
+        <span class="lbl2-13">{{chitietPA.ChucVuNguoiTraLoi}}</span>
       </div>
     </div>
-    <div class="wrapper2-2">
-      <p class="header2-2">
-        <ion-icon class="icon2-5 chatbubbles" name="md-chatbubbles"></ion-icon>
-        <span class="title2-2">Nội dung trả lời</span>
-      </p>
-      <div class="row2-2" [innerHtml]="chitietPA.NoiDungTraLoiHtml"></div>
+  </div>
+  <div class="group2-1">
+    <div class="header2-1">
+      <span class="icon2-11 iconsprite2-traodoi"></span>
+      <span class="lbl2-11">Nội dung trả lời</span>
     </div>
-    <div class="wrapper2-2">
-      <p class="header2-2">
-        <ion-icon class="icon2-5 document" name="md-document"></ion-icon>
-        <span class="title2-2">Tài liệu đính kèm</span>
-      </p>
+    <div class="content2-1 style2-1" [innerHtml]="chitietPA.NoiDungTraLoiHtml"></div>
+  </div>
+  <div class="group2-1">
+    <div class="header2-1">
+      <span class="icon2-11 iconsprite2-thanhphan"></span>
+      <span class="lbl2-11">Tài liệu đính kèm</span>
+    </div>
+    <div class="content2-1 style2-2">
       <div class="lst2-5">
         <button class="group2-3" *ngFor="let file of chitietPA.ListFile" [attr.data-type]="file.fileType"
           (click)="openFile(file)">

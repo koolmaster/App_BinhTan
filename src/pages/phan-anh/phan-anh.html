@@ -1,7 +1,8 @@
 <ion-header class="menu-header">
   <ion-navbar></ion-navbar>
   <div class="wrapper2-3">
-    <input type="text" class="txt2-3" [(ngModel)]="txtSearch" placeholder="Tìm kiếm phản ánh" (keyup.enter)="seachPhanAnh(txtSearch)" />
+    <input type="text" class="txt2-3" [(ngModel)]="txtSearch" placeholder="Tìm kiếm phản ánh"
+      (keyup.enter)="seachPhanAnh(txtSearch)" />
     <span class="btn2-4">
       <ion-icon name="search"></ion-icon>
     </span>
@@ -9,7 +10,8 @@
 </ion-header>
 <ion-content>
   <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content pullingText="Kéo để làm mới" refreshingSpinner="circles" refreshingText="Làm mới..."></ion-refresher-content>
+    <ion-refresher-content pullingText="Kéo để làm mới" refreshingSpinner="circles" refreshingText="Làm mới...">
+    </ion-refresher-content>
   </ion-refresher>
   <ion-list class="lst2-1">
     <ion-item class="item2-1" *ngFor="let item of lstPhanAnh" (click)="goPage(item.HoiDapID)">
@@ -26,6 +28,7 @@
     </button>
   </ion-fab>
   <ion-infinite-scroll (ionInfinite)="loadDSPhanAnh($event)" *ngIf="!noMoreItemsAvailable">
-    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Đang tải dữ liệu..."></ion-infinite-scroll-content>
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Đang tải dữ liệu...">
+    </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
