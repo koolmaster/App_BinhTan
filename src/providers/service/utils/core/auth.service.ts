@@ -1,4 +1,3 @@
-import { CONST } from './../../providers/const/const';
 import { Injectable } from "@angular/core";
 import { Platform } from 'ionic-angular';
 import 'rxjs/add/operator/toPromise';
@@ -7,9 +6,9 @@ import * as firebase from 'firebase/app';
 import { Facebook } from '@ionic-native/facebook';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { FirebaseUserModel } from './user.model';
-import { environment } from '../../environment/environment';
-import { LoginService } from './../../providers/service/loginService';
 import { Storage } from '@ionic/storage';
+import { LoginService } from "../../loginService";
+import { environment } from "../../../../environment/environment";
 
 
 @Injectable()

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { PhanAnhService } from '../../providers/service/phanAnhService';
 import { isEmpty, isNil } from 'lodash';
 import { AlertService } from '../../providers/service/alertService';
-import { NavController } from 'ionic-angular';
+import { NavController} from 'ionic-angular';
 @Component({
   selector: 'them-phananh',
   templateUrl: 'them-phananh.html'

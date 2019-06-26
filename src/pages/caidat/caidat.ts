@@ -32,6 +32,14 @@ export class CaidatPage {
         this.navCtrl.push('CanhanPage');
         break;
 
+      case 4:
+        this.navCtrl.push('PhanAnhPage');
+        break;
+
+      case 5:
+        this.navCtrl.push('TrungCauPage');
+        break;
+
       default:
         break;
     }

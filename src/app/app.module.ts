@@ -16,15 +16,11 @@ import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
 import { ThongbaoPage } from '../pages/thongbao/thongbao';
 import { ChitietThongbaoPage } from '../pages/thongbao/chitiet-thongbao/chitiet-thongbao';
-import { TrungCauPage } from '../pages/trung-cau/trung-cau';
-import { ChitietTrungcauPage } from '../pages/trung-cau/chitiet-trungcau/chitiet-trungcau';
-import { PhanAnhPage } from '../pages/phan-anh/phan-anh';
-import { ChitietPhananhPage } from '../pages/phan-anh/chitiet-phananh/chitiet-phananh';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
 
 //Directive
 import { Autosize } from '../providers/directive/autosize';
-import { TranslateModule, TranslateLoader,TranslatePipe } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 //Components
 import { ThemPhananhComponent } from '../components/them-phananh/them-phananh';
@@ -42,10 +38,6 @@ import { LoginService } from '../providers/service/loginService';
 // GiapNT4
 import { Facebook } from '@ionic-native/facebook';
 import { GooglePlus } from '@ionic-native/google-plus';
-
-import { AuthService } from '../pages/core/auth.service';
-import { UserService } from '../pages/core/user.service';
-
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environment/environment';
@@ -54,6 +46,7 @@ import { TrattudothiPage } from '../pages/trattudothi/trattudothi';
 import { HuongdansudungPage } from '../pages/huongdansudung/huongdansudung';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LanguageService } from '../providers/service/utils/language.service';
+import { AuthService } from '../providers/service/utils/core/auth.service';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -66,14 +59,10 @@ export function createTranslateLoader(http: HttpClient) {
     QuyhoachPage,
     TrattudothiPage,
     ChitietThongbaoPage,
-    TrungCauPage,
-    ChitietTrungcauPage,
-    PhanAnhPage,
     HuongdansudungPage,
-    ChitietPhananhPage,
     Autosize,
-
     ThemPhananhComponent,
+
     ThongtinTaikhoanComponent
   ],
   imports: [
@@ -105,12 +94,7 @@ export function createTranslateLoader(http: HttpClient) {
     TrattudothiPage,
     ThongbaoPage,
     QuyhoachPage,
-    ChitietThongbaoPage,
-    TrungCauPage,
     HuongdansudungPage,
-    ChitietTrungcauPage,
-    PhanAnhPage,
-    ChitietPhananhPage,
     ThemPhananhComponent,
     ThongtinTaikhoanComponent
   ],

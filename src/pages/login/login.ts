@@ -4,7 +4,7 @@ import { IonicPage,App, NavController, NavParams } from 'ionic-angular';
 import { AlertService } from "../../providers/service/alertService";
 import { TabsPage } from './../tabs/tabs';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { AuthService } from '../core/auth.service';
+import { AuthService } from '../../providers/service/utils/core/auth.service';
 @IonicPage()
 @Component({
   selector: 'page-login',

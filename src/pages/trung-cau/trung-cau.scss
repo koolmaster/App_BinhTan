@@ -4,7 +4,7 @@ page-trung-cau {
   }
 
   .scroll-content {
-    background: #F0EFF5;
+    background: rgba(227, 233, 249, 0.5);
   }
 
   .img2-1 {
@@ -27,6 +27,10 @@ page-trung-cau {
     z-index: 0;
     --i: 0;
 
+    &[style='--i:1']:after {
+      background: #62e6ca;
+    }
+
     &:after {
       content: "";
       position: absolute;
@@ -35,36 +39,34 @@ page-trung-cau {
       top: 1px;
       left: calc(var(--i) * (100% / 2) + 1px);
       height: 94%;
-      background: #f59300;
+      background: #14cbfa;
+      transition: background .5s ease-in-out;
       border-radius: 20px;
       transition: .3s ease-in-out;
     }
 
     .segment-button.btn2-1 {
       padding: .5rem 1rem;
-      height: 2.8rem;
+      height: 3rem;
       width: 25%;
-      color: #ddd;
+      color: #bbb;
       background: transparent;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       position: relative;
       border: none;
       border-radius: 0;
-      min-width: calc(100% / 4);
+      min-width: calc(100% / 2);
       position: relative;
       z-index: 2;
-      color: grey;
       position: relative;
       transition: color .3s ease-in-out;
+      text-transform: capitalize;
 
       &.segment-activated {
         color: #fff;
-        // background: #f59300;
-        // border-radius: 20px;
-        // transition: color .3s ease-in-out;
       }
     }
   }
@@ -122,10 +124,10 @@ page-trung-cau {
       font-weight: 500;
       padding-left: 5px;
       font-size: 14px;
-      color: #0099FF;
+      color: #14cbfa;
 
       &.style2-1 {
-        color: #00CC66;
+        color: #62e6ca;
       }
     }
 
@@ -140,7 +142,7 @@ page-trung-cau {
 
       &:last-child {
         svg path {
-          stroke: #00CC66;
+          stroke: #62e6ca;
         }
       }
 
@@ -195,7 +197,6 @@ page-trung-cau {
     }
 
     .btn2-1 {
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
       border: none;
       padding: 5px 20px;
       font-size: 13px;
@@ -204,10 +205,10 @@ page-trung-cau {
       border-radius: 3px;
       margin-right: 20px;
       color: #fff;
-      background: #0099FF;
+      background: #14cbfa;
 
       &:last-child {
-        background: #00CC66;
+        background: #62e6ca;
         margin-right: 0;
       }
     }
