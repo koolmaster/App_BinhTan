@@ -20,6 +20,10 @@ ion-app.wp {
   min-height: 44px;
 }
 
+.header-md::after {
+  display: none;
+}
+
 .popover-md ion-backdrop {
   opacity: 0.08;
 }
