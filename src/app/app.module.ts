@@ -1,3 +1,4 @@
+import { QuyhoachPage } from './../pages/quyhoach/quyhoach';
 import { CanhanPage } from './../pages/canhan/canhan';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -52,6 +53,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environment/environment';
 import { KhacPage } from '../pages/khac/khac';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { TrattudothiPage } from '../pages/trattudothi/trattudothi';
+import { HuongdansudungPage } from '../pages/huongdansudung/huongdansudung';
 
 
 @NgModule({
@@ -62,10 +65,13 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     AnninhTrattuPage,
     ChitietAnninhtrattuPage,
     ThongbaoPage,
+    QuyhoachPage,
+    TrattudothiPage,
     ChitietThongbaoPage,
     TrungCauPage,
     ChitietTrungcauPage,
     PhanAnhPage,
+    HuongdansudungPage,
     ChitietPhananhPage,
     CanhanPage,
     KhacPage,
@@ -95,10 +101,13 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     LoginPage,
     ChitietTintucPage,
     AnninhTrattuPage,
+    TrattudothiPage,
     ChitietAnninhtrattuPage,
     ThongbaoPage,
+    QuyhoachPage,
     ChitietThongbaoPage,
     TrungCauPage,
+    HuongdansudungPage,
     ChitietTrungcauPage,
     PhanAnhPage,
     ChitietPhananhPage,

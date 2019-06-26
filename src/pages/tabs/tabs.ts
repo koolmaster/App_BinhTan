@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavParams, IonicPage } from 'ionic-angular';
+import { CanhanPage } from '../canhan/canhan';
 
 @IonicPage()
 @Component({
@@ -11,7 +12,7 @@ export class TabsPage {
   thutuc: any = 'ThutucHanhchinhPage';
   tracuu: any = 'TracuuHosoPage';
   nophoso: any = 'NophosoPage';
-  profile: any = 'ProfilePage';
+  profile: any = CanhanPage;
   constructor(public navParams: NavParams) {
 
   }

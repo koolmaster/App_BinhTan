@@ -50,13 +50,7 @@ export class ProfilePage {
   }
 
   goPage(type) {
-    switch (type) {
-      case 0:
-        break;
-    
-      default:
-        break;
-    }
+    this.navCtrl.push(CanhanPage);
   }
 
   Login(){
