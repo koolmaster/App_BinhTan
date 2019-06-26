@@ -1,0 +1,207 @@
+page-caidat {
+    .scroll-content {
+        background: #fff;
+    }
+
+    .toolbar .toolbar-background {
+        border: none;
+    }
+
+    .header {
+        box-shadow: 0 0 10px -1px rgba(0, 0, 0, 0.2);
+    }
+
+    .wrapper2-2 {
+        position: relative;
+        min-height: 100px;
+        background: #00C9FF;
+        background: -webkit-gradient(linear, left top, right top, from(#00C9FF), to(#62e6ca));
+        background: linear-gradient(to right, #00C9FF, #62e6ca);
+
+        .img2-1 {
+            width: 60px;
+            text-align: center;
+            height: 60px;
+            line-height: 90px;
+            position: absolute;
+            background: #fff;
+            border-radius: 20px;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .lbl2-1 {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            border-radius: 20px;
+            bottom: -55px;
+            left: 50%;
+            color: #666;
+            font-weight: 600;
+            font-size: 1.6rem;
+            transform: translateX(-50%);
+        }
+    }
+
+    .content2-1 {
+        margin-top: 100px;
+        padding: 0 1.2rem;
+
+        .lbl2-2 {
+            font-size: 1.2rem;
+            width: 100%;
+            display: block;
+            margin: 0 0 1rem;
+            color: #666;
+            text-transform: uppercase;
+            padding: 0 1.2rem;
+        }
+
+        .section2-1 {
+            margin-bottom: 3rem;
+        }
+
+        .group2-2 {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            position: relative;
+            background: #fff;
+
+            &:before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                border-bottom: 1px solid #eee;
+                width: calc(100% - 4rem);
+                height: 1px;
+            }
+
+            .wrapper2-3 {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                margin: 0;
+                font-size: 1.3rem;
+            }
+
+            .icon2-2 {
+                position: absolute;
+                right: 1rem;
+                font-size: 2rem;
+                color: #bfbfbf;
+                top: 2.5rem;
+            }
+
+            .lbl2-3 {
+                color: #354a67;
+                font-weight: 500;
+                font-size: 1.4rem;
+            }
+
+            .lbl2-4 {
+                color: #bfbfbf;
+                padding-top: .3rem;
+                font-size: 1.3rem;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &.style2-1 {
+                padding: 1rem 1rem 1rem 0;
+                margin: 0 0 0 1.5rem;
+
+                .wrapper2-3 {
+                    width: calc(100% - 8rem);
+                    padding-left: 1rem;
+
+                    &.style2-1 {
+                        width: calc(100% - 10rem);
+                    }
+                }
+
+                .select2-1 {
+                    width: 100px;
+                }
+
+                .icon2-2 {
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+
+            .icon2-3 {
+                font-size: 3rem;
+                color: #48a8a7;
+                width: 3rem;
+                height: 3rem;
+                text-align: center;
+                border-radius: 5px;
+
+                &.iconsprite2-taikhoan {
+                    background-position: -178px -2px;
+                }
+
+                &.iconsprite2-lock {
+                    background-position: -214px -2px;
+                }
+
+                &.iconsprite2-noti {
+                    background-position: -248px -2px;
+                }
+
+                &.iconsprite2-update {
+                    background-position: -283px -2px;
+                }
+
+                &.iconsprite2-huongdan {
+                    background-position: -318px 0px;
+                }
+
+                &.iconsprite2-danhgia {
+                    background-position: -38px -63px;
+                }
+
+                &.iconsprite2-thongtin {
+                    background-position: -3px -63px;
+                }
+
+                &.iconsprite2-tracuu {
+                    background-position: -72px -63px;
+                }
+
+                &.iconsprite2-phananh {
+                    background-position: -107px -63px;
+                }
+
+                &.iconsprite2-trungcau {
+                    background-position: -143px -65px;
+                }
+
+                &.iconsprite2-lang {
+                    background-position: -180px -65px;
+                }
+
+                &.iconsprite2-color {
+                    background-position: -212px -64px;
+                }
+            }
+
+            .toggle-checked .toggle-icon {
+                background-color: #49d663;
+            }
+
+            .toggle-checked .toggle-inner {
+                background-color: #fff;
+            }
+
+        }
+    }
+
+
+}

@@ -7,6 +7,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { FCM } from '@ionic-native/fcm';
 import { LoginService } from '../providers/service/loginService';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 export interface PageInterface {
   title: string;
@@ -20,6 +21,7 @@ export interface PageInterface {
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
+  textDir: string = "ltr";
   activePage: any; 
   rootPage: any = 'TabsPage';
   constructor(
@@ -31,9 +33,12 @@ export class MyApp {
     private alertCtrl: AlertController,
     public menuCtrl: MenuController,
     private localNotifications: LocalNotifications,
+    public translate: TranslateService,
     private fcm: FCM,
     private loginService: LoginService,
   ) {
+    translate.setDefaultLang('vn');
+    translate.use('vn');
     this.menuCtrl.close();
     this.menuCtrl.enable(false, 'myMenu');
     this.menuCtrl.swipeEnable(false);
@@ -42,6 +47,10 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       // statusBar.styleDefault();
+      this.translate.onLangChange.subscribe((event: LangChangeEvent) =>
+      {
+        this.textDir = event.lang == 'ar'? 'rtl' : 'ltr';
+      });
       this.splashScreen.hide();
       this.localNotifications.hasPermission().then(data => {
         console.log(data);

@@ -24,6 +24,8 @@ import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/na
 
 //Directive
 import { Autosize } from '../providers/directive/autosize';
+import { TranslateModule, TranslateLoader,TranslatePipe } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 //Components
 import { ThemPhananhComponent } from '../components/them-phananh/them-phananh';
 import { ThongtinTaikhoanComponent } from '../components/thongtin-taikhoan/thongtin-taikhoan';
@@ -48,8 +50,12 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environment/environment';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { LanguageService } from '../providers/service/utils/language.service';
 
-
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 @NgModule({
   declarations: [
     MyApp,
@@ -60,12 +66,6 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     ChitietTrungcauPage,
     PhanAnhPage,
     ChitietPhananhPage,
-<<<<<<< HEAD
-=======
-    CanhanPage,
-    KhacPage,
->>>>>>> 969b3af7f47801a5b7d42bd0c5223557249f1819
-
     Autosize,
 
     ThemPhananhComponent,
@@ -74,12 +74,20 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
   imports: [
     BrowserModule,
     HttpModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     SelectSearchableModule,
     NgxChartsModule,
     IonicModule.forRoot(MyApp, {
       backButtonText: '',
       tabsPlacement: 'bottom',
+    }),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
     }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
@@ -95,12 +103,6 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     ChitietTrungcauPage,
     PhanAnhPage,
     ChitietPhananhPage,
-<<<<<<< HEAD
-=======
-    KhacPage,
-    CanhanPage,
->>>>>>> 969b3af7f47801a5b7d42bd0c5223557249f1819
-
     ThemPhananhComponent,
     ThongtinTaikhoanComponent
   ],
@@ -108,6 +110,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     StatusBar,
     SplashScreen,
     HTTP,
+    HttpClient,
     FCM,
     NativePageTransitions,
     LocalNotifications,
@@ -123,7 +126,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     AnNinhTratTuService,
     Facebook,
     GooglePlus,
-    AuthService
+    AuthService,
+    LanguageService
   ]
 })
 export class AppModule { }

@@ -1,0 +1,42 @@
+{
+  "TAB": {
+    "HOME": "Home",
+    "NOTIFICATION": "Notification",
+    "PERSONAL": "Personal"
+  },
+  "HI": "Hi {{name}}",
+  "HOME": {
+    "CONTACT": "Contact"
+  },
+  "CONTACT": {
+    "SEARCH": "Search contact",
+    "PROFILE": "Profile",
+    "EDIT": "Edit",
+    "CHAT": "Chat",
+    "CALL": "Call",
+    "EMAIL": "Email",
+    "DETAIL": "Detail",
+    "ACCOUNT": "Account Information"
+  },
+  "SETTINGS": {
+    "TITLE": "Persional",
+    "USER_INFO": {
+      "NAME": "{{name}}",
+      "TYPE": "{{type}}"
+    },
+    "SELECT_NOTIFICATION": "Notification",
+    "SELECT_UNLOCK": "Unlock",
+    "SELECT_COLOR": "Color",
+    "SUB_SELECT_COLOR": "Main color settings",
+    "SELECT_LANGUAGE": "Select your language",
+    "SUB_SELECT_LANGUAGE": "Support multiple languages",
+    "SELECT_CHANGEPASS": "Change password",
+    "SELECT_FORGETPASS": "Forget password",
+    "SELECT_SUPPORTCENTER": "Support center",
+    "SELECT_RATING": "Rating",
+    "SELECT_INFORMATION": "Information",
+    "LOGOUT": "Log out",
+    "CANCEL": "Cancel",
+    "OK": "OK"
+  }
+}

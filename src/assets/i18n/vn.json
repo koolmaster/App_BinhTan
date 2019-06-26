@@ -1,0 +1,41 @@
+{
+  "TAB": {
+    "HOME": "Trang Chủ",
+    "NOTIFICATION": "Thông Báo",
+    "PERSONAL":"Cá Nhân"
+  },
+  "HOME": {
+    "CONTACT": "Danh bạ"
+  },
+  "CONTACT": {
+    "SEARCH": "Tìm kiếm danh bạ",
+    "PROFILE": "Thông tin cá nhân",
+    "EDIT": "Chỉnh sửa",
+    "CHAT": "Trò chuyện",
+    "CALL": "Điện thoại",
+    "EMAIL": "Thư điện tử",
+    "DETAIL": "Thông tin chi tiết",
+    "ACCOUNT": "Trò chuyện"
+  },
+  "SETTINGS": {
+    "TITLE": "Thiết lập tài khoản",
+    "USER_INFO": {
+      "NAME": "{{name}}",
+      "TYPE": "{{type}}"
+    },
+    "SELECT_NOTIFICATION": "Hiển thị thông báo",
+    "SELECT_UNLOCK": "Mở khóa chức năng",
+    "SELECT_COLOR": "Màu ứng dụng",
+    "SUB_SELECT_COLOR": "Thiết lập màu chủ đạo",
+    "SELECT_LANGUAGE": "Chọn ngôn ngữ",
+    "SUB_SELECT_LANGUAGE": "Hỗ trợ nhiều ngôn ngữ",
+    "SELECT_CHANGEPASS": "Đổi mật khẩu",
+    "SELECT_FORGETPASS": "Quên mật khẩu",
+    "SELECT_SUPPORTCENTER": "Trung tâm hỗ trợ",
+    "SELECT_RATING": "Xếp hạng ứng dụng",
+    "SELECT_INFORMATION": "Thông tin ứng dụng",
+    "LOGOUT": "Đăng xuất",
+    "CANCEL": "Thoát",
+    "OK": "Đồng ý"
+  }
+}

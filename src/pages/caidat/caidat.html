@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cài đặt</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="wrapper2-2">
+    <img src="assets/imgs/avatar.jpg" class="img2-1" />
+    <span class="lbl2-1">Trịnh Quốc Thịnh</span>
+  </div>
+  <div class="content2-1">
+    <div class="section2-1">
+      <span class="lbl2-2">Tài khoản</span>
+      <div class="group2-2 style2-1" (click)="goPage(0)">
+        <span class="icon2-3 iconsprite2-taikhoan"></span>
+        <p class="wrapper2-3">
+          <span class="lbl2-3">Thông tin tài khoản</span>
+        </p>
+        <ion-icon class="icon2-2" name="arrow-forward"></ion-icon>
+      </div>
+      <div class="group2-2 style2-1">
+        <span class="icon2-3 iconsprite2-lock"></span>
+        <p class="wrapper2-3">
+          <span class="lbl2-3">Thay đổi mật khẩu</span>
+        </p>
+        <ion-icon class="icon2-2" name="arrow-forward"></ion-icon>
+      </div>
+    </div>
+    <div class="section2-1">
+      <span class="lbl2-2">Chức năng mở rộng</span>
+      <div class="group2-2 style2-1">
+        <span class="icon2-3 iconsprite2-tracuu"></span>
+        <p class="wrapper2-3">
+          <span class="lbl2-3">Tra cứu thông tin quy hoạch</span>
+        </p>
+        <ion-icon class="icon2-2" name="arrow-forward"></ion-icon>
+      </div>
+      <div class="group2-2 style2-1">
+        <span class="icon2-3 iconsprite2-phananh"></span>
+        <p class="wrapper2-3">
+          <span class="lbl2-3">Phản ánh góp ý</span>
+        </p>
+        <ion-icon class="icon2-2" name="arrow-forward"></ion-icon>
+      </div>
+      <div class="group2-2 style2-1">
+        <span class="icon2-3 iconsprite2-trungcau"></span>
+        <p class="wrapper2-3">
+          <span class="lbl2-3">Trưng cầu ý kiến</span>
+        </p>
+        <ion-icon class="icon2-2" name="arrow-forward"></ion-icon>
+      </div>
+    </div>
+    <div class="section2-1">
+      <span class="lbl2-2">Cài đặt</span>
+      <div class="group2-2 style2-1">
+      <span class="icon2-3 iconsprite2-color"></span>
+      <p class="wrapper2-3">
+        <span class="lbl2-3">{{ 'SETTINGS.SELECT_COLOR' | translate }}</span>
+        <span class="lbl2-4">{{ 'SETTINGS.SUB_SELECT_COLOR' | translate }}</span>
+      </p>
+      <ion-icon class="icon2-2" name="arrow-forward"></ion-icon>
+    </div>
+    <div class="group2-2 style2-1">
+      <span class="icon2-3 iconsprite2-lang"></span>
+      <p class="wrapper2-3 style2-1">
+        <span class="lbl2-3">{{ 'SETTINGS.SELECT_LANGUAGE' | translate }}</span>
+        <span class="lbl2-4">{{ 'SETTINGS.SUB_SELECT_LANGUAGE' | translate }}</span>
+      </p>
+      <ion-select class="select2-1" [(ngModel)]="languageSelected" (ionChange)='setLanguage()'
+        [okText]="'SETTINGS.OK' | translate" [cancelText]="'SETTINGS.CANCEL' | translate">
+        <ion-option *ngFor="let item of languages" [value]="item.code">{{item.name}}</ion-option>
+      </ion-select>
+    </div>
+      <div class="group2-2 style2-1">
+        <span class="icon2-3 iconsprite2-noti"></span>
+        <p class="wrapper2-3">
+          <span class="lbl2-3">Hiện thông báo</span>
+        </p>
+        <ion-toggle class="toggle2-1" [(ngModel)]="notification" checked="false"></ion-toggle>
+      </div>
+      <div class="group2-2 style2-1">
+        <span class="icon2-3 iconsprite2-update"></span>
+        <p class="wrapper2-3">
+          <span class="lbl2-3">Hiện thông báo cập nhật</span>
+        </p>
+        <ion-toggle class="toggle2-1" [(ngModel)]="updatenotification" checked="false"></ion-toggle>
+      </div>
+    </div>
+
+    <div class="section2-1">
+      <span class="lbl2-2">Ứng dụng</span>
+      <div class="group2-2 style2-1">
+        <span class="icon2-3 iconsprite2-huongdan"></span>
+        <p class="wrapper2-3">
+          <span class="lbl2-3">Hướng dẫn sử dụng</span>
+        </p>
+        <ion-icon class="icon2-2" name="arrow-forward"></ion-icon>
+      </div>
+      <div class="group2-2 style2-1">
+        <span class="icon2-3 iconsprite2-danhgia"></span>
+        <p class="wrapper2-3">
+          <span class="lbl2-3">Đánh giá</span>
+        </p>
+        <ion-icon class="icon2-2" name="arrow-forward"></ion-icon>
+      </div>
+      <div class="group2-2 style2-1">
+        <span class="icon2-3 iconsprite2-thongtin"></span>
+        <p class="wrapper2-3">
+          <span class="lbl2-3">Thông tin ứng dụng</span>
+        </p>
+        <ion-icon class="icon2-2" name="arrow-forward"></ion-icon>
+      </div>
+    </div>
+  </div>
+</ion-content>

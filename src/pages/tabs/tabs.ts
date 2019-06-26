@@ -11,7 +11,7 @@ export class TabsPage {
   thutuc: any = 'ThutucHanhchinhPage';
   tracuu: any = 'TracuuHosoPage';
   nophoso: any = 'NophosoPage';
-  profile: any = 'ProfilePage';
+  caidat: any = 'CaidatPage';
   constructor(public navParams: NavParams) {
 
   }

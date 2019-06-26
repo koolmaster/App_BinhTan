@@ -33,6 +33,11 @@ ion-icon {
     content: "\f435";
 }
 
+.ion-ios-settings-outline:before,
+.ion-ios-settings:before {
+    content: "\f377";
+}
+
 .tabs-md {
     .tabbar {
         background: #fff;
