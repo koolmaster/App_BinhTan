@@ -31,12 +31,17 @@ page-huongdansudung {
         font-size: 50px;
         text-align: right;
         float: left;
-        width: 22%;
-        margin-left: 6%;
-        padding-right: 10px;
+        width: 25%;
+    }
+    .item-ios p{
+        margin: 15px 5px;
+    }
+    .item-md p{
+        margin: 15px 5px;
     }
     .lcol p {
         float: left;
+        margin: auto;
     }
     .hdsd p span {
         text-align: left;
@@ -96,12 +101,10 @@ page-huongdansudung {
         color: #5b5b5b;
     }
     /*  */
-     .box-10 {
+    .box-10 {
         display: flex;
         justify-content: space-around;
         position: relative;
-        float: right;
-        margin: -15px 0px -20px 0px;
         padding: 0 10px 0px 10px;
     }
     .box-10 [class*="col-"] {
@@ -186,9 +189,7 @@ page-huongdansudung {
     .lbl-35.p4{right: 0;}
     /*  */
     @media screen and (min-width: 360px) {
-        .lcol {
-            margin-top:3%;
-        }
+        
         .hd-text {
             padding-left: 10%;
         }
