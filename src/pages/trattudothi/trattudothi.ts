@@ -1,12 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the TrattudothiPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Navbar } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -14,12 +7,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'trattudothi.html',
 })
 export class TrattudothiPage {
-
+  @ViewChild(Navbar) navBar: Navbar;
+  elements = document.querySelectorAll(".tabbar");
+  showTab = false;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    if (this.elements != null) {
+      Object.keys(this.elements).map((key) => {
+        this.elements[key].style.display = 'none';
+      });
+    }
+  }
+
+  ionViewWillLeave() {
+    if (this.showTab) {
+      Object.keys(this.elements).map((key) => {
+        this.elements[key].style.display = 'flex';
+      });
+    }
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TrattudothiPage');
+    this.navBar.backButtonClick = (ev: UIEvent) => {
+      this.showTab = true;
+      this.navCtrl.pop();
+    };
   }
 
 }
