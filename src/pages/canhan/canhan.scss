@@ -1,4 +1,72 @@
 page-canhan {
+  .lst2-5 {
+    .btn2-1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: .8rem 1rem;
+      background: transparent;
+      font-weight: 500;
+      font-size: 1.4rem;
+      color: #666;
+    }
+
+    .wrapper2-7 {
+      margin-bottom: 1rem;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .icon2-3 {
+      width: 30px;
+      height: 30px;
+      font-size: 2.8rem;
+      line-height: 30px;
+      text-align: center;
+
+      &.marker {
+        color: #E7352D;
+      }
+
+      &.map {
+        color: #8CD9A5;
+      }
+
+      &.folder {
+        color: #F8C427;
+      }
+
+      &.document {
+        color: #1D6FB0;
+      }
+
+      &.cash {
+        color: #358439;
+      }
+
+      &.food {
+        color: #7BC1D3;
+      }
+
+      &.finger {
+        color: #008174;
+      }
+
+      &.people {
+        color: #EB8E00;
+      }
+
+      &.star {
+        color: #F8DF00;
+      }
+    }
+
+    .lbl2-3 {
+      width: calc(100% - 4rem);
+      text-align: left;
+    }
+  }
   .lbl2-1 {
     margin: .8rem 0 0;
     font-size: 2rem;
@@ -106,7 +174,7 @@ page-canhan {
   }
   
   .lbl2-5 {
-    color: #046b42;
+    color: #00C9FF;
     font-size: 1.3rem;
     margin-bottom: .3rem;
   }
@@ -204,6 +272,11 @@ page-canhan {
      
     }
   }
+  .wrapper2-7 {
+    margin-bottom: 1rem;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+  }
  
   .slide2-1 {
     .card1-1{
@@ -213,6 +286,7 @@ page-canhan {
     .slide-zoom {
       text-align: left;
         height: 100%;
+        padding-bottom: 15px;
     }
     .list1-1{
       margin-left:20px;
@@ -220,18 +294,48 @@ page-canhan {
         margin-left:0 auto;
       }
       .icon2-3 {
-        font-size: 3rem;
-        color: #48a8a7;
-        width: 3rem;
-        height: 3rem;
+        width: 30px;
+        height: 30px;
+        font-size: 2.8rem;
+        line-height: 30px;
         text-align: center;
-        border-radius: 5px;
-    
-        &.iconsprite1-noti {
-            background-position: -318px -161px;
-            background-color: #fd9407;
+  
+        &.notify {
+          color: #E7352D;
         }
-    }
+  
+        &.color {
+          color: #8CD9A5;
+        }
+  
+        &.language {
+          color: #F8C427;
+        }
+  
+        &.rank {
+          color: #1D6FB0;
+        }
+  
+        &.support{
+          color: #358439;
+        }
+  
+        &.info {
+          color: #7BC1D3;
+        }
+  
+        &.finger {
+          color: #008174;
+        }
+  
+        &.people {
+          color: #EB8E00;
+        }
+  
+        &.star {
+          color: #F8DF00;
+        }
+      }
     }
     .lst2-1 {
         padding: 0;

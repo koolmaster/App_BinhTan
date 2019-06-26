@@ -1,4 +1,4 @@
-import { CanhanPage } from './../pages/canhan/canhan';
+import { QuyhoachPage } from './../pages/quyhoach/quyhoach';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -50,6 +50,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environment/environment';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { TrattudothiPage } from '../pages/trattudothi/trattudothi';
+import { HuongdansudungPage } from '../pages/huongdansudung/huongdansudung';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LanguageService } from '../providers/service/utils/language.service';
 
@@ -61,10 +63,13 @@ export function createTranslateLoader(http: HttpClient) {
     MyApp,
     LoginPage,
     ThongbaoPage,
+    QuyhoachPage,
+    TrattudothiPage,
     ChitietThongbaoPage,
     TrungCauPage,
     ChitietTrungcauPage,
     PhanAnhPage,
+    HuongdansudungPage,
     ChitietPhananhPage,
     Autosize,
 
@@ -78,16 +83,16 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserAnimationsModule,
     SelectSearchableModule,
     NgxChartsModule,
-    IonicModule.forRoot(MyApp, {
-      backButtonText: '',
-      tabsPlacement: 'bottom',
-    }),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
       }
+    }),
+    IonicModule.forRoot(MyApp, {
+      backButtonText: '',
+      tabsPlacement: 'bottom',
     }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
@@ -97,9 +102,12 @@ export function createTranslateLoader(http: HttpClient) {
   entryComponents: [
     MyApp,
     LoginPage,
+    TrattudothiPage,
     ThongbaoPage,
+    QuyhoachPage,
     ChitietThongbaoPage,
     TrungCauPage,
+    HuongdansudungPage,
     ChitietTrungcauPage,
     PhanAnhPage,
     ChitietPhananhPage,
@@ -110,7 +118,6 @@ export function createTranslateLoader(http: HttpClient) {
     StatusBar,
     SplashScreen,
     HTTP,
-    HttpClient,
     FCM,
     NativePageTransitions,
     LocalNotifications,
@@ -126,8 +133,8 @@ export function createTranslateLoader(http: HttpClient) {
     AnNinhTratTuService,
     Facebook,
     GooglePlus,
-    AuthService,
-    LanguageService
+    LanguageService,
+    AuthService
   ]
 })
 export class AppModule { }

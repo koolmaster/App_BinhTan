@@ -1,5 +1,9 @@
+import { TrattudothiPage } from './../trattudothi/trattudothi';
+import { QuyhoachPage } from './../quyhoach/quyhoach';
+import { PhanAnhPage } from './../phan-anh/phan-anh';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Navbar, Slides } from 'ionic-angular';
+import { HuongdansudungPage } from '../huongdansudung/huongdansudung';
 
 /**
  * Generated class for the CanhanPage page.
@@ -17,7 +21,6 @@ export interface sectionInterface {
   templateUrl: 'canhan.html',
 })
 export class CanhanPage {
-  @ViewChild(Navbar) navBar: Navbar;
   @ViewChild(Slides) slides: Slides;
   elements = document.querySelectorAll(".tabbar");
   tabs = "0";
@@ -29,36 +32,18 @@ export class CanhanPage {
 
 
   section: sectionInterface[] = [
-    { title: 'Hành chính', type: 0 },
-    { title: 'Điện thoại', type: 1 },
-    { title: 'Tiêu dùng', type: 2 } 
+    { title: 'Chức năng', type: 0 },
+    { title: 'Thông tin', type: 1 },
+    { title: 'Cài đặt', type: 2 } 
   ]
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    if (this.elements != null) {
-      Object.keys(this.elements).map((key) => {
-        this.elements[key].style.display = 'none';
-      });
-    }
   }
 
   ionViewWillLeave() {
-    if (this.showTab) {
-      Object.keys(this.elements).map((key) => {
-        this.elements[key].style.display = 'flex';
-      });
-    }
   }
 
   ionViewDidLoad() {
-    this.navBar.backButtonClick = (ev: UIEvent) => {
-      this.showTab = true;
-      this.navCtrl.pop();
-    };
-
-    setTimeout(() => {
-      this.show = true;
-    }, 2000);
   }
 
   onTabChange(val) {
@@ -75,7 +60,18 @@ export class CanhanPage {
   }
 
   goPage(id, type) {
-    this.navCtrl.push('', { AnNinhTratTuID: id, LoaiAnNinh: type });
+    if(id == 0){
+    this.navCtrl.push(PhanAnhPage);
+    }
+    else if (id ==1){
+      this.navCtrl.push(QuyhoachPage);
+    }
+    else if (id ==2){
+      this.navCtrl.push(TrattudothiPage);
+    }
+    else if (id ==3){
+      this.navCtrl.push(HuongdansudungPage);
+    }
   }
 
   doRefresh(refresher) {
