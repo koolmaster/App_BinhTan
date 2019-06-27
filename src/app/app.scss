@@ -2,7 +2,7 @@ body,
 ion-app.ios,
 ion-app.md,
 ion-app.wp {
-  font-family: 'Roboto', sans-serif !important;
+  font-family: "Roboto", sans-serif !important;
 }
 
 [class*="iconsprite2-"],
@@ -31,9 +31,9 @@ ion-app.wp {
 [class*="iconsprite1-"],
 [class*="iconbfsprite1-"]:before,
 [class*="iconafsprite1-"]:after {
-    background-image: url(../assets/imgs/main1.png);
-    background-repeat: no-repeat;
-    background-size: 350px 350px;
+  background-image: url(../assets/imgs/main1.png);
+  background-repeat: no-repeat;
+  background-size: 350px 350px;
 }
 
 //settings ios
@@ -42,10 +42,11 @@ ion-app.wp {
 }
 
 .menu-header {
-  background: #00C9FF;
-  background: -webkit-linear-gradient(to right, #00C9FF, #62e6ca);
-  background: linear-gradient(to right, #00C9FF, #62e6ca);
+  background: #00c9ff;
+  background: -webkit-linear-gradient(to right, #00c9ff, #62e6ca);
+  background: linear-gradient(to right, #00c9ff, #62e6ca);
 
+  
 
   .ion-md-funnel:before {
     content: "\f182";
@@ -70,7 +71,7 @@ ion-app.wp {
     }
   }
 
-  &.toolbar-md+.wrapper2-3 {
+  &.toolbar-md + .wrapper2-3 {
     top: 13px;
   }
 }
@@ -86,7 +87,7 @@ ion-app.wp {
 }
 
 .scroll-content {
-  background: #F0EFF5;
+  background: #f0eff5;
 }
 
 .item.item-block {
@@ -115,16 +116,15 @@ ion-app.wp {
   display: none !important;
 }
 
-
-//alert show 
+//alert show
 .error-msg .toast-wrapper {
-  background: #C1272D;
+  background: #c1272d;
 }
 
 .success-msg .toast-wrapper {
-  background: #22B573;
+  background: #22b573;
 }
 
 .warning-msg .toast-wrapper {
-  background: #FEC552;
+  background: #fec552;
 }
