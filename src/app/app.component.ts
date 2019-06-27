@@ -5,7 +5,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Storage } from '@ionic/storage';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LocalNotifications } from '@ionic-native/local-notifications';
-import { FCM } from '@ionic-native/fcm';
 import { LoginService } from '../providers/service/loginService';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
@@ -34,7 +33,6 @@ export class MyApp {
     public menuCtrl: MenuController,
     private localNotifications: LocalNotifications,
     public translate: TranslateService,
-    private fcm: FCM,
     private loginService: LoginService,
   ) {
     translate.setDefaultLang('vn');
@@ -52,38 +50,38 @@ export class MyApp {
         this.textDir = event.lang == 'ar'? 'rtl' : 'ltr';
       });
       this.splashScreen.hide();
-      this.localNotifications.hasPermission().then(data => {
-        console.log(data);
-        if (data == true) {
-          let token: any;
-          this.fcm.getToken().then(tokenG => {
-            if (tokenG == null || tokenG == undefined) {
-              this.fcm.onTokenRefresh().subscribe(tokenO => {
-                token = tokenO;
-              });
-            } else {
-              token = tokenG;
-            }
-            this.setOSKey(token);
-            let typeDevice;
-            if (this.platform.is('ios')) {
-              typeDevice = 2;
-            } else if (this.platform.is('android')) {
-              typeDevice = 1;
-            }
-            let paramsFirebase = {
-              UserID: 0,
-              UserName: "App Công Dân",
-              OSKey: token,
-              TypeDevice: typeDevice
-            }
-            this.loginService.saveFireBase(paramsFirebase).then(data=>{
-              console.log(data);
-            })
-            console.log(token);
-          });
-        }
-      });
+      // this.localNotifications.hasPermission().then(data => {
+      //   console.log(data);
+      //   if (data == true) {
+      //     let token: any;
+      //     this.fcm.getToken().then(tokenG => {
+      //       if (tokenG == null || tokenG == undefined) {
+      //         this.fcm.onTokenRefresh().subscribe(tokenO => {
+      //           token = tokenO;
+      //         });
+      //       } else {
+      //         token = tokenG;
+      //       }
+      //       this.setOSKey(token);
+      //       let typeDevice;
+      //       if (this.platform.is('ios')) {
+      //         typeDevice = 2;
+      //       } else if (this.platform.is('android')) {
+      //         typeDevice = 1;
+      //       }
+      //       let paramsFirebase = {
+      //         UserID: 0,
+      //         UserName: "App Công Dân",
+      //         OSKey: token,
+      //         TypeDevice: typeDevice
+      //       }
+      //       this.loginService.saveFireBase(paramsFirebase).then(data=>{
+      //         console.log(data);
+      //       })
+      //       console.log(token);
+      //     });
+      //   }
+      // });
     });
   }
  

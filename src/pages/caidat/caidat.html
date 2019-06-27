@@ -1,6 +1,11 @@
 <ion-header>
   <ion-navbar>
     <ion-title>Cài đặt</ion-title>
+    <ion-buttons end class="btn-filter">
+      <button (click)="gotoNo()">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -29,14 +34,14 @@
     </div>
     <div class="section2-1">
       <span class="lbl2-2">Chức năng mở rộng</span>
-      <div class="group2-2 style2-1">
+      <div class="group2-2 style2-1" (click)="goPage(2)">
         <span class="icon2-3 iconsprite2-tracuu"></span>
         <p class="wrapper2-3">
           <span class="lbl2-3">Tra cứu thông tin quy hoạch</span>
         </p>
         <ion-icon class="icon2-2" name="arrow-forward"></ion-icon>
       </div>
-      <div class="group2-2 style2-1">
+      <div class="group2-2 style2-1" (click)="goPage(3)">
         <span class="icon2-3 iconsprite2-trattu"></span>
         <p class="wrapper2-3">
           <span class="lbl2-3">Trật tự đô thị</span>
@@ -97,7 +102,7 @@
 
     <div class="section2-1">
       <span class="lbl2-2">Ứng dụng</span>
-      <div class="group2-2 style2-1">
+      <div class="group2-2 style2-1" (click)="goPage(10)">
         <span class="icon2-3 iconsprite2-huongdan"></span>
         <p class="wrapper2-3">
           <span class="lbl2-3">Hướng dẫn sử dụng</span>
@@ -117,6 +122,15 @@
           <span class="lbl2-3">Thông tin ứng dụng</span>
         </p>
         <ion-icon class="icon2-2" name="arrow-forward"></ion-icon>
+      </div>
+    </div>
+
+    <div class="section2-1">
+      <div class="group2-2 style2-1" (click)="goPage(14)">
+        <span class="icon2-3 iconsprite2-dangxuat"></span>
+        <p class="wrapper2-3">
+          <span class="lbl2-3 style2-1">Đăng xuất</span>
+        </p>
       </div>
     </div>
   </div>

@@ -1,5 +1,5 @@
 <ion-content class="login">
-  <img class="img2-1" src="../../assets/imgs/logo.png" alt="">
+  <img class="img2-1" src="assets/imgs/logo.png" alt="">
   <div class="wrapper2-2" *ngIf="show == 0">
       <form class="form" [formGroup]="loginForm" (ngSubmit)="tryLogin(loginForm.value)">
     <div class="row2-1">
@@ -16,11 +16,11 @@
       <button class="btn2-2" (click)="goAround(1)">Đăng ký</button>
       <button class="btn2-2" (click)="goAround(2)">Quên mật khẩu</button>
     </div>
-    <p class="lbl2-3">Hoặc</p>
+    <!-- <p class="lbl2-3">Hoặc</p>
     <div class="row2-1 style2-2">
       <button class="btn2-3 iconbfsprite2-1" (click)="tryFacebookLogin()"></button>
       <button class="btn2-3 iconbfsprite2-2" (click)="tryGoogleLogin()"></button>
-    </div>
+    </div> -->
   </form>
   </div>
   <div class="wrapper2-2" *ngIf="show == 1">

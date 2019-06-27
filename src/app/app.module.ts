@@ -1,4 +1,3 @@
-import { QuyhoachPage } from './../pages/quyhoach/quyhoach';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -13,9 +12,6 @@ import { FCM } from '@ionic-native/fcm';
 import { HttpModule } from '@angular/http';
 import { HTTP } from '@ionic-native/http';
 import { MyApp } from './app.component';
-import { LoginPage } from '../pages/login/login';
-import { ThongbaoPage } from '../pages/thongbao/thongbao';
-import { ChitietThongbaoPage } from '../pages/thongbao/chitiet-thongbao/chitiet-thongbao';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
 
 //Directive
@@ -36,17 +32,13 @@ import { AnNinhTratTuService } from '../providers/service/anNinhTratTuService';
 import { LoginService } from '../providers/service/loginService';
 
 // GiapNT4
-import { Facebook } from '@ionic-native/facebook';
-import { GooglePlus } from '@ionic-native/google-plus';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environment/environment';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { TrattudothiPage } from '../pages/trattudothi/trattudothi';
-import { HuongdansudungPage } from '../pages/huongdansudung/huongdansudung';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LanguageService } from '../providers/service/utils/language.service';
-import { AuthService } from '../providers/service/utils/core/auth.service';
+//import { AuthService } from '../providers/service/utils/core/auth.service';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -54,15 +46,8 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [
     MyApp,
-    LoginPage,
-    ThongbaoPage,
-    QuyhoachPage,
-    TrattudothiPage,
-    ChitietThongbaoPage,
-    HuongdansudungPage,
     Autosize,
     ThemPhananhComponent,
-
     ThongtinTaikhoanComponent
   ],
   imports: [
@@ -90,11 +75,6 @@ export function createTranslateLoader(http: HttpClient) {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    LoginPage,
-    TrattudothiPage,
-    ThongbaoPage,
-    QuyhoachPage,
-    HuongdansudungPage,
     ThemPhananhComponent,
     ThongtinTaikhoanComponent
   ],
@@ -115,10 +95,8 @@ export function createTranslateLoader(http: HttpClient) {
     LoginService,
     InAppBrowser,
     AnNinhTratTuService,
-    Facebook,
-    GooglePlus,
     LanguageService,
-    AuthService
+    // AuthService
   ]
 })
 export class AppModule { }

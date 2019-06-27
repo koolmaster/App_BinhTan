@@ -26,7 +26,7 @@ export class LoginPage {
   errorMessage: string = '';
   constructor(
     public navCtrl: NavController,
-    public authService: AuthService,
+    // public authService: AuthService,
     public formBuilder: FormBuilder,
     public app: App,
     public navParams: NavParams,
@@ -52,51 +52,51 @@ export class LoginPage {
     });
   }
  
-  tryLogin(value){
-    this.authService.doLogin(value)
-    .then(res => {
-      console.log(res);
+  // tryLogin(value){
+  //   this.authService.doLogin(value)
+  //   .then(res => {
+  //     console.log(res);
       
-      this.navCtrl.setRoot(TabsPage);
-    }, err => {
-      console.log(err);
-      this.errorMessage = err.message;
-    })
-  }
-  tryRegister(){
-    var formregister= {
-      email: this.txtTaikhoan,
-      password: this.txtPassword
-    }
-    this.authService.doRegisterEmail(formregister)
-     .then(res => {
-       this.errorMessage = "";
-       this.successMessage = "Tài khoản của bạn được tạo thành công. Vui lòng đăng nhập!";
-       alert("Tài khoản của bạn được tạo thành công. Vui lòng đăng nhập!");
-     }, err => {
-       this.errorMessage = err.message;
-       this.successMessage = "";
-     })
-  }
-  tryFacebookLogin(){
-    this.authService.doFacebookLogin()
-    .then((res) => {
-      this.alert.showToast('success', 'Đăng nhập thành công');
-      this.navCtrl.setRoot(TabsPage);
-    }, (err) => {
-      this.errorMessage = err.message;
-    });
-  }
+  //     this.navCtrl.setRoot(TabsPage);
+  //   }, err => {
+  //     console.log(err);
+  //     this.errorMessage = err.message;
+  //   })
+  // }
+  // tryRegister(){
+  //   var formregister= {
+  //     email: this.txtTaikhoan,
+  //     password: this.txtPassword
+  //   }
+  //   this.authService.doRegisterEmail(formregister)
+  //    .then(res => {
+  //      this.errorMessage = "";
+  //      this.successMessage = "Tài khoản của bạn được tạo thành công. Vui lòng đăng nhập!";
+  //      alert("Tài khoản của bạn được tạo thành công. Vui lòng đăng nhập!");
+  //    }, err => {
+  //      this.errorMessage = err.message;
+  //      this.successMessage = "";
+  //    })
+  // }
+  // tryFacebookLogin(){
+  //   this.authService.doFacebookLogin()
+  //   .then((res) => {
+  //     this.alert.showToast('success', 'Đăng nhập thành công');
+  //     this.navCtrl.setRoot(TabsPage);
+  //   }, (err) => {
+  //     this.errorMessage = err.message;
+  //   });
+  // }
 
-  tryGoogleLogin(){
-    this.authService.doGoogleLogin()
-    .then((res) => {
-      this.alert.showToast('success', 'Đăng nhập thành công');
-      this.navCtrl.setRoot(TabsPage);
-    }, (err) => {
-      this.errorMessage = err.message;
-    });
-  }
+  // tryGoogleLogin(){
+  //   this.authService.doGoogleLogin()
+  //   .then((res) => {
+  //     this.alert.showToast('success', 'Đăng nhập thành công');
+  //     this.navCtrl.setRoot(TabsPage);
+  //   }, (err) => {
+  //     this.errorMessage = err.message;
+  //   });
+  // }
   login() {
     this.alert.showToast('success', 'Đăng nhập thành công');
     this.navCtrl.setRoot(TabsPage);

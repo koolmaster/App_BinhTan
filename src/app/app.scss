@@ -13,6 +13,10 @@ ion-app.wp {
   background-size: 350px 350px;
 }
 
+.header-md::after {
+  display: none;
+}
+
 .toolbar-md {
   padding: 4px;
   padding-left: 4px;
@@ -30,6 +34,11 @@ ion-app.wp {
     background-image: url(../assets/imgs/main1.png);
     background-repeat: no-repeat;
     background-size: 350px 350px;
+}
+
+//settings ios
+.toolbar-ios .wrapper2-3 {
+  top: 30px;
 }
 
 .menu-header {

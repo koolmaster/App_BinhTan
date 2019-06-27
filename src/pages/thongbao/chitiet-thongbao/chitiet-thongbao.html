@@ -3,12 +3,11 @@
     <ion-title>Chi tiết thông báo</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content>
+<ion-content padding>
   <div *ngIf="chitietTB">
     <div class="title2-1">{{chitietTB.TieuDe}}</div>
     <p class="lbl2-1">{{chitietTB.NgayBatDau}}</p>
     <div class="info" [innerHtml]="chitietTB.NoiDung"></div>
     <div class="clear"></div>
   </div>
-
 </ion-content>

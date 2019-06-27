@@ -1,0 +1,187 @@
+page-doimatkhau {
+    .scroll-content {
+        background: #fff;
+    }
+
+    .header {
+        box-shadow: 0 0 10px -1px rgba(0, 0, 0, 0.2);
+    }
+
+    .toolbar .toolbar-background {
+        border: none;
+    }
+
+    .iconsprite2-gopy {
+        background-size: 500px 500px;
+        background-position: -349px -43px;
+    }
+
+    .wrapper2-2 {
+        position: relative;
+        overflow: hidden;
+        min-height: 120px;
+        background: #00C9FF;
+        background: -webkit-gradient(linear, left top, right top, from(#00C9FF), to(#62e6ca));
+        background: linear-gradient(to right, #00C9FF, #62e6ca);
+    }
+
+    .group2-2 {
+        width: 120px;
+        text-align: center;
+        height: 120px;
+        line-height: 90px;
+        position: absolute;
+        background: #fff;
+        border-radius: 50%;
+        bottom: -55px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+
+    .icon2-1 {
+        width: 50px;
+        height: 50px;
+        display: block;
+        margin: 1rem auto 0;
+    }
+
+    .icon2-register {
+        background-position: -361px -68px;
+    }
+
+    .icon2-address {
+        background-position: -433px -68px;
+    }
+
+    .icon2-folder {
+        background-position: -501px -68px;
+    }
+
+    .group2-1 {
+        padding: 1rem 1.5rem 1rem;
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap-reverse;
+
+        &.style2-1 {
+            margin-bottom: 7rem;
+        }
+
+        .txt2-1 {
+            padding: 0;
+            border: 0;
+            font-size: 14px;
+            border-bottom: 1px solid #ccc;
+            line-height: 35px;
+            height: 30px;
+            color: #777777;
+            background: transparent;
+            width: 100%;
+            overflow: unset;
+            max-width: 100%;
+
+            &:placeholder-shown+.lbl2-2 {
+                opacity: 0;
+            }
+
+            .select-icon {
+                top: 8px;
+                right: 3px;
+            }
+
+            .datetime-text {
+                line-height: unset;
+            }
+
+            &.datetime-disabled,
+            &.select-disabled {
+                opacity: .9;
+            }
+        }
+
+        .lbl2-2 {
+            font-size: 1.3rem;
+            color: #999;
+            padding: 0;
+            display: block;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        .lbl2-2b {
+            font-style: normal;
+            color: #f00;
+        }
+    }
+
+    .wrapper2-3 {
+        display: flex;
+        align-items: center;
+    }
+
+    .lst2-4 {
+        margin: 1rem 1.5rem;
+
+        .icon2-1.icon2-5 {
+            margin-top: 0;
+            width: 40px;
+            height: 40px;
+            background-position: -572px -75px;
+        }
+    }
+
+    .item2-4 {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap-reverse;
+        margin-bottom: 1rem;
+
+        input[type="file"] {
+            display: none;
+            vertical-align: middle;
+        }
+
+        .lbl2-18 {
+            width: calc(100% - 60px);
+            display: inline-block;
+            word-wrap: break-word;
+            white-space: normal;
+            margin-right: 10px;
+            font-size: 1.5rem;
+            color: #777777;
+        }
+    }
+
+    .item-input-has-value .lbl2-2[floating],
+    .input-has-value .lbl2-2[floating] {
+        font-size: 1.6rem;
+    }
+
+    ion-item.group2-1.item.item-block {
+        padding: 2rem 1.5rem 1rem;
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap-reverse;
+
+
+        .text-input {
+            margin: 0;
+        }
+    }
+
+    .btn2-1 {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 1.5rem;
+        font-size: 1.4rem;
+        background: #00C9FF;
+        background: -webkit-gradient(linear, left top, right top, from(#00C9FF), to(#62e6ca));
+        background: linear-gradient(to right, #00C9FF, #62e6ca);
+        color: #fff;
+    }
+}

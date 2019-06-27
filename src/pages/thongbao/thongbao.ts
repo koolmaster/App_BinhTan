@@ -89,7 +89,7 @@ export class ThongbaoPage {
   }
 
   goPage(ThongBaoNoiBoID) {
-    this.navCtrl.push(ChitietThongbaoPage, { ThongBaoNoiBoID: ThongBaoNoiBoID});
+    this.navCtrl.push('ChitietThongbaoPage', { ThongBaoNoiBoID: ThongBaoNoiBoID});
   }
 
   seachThongBao(txtSearch) {

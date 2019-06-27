@@ -23,4 +23,8 @@ export class TracuuHosoPage {
       this.show = true;
     }
   }
+
+  gotoNo() {
+    this.navCtrl.push('ThongbaoPage');
+  }
 }
