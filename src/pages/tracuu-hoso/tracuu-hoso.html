@@ -18,7 +18,7 @@
     </ion-input>
   </div>
   <div class="section2-1" *ngIf="!show">
-    <img src="assets/imgs/qr.png" class="img2-1">
+    <img src="assets/imgs/qr.png" class="img2-1" (click)="scanQR()">
     <div class="group2-2">
       <p class="lbl2-5">Nhập số biên bản ,
         mã tra cứu mà bạn nhận được từ hệ thống hoặc
