@@ -61,16 +61,16 @@ export class CanhanPage {
 
   goPage(id, type) {
     if(id == 0){
-    this.navCtrl.push(PhanAnhPage);
+    this.navCtrl.push('PhanAnhPage');
     }
     else if (id ==1){
-      this.navCtrl.push(QuyhoachPage);
+      this.navCtrl.push('QuyhoachPage');
     }
     else if (id ==2){
-      this.navCtrl.push(TrattudothiPage);
+      this.navCtrl.push('TrattudothiPage');
     }
     else if (id ==3){
-      this.navCtrl.push(HuongdansudungPage);
+      this.navCtrl.push('HuongdansudungPage');
     }
   }
 
