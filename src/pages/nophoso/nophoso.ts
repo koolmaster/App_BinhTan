@@ -8,6 +8,7 @@ import { isEmpty, isNil } from 'lodash'
   templateUrl: 'nophoso.html',
 })
 export class NophosoPage {
+  tinhtrang = 0;
   step: any;
   stepCondition: any;
   stepDefaultCondition: any;

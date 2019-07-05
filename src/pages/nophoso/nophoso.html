@@ -107,16 +107,39 @@
       </label>
     </ion-wizard-step>
     <ion-wizard-step>
+      <p class="lbl2-1">Chọn loại hồ sơ</p>
+      <ion-list class="lst2-1" radio-group [(ngModel)]="tinhtrang">
+        <ion-item class="item2-1">
+          <ion-label class="iconbfsprite2-kinhdoanh">Kinh doanh</ion-label>
+          <ion-radio [value]="0"></ion-radio>
+        </ion-item>
+        <ion-item class="item2-1">
+          <ion-label class="iconbfsprite2-yte">Y tế</ion-label>
+          <ion-radio [value]="2"></ion-radio>
+        </ion-item>
+      </ion-list>
+      <ion-list class="lst2-2" radio-group [(ngModel)]="loai">
+        <ion-item class="item2-2">
+          <ion-label class="iconbfsprite2-capmoi"><span class="lbl2-20">Cấp mới</span></ion-label>
+          <ion-radio [value]="0"></ion-radio>
+        </ion-item>
+        <ion-item class="item2-2">
+          <ion-label class="iconbfsprite2-thaydoi"><span class="lbl2-20">Thay đổi</span></ion-label>
+          <ion-radio [value]="1"></ion-radio>
+        </ion-item>
+        <ion-item class="item2-2">
+          <ion-label class="iconbfsprite2-tamdung"><span class="lbl2-20">Tạm ngưng</span></ion-label>
+          <ion-radio [value]="2"></ion-radio>
+        </ion-item>
+      </ion-list>
+    </ion-wizard-step>
+    <ion-wizard-step>
       <div class="wrapper2-2">
         <div class="group2-2">
           <span class="icon2-1 iconsprite2-folder"></span>
         </div>
       </div>
       <p class="lbl2-1">Hồ sơ kèm theo</p>
-      <ion-segment class="row2-2" [(ngModel)]="hosotab">
-        <ion-segment-button class="btn2-1" value="0" (click)="onTabChange(0)">Hồ sơ xây dựng</ion-segment-button>
-        <ion-segment-button class="btn2-1" value="1" (click)="onTabChange(1)">Hồ sơ kinh doanh</ion-segment-button>
-      </ion-segment>
       <div class="lst2-4">
         <label class="item2-4">
           <input type="file" class="file2-1">

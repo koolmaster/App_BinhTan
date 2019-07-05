@@ -1,0 +1,23 @@
+<ion-slides #Slides pager="true" (ionSlideWillChange)="moveTab($event)">
+  <ion-slide class="slide2-1 slide-1">
+    <div class="wrapper2-1">
+      <h2 class="titl2-1">Chào mừng đến với công dân số</h2>
+      <p class="lbl2-1">Ứng dụng cung cấp giải pháp xử lý nhanh các vấn đề liên quan tới thủ tục , hồ sơ</p>
+    </div>
+  </ion-slide>
+  <ion-slide class="slide2-1 slide-2">
+    <div class="wrapper2-1">
+      <h2 class="titl2-1">Nhiều tiện ích phục vụ người dân</h2>
+      <p class="lbl2-1">Dễ dàng tra cứu được thông tin về thủ tục hành chính; tiến độ xử lý hồ sơ thông qua mã số biên
+        nhận; tra cứu thông tin về quy hoạch….<br /> Nộp hồ sơ trực tuyến; góp ý, phản ánh về các sai phạm hành chính trên địa bàn 
+      </p>
+    </div>
+  </ion-slide>
+  <ion-slide class="slide2-1 slide-3">
+    <div class="wrapper2-1">
+      <h2 class="titl2-1">Dễ sử dụng</h2>
+      <p class="lbl2-1">Giao diện thân thiện, dễ thao tác, tìm kiếm chuyên biệt và chức năng mở rộng giúp người dân dễ dàng tìm kiếm chức năng mong muốn hoặc cài đặt theo mong muốn</p>
+    </div>
+    <button class="btn2-1" [ngClass]="{'fade-in': addclass}" (click)="goPage()">Bắt đầu</button>
+  </ion-slide>
+</ion-slides>

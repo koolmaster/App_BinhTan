@@ -38,7 +38,9 @@ ion-app.wp {
 
 //settings ios
 .toolbar-ios .wrapper2-3 {
-  top: 30px;
+  top: calc(20px + 4px);
+  top: calc(constant(safe-area-inset-top) + 4px);
+  top: calc(env(safe-area-inset-top) + 8px);
 }
 
 .menu-header {

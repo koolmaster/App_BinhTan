@@ -3,7 +3,6 @@ import { Platform, Nav, Events, AlertController, MenuController } from 'ionic-an
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Storage } from '@ionic/storage';
-import { TabsPage } from '../pages/tabs/tabs';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { LoginService } from '../providers/service/loginService';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -22,7 +21,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
   textDir: string = "ltr";
   activePage: any; 
-  rootPage: any = 'TabsPage';
+  rootPage: any = 'ChaomungPage';
   constructor(
     public platform: Platform,
     public statusBar: StatusBar,
@@ -41,7 +40,7 @@ export class MyApp {
     this.menuCtrl.enable(false, 'myMenu');
     this.menuCtrl.swipeEnable(false);
     this.platform.ready().then(() => {
-      this.rootPage = TabsPage;
+      this.rootPage = 'ChaomungPage';
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       // statusBar.styleDefault();

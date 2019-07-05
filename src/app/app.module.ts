@@ -12,7 +12,6 @@ import { FCM } from '@ionic-native/fcm';
 import { HttpModule } from '@angular/http';
 import { HTTP } from '@ionic-native/http';
 import { MyApp } from './app.component';
-import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
 
 //Directive
 import { Autosize } from '../providers/directive/autosize';
@@ -84,7 +83,6 @@ export function createTranslateLoader(http: HttpClient) {
     SplashScreen,
     HTTP,
     FCM,
-    NativePageTransitions,
     LocalNotifications,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ApiProvider,

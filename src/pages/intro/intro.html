@@ -1,0 +1,36 @@
+<ion-content id="step7" class="no-header style2-1">
+  <div class="box2-1">
+    <div class="wrapper2-1">
+      <ion-icon class="icon2-back" name="arrow-back" *ngIf="show" (click)="goBack()"></ion-icon>
+      <button id="step1" menuToggle class="btn2-1 left iconbfsprite2-menu" *ngIf="!show"></button>
+      <button id="step2" class="btn2-1 iconbfsprite2-user" (click)="goSignIn()" *ngIf="!show"></button>
+    </div>
+    <div class="wrapper2-2">
+      <div class="logo2-1"></div>
+      <p class="lbl2-1">Dịch Vụ Công</p>
+      <p class="lbl2-2">Thành phố tây ninh</p>
+      <label id="step8" class="lbl2-input2">
+        <input type="text" class="txt2-1" placeholder="Tìm kiếm">
+      </label>
+    </div>
+  </div>
+  <ion-list id="step9" class="lst2-1 animated">
+    <ion-item class="item2-1" *ngFor="let p of pages" (click)="goPage(p)" [id]="p.classname">
+      <span [class]="p.icon"></span>
+      <span class="lbl2-3">{{p.title}}</span>
+    </ion-item>
+  </ion-list>
+  <div id="step3" class="login" [@fadeInOut]>
+    <label id="step4" class="group2-input">
+      <span class="lbl2-4">Tên đăng nhập</span>
+      <input type="text" class="txt2-1">
+      <ion-icon class="icon2-2" ios="md-person" md="md-person"></ion-icon>
+    </label>
+    <label id="step5" class="group2-input">
+      <span class="lbl2-4">Mật khẩu</span>
+      <input type="password" class="txt2-1">
+      <ion-icon class="icon2-2" ios="ios-eye" md="md-eye"></ion-icon>
+    </label>
+    <button id="step6" class="btn2-3">Đăng nhập</button>
+  </div>
+</ion-content>

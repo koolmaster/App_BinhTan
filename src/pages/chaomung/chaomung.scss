@@ -1,0 +1,85 @@
+page-chaomung {
+    .slide-1 {
+        background-image: url(../assets/imgs/welcome/welcome3.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .slide-2 {
+        background-image: url(../assets/imgs/welcome/welcome2.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .slide-3 {
+        background-image: url(../assets/imgs/welcome/welcome1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .wrapper2-1 {
+        margin: 45vh 1.5rem 0;
+
+        .titl2-1 {
+            text-align: left;
+            font-size: 2.3rem;
+            color: #354a67;
+            font-weight: 600;
+        }
+
+        .lbl2-1 {
+            text-align: left;
+            font-size: 1.5rem;
+            color: #666;
+            line-height: 2rem;
+        }
+    }
+
+    .btn2-1 {
+        background: #00c9ff;
+        background: -webkit-linear-gradient(to right, #00c9ff, #62e6ca);
+        background: linear-gradient(to right, #00c9ff, #62e6ca);
+        position: absolute;
+        width: 90%;
+        left: 50%;
+        bottom: 20px;
+        transform: translateX(-50%);
+        padding: 1.5rem;
+        font-size: 1.5rem;
+        border-radius: 20px;
+        color: #fff;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        outline: none;
+
+    }
+
+    @-webkit-keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+
+
+    .fade-in {
+        -webkit-animation: fade-in 2.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation: fade-in 2.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    }
+
+}
