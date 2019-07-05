@@ -38,6 +38,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LanguageService } from '../providers/service/utils/language.service';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+
+import { SkeletonModule } from '../skeleton/skeleton.module';
 //import { AuthService } from '../providers/service/utils/core/auth.service';
 
 export function createTranslateLoader(http: HttpClient) {
@@ -57,6 +59,7 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserAnimationsModule,
     SelectSearchableModule,
     NgxChartsModule,
+    SkeletonModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

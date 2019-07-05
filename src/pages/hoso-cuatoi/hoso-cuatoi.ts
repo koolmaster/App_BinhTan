@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides, Navbar, PopoverController } from 'ionic-angular';
-
+import { SkeletonModule } from '../../skeleton/skeleton.module';
 @IonicPage()
 @Component({
   selector: 'page-hoso-cuatoi',
@@ -11,6 +11,7 @@ export class HosoCuatoiPage {
   @ViewChild(Navbar) navBar: Navbar;
   tabs = "0";
   txtSearch = '';
+  show = false;
   placeholder = "Tìm kiếm hồ sơ chưa nộp";
   constructor(
     public navCtrl: NavController,
@@ -20,6 +21,9 @@ export class HosoCuatoiPage {
   }
 
   ionViewDidLoad() {
+    setTimeout(() => {
+      this.show = true;
+    }, 5000);
 
   }
 
