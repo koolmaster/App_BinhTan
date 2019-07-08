@@ -1,13 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, ViewController, AlertController, Slides } from 'ionic-angular';
 import { trigger, style, animate, transition } from '@angular/animations';
 import introJs from 'intro.js/intro.js';
-export interface HomeInterface {
-  title: string;
-  component: any;
-  icon: string;
-  classname: string;
-}
+import Typewriter from 'typewriter-effect/dist/core';
 @IonicPage()
 @Component({
   selector: 'page-intro',
@@ -40,12 +35,10 @@ export interface HomeInterface {
   ],
 })
 export class IntroPage {
-  pages: HomeInterface[] = [
-    { title: 'Tra cứu thủ tục', component: "", icon: 'icon2-1 icon2-email', classname: "step10" },
-    { title: 'Tra cứu hồ sơ', component: "", icon: 'icon2-1 icon2-tchs', classname: "step11" },
-    { title: 'Nộp hồ sơ trực tuyến', component: "", icon: 'icon2-1 icon2-nhstt', classname: "step12" },
-    { title: 'Hướng dẫn sử dụng', component: "", icon: 'icon2-1 icon2-hdsd', classname: "step13" },
-  ]
+  @ViewChild(Slides) slides: Slides;
+  showA = true;
+  tabs = "0";
+  tabhanhchinh = "0";
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -54,35 +47,23 @@ export class IntroPage {
   ) {
 
   }
-
   ionViewDidLoad() {
-    const confirm = this.alertCtrl.create({
-      title: 'Thông báo !!!',
-      message: 'Hướng dẫn sử dụng',
-      buttons: [
-        {
-          text: 'Quay lại',
-          handler: () => {
-            this.navCtrl.setRoot('TabsPage');
-          }
-        },
-        {
-          text: 'Bắt đầu',
-          handler: () => {
-            this.start();
-          }
-        }
-      ]
-    });
-    confirm.present();
+  }
+  submit(index) {
+    if (index == 0) {
+      this.navCtrl.setRoot('TabsPage', {}, { animate: true, direction: 'forward' });
+    } else {
+      this.start();
+      this.showA = false;
+    }
   }
 
   start() {
     let self = this;
     introJs.introJs().setOptions({
-      "nextLabel": "Kế tiếp",
-      "prevLabel": "Trước đó",
-      skipLabel: "Bỏ qua",
+      "nextLabel": "Tiếp theo",
+      "prevLabel": "Quay lại",
+      skipLabel: "Đã hiểu",
       doneLabel: "Hoàn thành",
       showProgress: true,
       showBullets: false,
@@ -90,81 +71,184 @@ export class IntroPage {
       scrollPadding: 130,
       steps: [{
         element: '#step1',
-        intro: 'Nút menu',
+        intro: 'Chức năng tra cứu hồ sơ với 3 cách sử dụng',
         position: 'bottom'
       },
       {
         element: '#step2',
-        intro: 'Nút đăng nhập',
+        intro: 'Cách 1: Nhập số biên nhận, mã tra cứu mà bạn nhận được từ hệ thống hoặc cơ quan chức năng sau khi đăng ký hồ sơ thành công',
         position: 'bottom'
       },
       {
         element: '#step3',
-        intro: 'Khung đăng nhập',
+        intro: 'Cách 2: Nhấn vào để quét mã QR',
         position: 'bottom'
       },
       {
         element: '#step4',
-        intro: 'Vị trí nhập tên đăng nhập',
+        intro: 'Cách 3: Soạn tin nhắn với cú pháp: <b>TC 00.54.H29</b> gửi đến <b>1022</b>',
         position: 'bottom'
       },
       {
         element: '#step5',
-        intro: 'Vị trí nhập mật khẩu',
+        intro: 'Ví dụ số biên nhận của bạn là <b>777022015CPLD00132</b> hoặc mã tra cứu là <b>1541511924666</b>',
         position: 'bottom'
       },
       {
         element: '#step6',
-        intro: 'Nút <span style="color: blue">Đăng nhập</span> để hoàn thành quá trình đăng nhập',
+        intro: 'Thông tin về hồ sơ',
         position: 'bottom'
       },
       {
         element: '#step7',
-        intro: 'Giao diện chính của App , hiển thị các chứ năng chính',
+        intro: 'Chức năng hồ sơ của tôi',
         position: 'bottom'
       },
       {
         element: '#step8',
-        intro: 'Tìm kiếm nhập biên nhận , mã tra cứu',
+        intro: 'Danh sách <b>hồ sơ của tôi</b>',
         position: 'bottom'
       },
       {
         element: '#step9',
-        intro: 'Danh sách chức năng chức chính',
+        intro: 'Tab trạng thái hồ sơ của tôi',
         position: 'bottom'
       },
       {
         element: '#step10',
-        intro: 'Chức năng <span style="color: blue">TRA CỨU THỦ TỤC</span> hiển thị danh sách thủ tục',
+        intro: 'Thanh tìm kiếm hồ sơ',
         position: 'bottom'
       },
       {
         element: '#step11',
-        intro: 'Chức năng <span style="color: blue">TRA CỨU HỒ SƠ</span> tìm kiếm hồ sơ thông qua mã tra cứu hoặc số biên nhận',
+        intro: 'Tìm kiếm nâng cao với tên hồ sơ và trạng thái',
         position: 'bottom'
       },
       {
         element: '#step12',
-        intro: 'Chức năng <span style="color: blue">NỘP HỒ SƠ TRỰC TUYẾN</span> hiện thị danh sách hồ sơ và đăng ký nộp hồ sơ cá nhân',
+        intro: 'Chức năng <b>Thủ tục hành chính</b>',
         position: 'bottom'
       },
       {
         element: '#step13',
-        intro: 'Chức năng <span style="color: blue">HƯỚNG DẪN SỬ DỤNG</span> hướng dẫn sử dụng ứng dụng',
+        intro: 'Danh sách thủ tục hành chính',
+        position: 'bottom'
+      },
+      {
+        element: '#step14',
+        intro: 'Trạng thái của thủ tục hành chính bao gồm <b>Tất cả</b> và <b>Mới thay đổi</b>',
+        position: 'bottom'
+      },
+      {
+        element: '#step15',
+        intro: 'Thanh tìm kiếm thủ tục hành chính',
+        position: 'bottom'
+      },
+      {
+        element: '#step16',
+        intro: 'Tìm kiếm nâng cao với tên thủ tục và trạng thái',
+        position: 'bottom'
+      },
+      {
+        element: '#step17',
+        intro: 'Chức năng nộp hồ sơ',
+        position: 'bottom'
+      },
+      {
+        element: '#step18',
+        intro: 'Trang nộp hồ sơ',
+        position: 'bottom'
+      },
+      {
+        element: '#step19',
+        intro: 'Chức năng mở rộng bao gồm <b>Thông tin tài khoản, Các chức năng mở rộng</>, Các chức năng cài đặt và liên quan đến ứng dụng',
+        position: 'bottom'
+      },
+      {
+        element: '#step20',
+        intro: 'Chức năng liên quan đến tài khoản như: <b>Xem thông tin tài khoản, đổi mật khẩu , v.v</b>',
+        position: 'bottom'
+      },
+      {
+        element: '#step21',
+        intro: 'Nhóm chức năng mở rộng bao gồm: <b>Phản ánh kiến nghị,Trật tự đô thị, Tra cứu quy hoạch, Trưng cầu, v.v</b>',
+        position: 'bottom'
+      },
+      {
+        element: '#step22',
+        intro: 'Nhóm chức năng cài đặt hiệu chỉnh ứng dụng theo ý bạn',
+        position: 'bottom'
+      },
+      {
+        element: '#step23',
+        intro: 'Nhóm ứng dụng cung cấp thông tin ứng dụng và đánh giá',
+        position: 'bottom'
+      },
+      {
+        element: '#step24',
+        intro: 'Đăng xuất tài khoản',
         position: 'bottom'
       }]
     }).start().onbeforechange(function (targetElement) {
-      console.log(targetElement.id);
       switch (targetElement.id) {
         case "step2":
-          document.getElementById('step9').classList.add('hidden');
-          document.getElementById('step8').classList.add('hidden');
-          document.getElementById('step3').classList.add('show');
+          break;
+        case "step4":
+          self.typeWriter(true);
+          break;
+        case "step5":
+          document.getElementById('guide').classList.remove('hidden');
+          document.getElementById('step6').classList.add('hidden');
+          self.typeWriter();
+          break;
+        case "step6":
+          document.getElementById('guide').classList.add('hidden');
+          document.getElementById('step6').classList.remove('hidden');
+          document.getElementById('tracuu').classList.remove('hidden');
+          document.getElementById('hoso').classList.add('hidden');
+          self.typeWriter(true);
           break;
         case "step7":
-          document.getElementById('step9').classList.remove('hidden');
-          document.getElementById('step8').classList.remove('hidden');
-          document.getElementById('step3').classList.remove('show');
+          document.getElementById('tracuu').classList.add('hidden');
+          document.getElementById('hoso').classList.remove('hidden');
+          break;
+        case "step9":
+          document.getElementById('step10').classList.remove('style2-1');
+          break;
+        case "step10":
+          document.getElementById('step10').classList.add('style2-1');
+          break;
+        case "step11":
+          document.getElementById('step10').classList.remove('style2-1');
+          document.getElementById('hoso').classList.remove('hidden');
+          document.getElementById('thutuc').classList.add('hidden');
+          break;
+        case "step12":
+          document.getElementById('hoso').classList.add('hidden');
+          document.getElementById('thutuc').classList.remove('hidden');
+          break;
+        case "step14":
+          document.getElementById('step15').classList.remove('style2-1');
+          break;
+        case "step15":
+          document.getElementById('step15').classList.add('style2-1');
+          break;
+        case "step16":
+          document.getElementById('step15').classList.remove('style2-1');
+          document.getElementById('thutuc').classList.remove('hidden');
+          document.getElementById('step18').classList.add('hidden');
+          break;
+        case "step17":
+          document.getElementById('thutuc').classList.add('hidden');
+          document.getElementById('step18').classList.remove('hidden');
+          break;
+        case "step18":
+          document.getElementById('step18').classList.remove('hidden');
+          document.getElementById('caidat').classList.add('hidden');
+          break;
+        case "step19":
+          document.getElementById('step18').classList.add('hidden');
+          document.getElementById('caidat').classList.remove('hidden');
           break;
       }
     }).onexit(function () {
@@ -172,4 +256,20 @@ export class IntroPage {
     });
   }
 
+  typeWriter(stop?: boolean) {
+    let input = document.getElementById('step5');
+    let typewriter = new Typewriter(input, {
+      strings: ['777022015CPLD00132', '1541511924666'],
+      delay: 80,
+      loop: true,
+      autoStart: true,
+    });
+
+    if (stop) {
+      typewriter = new Typewriter(input, {
+        delay: 5,
+      })
+      typewriter.typeString('Mã số tra cứu hoặc số biên nhận').pauseFor(50000).start();
+    }
+  }
 }
