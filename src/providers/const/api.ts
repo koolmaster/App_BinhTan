@@ -69,6 +69,70 @@ export class ApiProvider {
       })
     }
   }
+  callBinhTan<T>(base, obj, params): Promise<T> {
+    let loading = this.loadingCtrl.create();
+    let apiUrl = base + obj.service + obj.functionUrl;
+    if (obj.method === "POST") {
+      return new Promise((resolve, reject) => {
+        let headers = new Headers();
+        headers.append("Content-Type", "application/json");
+        this.http.post(apiUrl, JSON.stringify(params), { headers: headers })
+          .map(res => res.json())
+          .subscribe(data => {
+            data.resultObject = data.resultObject;
+            if (data.status === "SUCCESS") {
+              if (data.resultObject == "") {
+                resolve(data.resultObject);
+              } else {
+                resolve(data.resultObject);
+              }
+            } else {
+              reject(data.description);
+            }
+          }, (err) => {
+            if (err != null) {
+              reject(err.description);
+            } else {
+              reject(err);
+            }
+
+          });
+      });
+    } else if (obj.method === "GET") {
+      return new Promise((resolve, reject) => {
+             JSON.stringify(params);
+        this.http.get(apiUrl, { params: params })
+          .map(res => res.json())
+          .subscribe(data => {
+            if (data.StatusCode === 0 || data.StatusCode === 200 ) {
+                        // data.resultObject = JSON.parse(data.resultObject);
+              resolve(data.resultObject);
+            } 
+            else if (data.statusCode === 0 || data.statusCode === 200){
+              data.resultObject = JSON.parse(data.resultObject);
+              resolve(data.resultObject);
+            }
+             else if (data.StatusCode === 400) {
+            resolve(data.description);
+            } 
+            else if (data.statusCode === -29) {
+              resolve(data);
+            } else if (data.statusCode === 401) {
+              resolve(data.description);
+            } else {
+              reject(data.description);
+            }
+          }, (err) => {
+            debugger;
+            if (err != null) {
+              reject(err._body);
+            } else {
+              reject(err);
+            }
+          });
+      })
+    }
+  }
   callLogin<T>(base, obj, params): Promise<T> {
     let loading = this.loadingCtrl.create();
     let apiUrl = base + obj.service + obj.functionUrl;

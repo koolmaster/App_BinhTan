@@ -3,7 +3,8 @@
 
 export const CONST = {
   BASE_MOBILECC: 'http://10.86.222.82:9001',
-  BASE: 'http://10.86.222.82:9001'
+  BASE: 'http://10.86.222.82:9001',
+  BASE_BINHTAN:'https://mobile-binhtan.tphcm.gov.vn'
 }
 
 export const DB_CONST = {

@@ -131,6 +131,23 @@ export const API_ANNINHTRATTU = {
         method: 'POST'
     },
 }
+export const API_QuanLyHoSo = {
+    'searchHoSo': {
+        functionUrl: 'TraCuuHoSo.rest',
+        service: '/portal-service/rest/portal/action/get/',
+        method: 'GET'
+      },
+    'dstintuc': {
+        functionUrl: 'Mobile_TINTUCSUKIEN_ListBasic',
+        service: '/HanhChinhService.svc/HC/',
+        method: 'POST'
+    },
+    'chitiettintuc': {
+        functionUrl: 'Mobile_TINTUCSUKIEN_Detail',
+        service: '/HanhChinhService.svc/HC/',
+        method: 'GET'
+    },
+}
 
 
 

@@ -12,8 +12,8 @@
 
 <ion-content>
   <div class="group2-1">
-    <ion-icon name="barcode"></ion-icon>
-    <ion-input type="text" [(ngModel)]="txtVBPL" class="txt2-1" (ionChange)="changeText()"
+    <ion-icon name="barcode" (click)="timKiemHoSo()"></ion-icon>
+    <ion-input type="text" [(ngModel)]="txtVBPL" class="txt2-1" (keypress)="keyPress($event)" (keyup.enter)="timKiemHoSo()"
       placeholder="Mã số tra cứu hoặc số biên nhận">
     </ion-input>
   </div>
@@ -37,50 +37,50 @@
     <div class="group2-3">
       <div class="group2-4">
         <span class="lbl2-1">Số biên nhận</span>
-        <span class="lbl2-1">777022014KT04123</span>
+        <span class="lbl2-1">{{chitiethoso.sobiennhan}}</span>
       </div>
       <div class="group2-4">
         <span class="lbl2-1">Mã tra cứu</span>
-        <span class="lbl2-1">777022014KT04123</span>
+        <span class="lbl2-1">{{chitiethoso.matracuu}}</span>
       </div>
       <div class="group2-4">
         <span class="lbl2-1">Lĩnh vực</span>
-        <span class="lbl2-1">Lĩnh vực kinh tế</span>
+        <span class="lbl2-1">{{chitiethoso.tenlinhvuc}}</span>
       </div>
       <div class="group2-4">
         <span class="lbl2-1">Thủ tục</span>
-        <span class="lbl2-1">Cấp giấy phép chứng nhận đăng ký hộ kinh doanh</span>
+        <span class="lbl2-1">{{chitiethoso.tenthutuc}}</span>
       </div>
     </div>
     <div class="group2-3">
       <div class="group2-4">
         <span class="lbl2-1">Ngày nhận</span>
-        <span class="lbl2-1">03/12/2014</span>
+        <span class="lbl2-1">{{chitiethoso.ngaynhan}}</span>
       </div>
       <div class="group2-4">
         <span class="lbl2-1">Ngày hẹn trả</span>
-        <span class="lbl2-1">17/12/2014</span>
+        <span class="lbl2-1">{{chitiethoso.ngayhentra}}</span>
       </div>
       <div class="group2-4">
         <span class="lbl2-1">Ngày hoàn thành</span>
-        <span class="lbl2-1">04/12/2014</span>
+        <span class="lbl2-1">{{chitiethoso.ngayhoanthanh}}</span>
       </div>
       <div class="group2-4">
         <span class="lbl2-1">Tình trạng</span>
-        <span class="lbl2-1">Hồ sơ đã trả</span>
+        <span class="lbl2-1">{{chitiethoso.matinhtrang}}</span>
       </div>
     </div>
     <div class="group2-4">
       <span class="lbl2-1">Phòng ban xử lý</span>
-      <span class="lbl2-1">ỦY BAN NHÂN DÂN QUẬN BÌNH TÂN - Chi Cục Thuế Bình tân</span>
+      <span class="lbl2-1">{{chitiethoso.phongxuly}}</span>
     </div>
     <div class="group2-4">
       <span class="lbl2-1">Người xử lý</span>
-      <span class="lbl2-1">Dương thanh tùng</span>
+      <span class="lbl2-1">{{chitiethoso.nguoixuly}}</span>
     </div>
     <div class="group2-4">
       <span class="lbl2-1">Kết quả xử lý</span>
-      <span class="lbl2-1">Tốt</span>
+      <span class="lbl2-1">{{chitiethoso.ketquaxuly}}</span>
     </div>
   </div>
 </ion-content>

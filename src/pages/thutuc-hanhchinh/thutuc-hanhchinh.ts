@@ -21,6 +21,22 @@ export class ThutucHanhchinhPage {
 
   ionViewDidLoad() {
   }
+  loadDanhSach(){
+    var formTrinhTrangThuTuc = [{
+      id: '0',
+      choose: false,
+      cls: 'statusVTN',
+      name: 'Tất cả thủ tục'
+    }, {
+      id: '1',
+      choose: false,
+      cls: 'statusDXL',
+      name: 'Mới thay đổi'
+    }];
+
+
+    
+  }
 
   onTabChange(val) {
     this.slides.slideTo(val, 300);
@@ -41,7 +57,9 @@ export class ThutucHanhchinhPage {
         this.placeholder = "Tìm kiếm thủ tục";
         break;
     }
+    this.doRefresh();
   }
+
 
   presentPopover(myEvent, txtSearch) {
     let popover = this.popoverCtrl.create('FilterThutucPage', { search: txtSearch });
@@ -52,6 +70,17 @@ export class ThutucHanhchinhPage {
 
   goPage() {
     this.navCtrl.push('ChitietThutuchanhchinhPage');
+  }
+
+  doRefresh(refresher?) {
+    this.txtSearch = '';
+    // this.isLoadMore = false;
+    // this.pageIndex = 1;
+    // this.lstThongBao = [];
+    // this.loadDS();
+    if (refresher) {
+      refresher.complete();
+    }
   }
 
 
