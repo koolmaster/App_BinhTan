@@ -65,6 +65,8 @@ export class TracuuHosoPage {
   scanQR() {
     this.options = {
      prompt : "Quét mã QR",
+     showTorchButton : true,
+     showFlipCameraButton : true
     //  currentCamera: 1,
     //  canEnableLight: true,
      // showing: true,
@@ -74,7 +76,7 @@ export class TracuuHosoPage {
      console.log('Barcode data', barcodeData);
      this.dulieuqr = barcodeData;
      if (barcodeData.cancelled) {
-       return;
+      this.navCtrl.setRoot('TabsPage', {}, { animate: true, direction: 'forward' });
      }
      else {
     //  this.formCoSoYTe.PageIndex = 1;
