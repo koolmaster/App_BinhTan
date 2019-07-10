@@ -767,6 +767,30 @@ page-intro {
         right: 0;
         z-index: 1;
 
+        video {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+
+            &::-webkit-media-controls {
+                display: none !important;
+            }
+        }
+
+        .video2-1 {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .backdrop-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 100;
+        }
+
         .scroll-content {
             background: #fff;
             contain: none;
@@ -907,7 +931,7 @@ page-intro {
                 max-width: 100%;
 
                 &:placeholder-shown+.lbl2-2 {
-                    opacity: 0;
+                    opacity: 1;
                 }
 
                 .select-icon {
@@ -1147,6 +1171,8 @@ page-intro {
         .scroll-content {
             background: #fff;
             contain: none;
+            margin-top: 44px;
+            margin-bottom: 58px;
         }
 
         ion-content,

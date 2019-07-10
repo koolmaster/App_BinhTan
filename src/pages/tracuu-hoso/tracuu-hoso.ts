@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { QuanLyHoSoService } from '../../providers/service/quanLyhoso'
-import { isEmpty, isNil } from 'lodash'; 
+import { isEmpty, isNil } from 'lodash';
 
 import { AlertService } from '../../providers/service/alertService';
 
@@ -15,22 +15,21 @@ import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-sca
 export class TracuuHosoPage {
   show = false;
   txtVBPL = '';
-  chitiethoso:any;
-  khongtimthayhoso:any;
-  options :BarcodeScannerOptions;
-  public dulieuqr:any;
-  constructor(public navCtrl: NavController, 
+  chitiethoso: any;
+  khongtimthayhoso: any;
+  options: BarcodeScannerOptions;
+  public dulieuqr: any;
+  constructor(public navCtrl: NavController,
     public barcodeScanner: BarcodeScanner,
-    public quanlyhoso:QuanLyHoSoService,
+    public quanlyhoso: QuanLyHoSoService,
     public alert: AlertService,
     public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-
   }
-  timKiemHoSo(){
-    if(this.txtVBPL == '') {
+  timKiemHoSo() {
+    if (this.txtVBPL == '') {
       this.alert.showAlert("error", "Vui lòng nhập đúng định dạng");
       this.show = false;
     } else {
@@ -48,7 +47,7 @@ export class TracuuHosoPage {
       console.log(err);
       this.show = false;
       this.alert.showAlert("error", this.khongtimthayhoso.description);
-      
+
     });
   }
   keyPress(event: any) {
@@ -64,36 +63,36 @@ export class TracuuHosoPage {
   }
   scanQR() {
     this.options = {
-     prompt : "Quét mã QR",
-     showTorchButton : true,
-     showFlipCameraButton : true
-    //  currentCamera: 1,
-    //  canEnableLight: true,
-     // showing: true,
-    //  previewing: true
-   }
-   this.barcodeScanner.scan(this.options).then(barcodeData => {
-     console.log('Barcode data', barcodeData);
-     this.dulieuqr = barcodeData;
-     if (barcodeData.cancelled) {
-      this.navCtrl.setRoot('TabsPage', {}, { animate: true, direction: 'forward' });
-     }
-     else {
-    //  this.formCoSoYTe.PageIndex = 1;
-    //  this.formCoSoYTe.timCoSo = this.dulieuqr.text;
-     // alert("string +"+JSON.stringify(this.dulieuqr.text));
-     // alert("json +"+JSON.parse(this.dulieuqr.text));
-    //  if (this.dulieuqr.text.length != 14 ){
-      //  this.alert.showAlert("error", "Mã QR không đúng định dạng");
-      //  return;
-    //  }
-     this.txtVBPL = this.dulieuqr.text;
-     this.timKiemHoSo();
-    //  this.goSpeciallist();
-     }
+      prompt: "Quét mã QR",
+      showTorchButton: true,
+      showFlipCameraButton: true
+      //  currentCamera: 1,
+      //  canEnableLight: true,
+      // showing: true,
+      //  previewing: true
+    }
+    this.barcodeScanner.scan(this.options).then(barcodeData => {
+      console.log('Barcode data', barcodeData);
+      this.dulieuqr = barcodeData;
+      if (barcodeData.cancelled) {
+        this.navCtrl.setRoot('TabsPage', {}, { animate: true, direction: 'forward' });
+      }
+      else {
+        //  this.formCoSoYTe.PageIndex = 1;
+        //  this.formCoSoYTe.timCoSo = this.dulieuqr.text;
+        // alert("string +"+JSON.stringify(this.dulieuqr.text));
+        // alert("json +"+JSON.parse(this.dulieuqr.text));
+        //  if (this.dulieuqr.text.length != 14 ){
+        //  this.alert.showAlert("error", "Mã QR không đúng định dạng");
+        //  return;
+        //  }
+        this.txtVBPL = this.dulieuqr.text;
+        this.timKiemHoSo();
+        //  this.goSpeciallist();
+      }
     }).catch(err => {
-        console.log('Error', err);
+      console.log('Error', err);
     });
 
- }
+  }
 }

@@ -8,9 +8,7 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
-
-
-<ion-content>
+<ion-content class="fade-in-bottom">
   <div class="group2-1">
     <ion-icon name="barcode" (click)="timKiemHoSo()"></ion-icon>
     <ion-input type="text" [(ngModel)]="txtVBPL" class="txt2-1" (keypress)="keyPress($event)" (keyup.enter)="timKiemHoSo()"
@@ -84,3 +82,4 @@
     </div>
   </div>
 </ion-content>
+<div class="wave-animation wave"></div>

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, AlertController, Events } from 'ionic-angular';
 import { AlertService } from '../../providers/service/alertService';
 import { isEmpty, isNil } from 'lodash'
+import Swal from 'sweetalert2'
+
 @IonicPage()
 @Component({
   selector: 'page-nophoso',
@@ -108,14 +110,14 @@ export class NophosoPage {
     }
   }
   onFinish() {
-    this.alertCtrl.create({
-      message: 'Nộp hồ sơ thành công',
-      title: 'Congrats!!',
-      buttons: [{
-        text: 'Ok'
-      }]
-    }).present();
-    this.viewCtrl.dismiss();
+    Swal.fire({
+      title: 'Chúc mừng !!!',
+      text: 'Nộp hồ sơ thành công',
+      type: 'success',
+      showConfirmButton: false,
+      timer: 1500
+    })
+
   }
 
   checkInput() {
@@ -134,11 +136,6 @@ export class NophosoPage {
     if (event.keyCode != 8 && !pattern.test(inputChar)) {
       event.preventDefault();
     }
-  }
-
-  onTabChange(val) {
-    let temp = document.querySelector('.row2-2');
-    temp.setAttribute('style', '--k:' + val);
   }
 
 }
