@@ -137,18 +137,26 @@ export const API_QuanLyHoSo = {
         service: '/portal-service/rest/portal/action/get/',
         method: 'GET'
       },
-    'dstintuc': {
-        functionUrl: 'Mobile_TINTUCSUKIEN_ListBasic',
-        service: '/HanhChinhService.svc/HC/',
-        method: 'POST'
-    },
-    'chitiettintuc': {
-        functionUrl: 'Mobile_TINTUCSUKIEN_Detail',
-        service: '/HanhChinhService.svc/HC/',
-        method: 'GET'
-    },
+   
 }
-
+export const API_QuanLyThuTuc = {
+    'postDanhSach': {
+        functionUrl: 'TraCuuThuTucHanhChinh.rest',
+        service: '/portal-service/rest/portal/action/post/',
+        method: 'POST'
+      },
+      'getChiTiet': {
+        functionUrl: 'GetThuTucHanhChinhById.rest',
+        service: '/portal-service/rest/portal/action/get/',
+        method: 'GET'
+      },
+      'gopYKien': {
+        functionUrl: 'GuiGopYHoSoDvc.rest',
+        service: '/portal-service/rest/portal/action/post/',
+        method: 'POST'
+      }
+   
+}
 
 
 

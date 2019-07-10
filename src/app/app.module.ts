@@ -41,6 +41,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 import { SkeletonModule } from '../skeleton/skeleton.module';
 import { QuanLyHoSoService } from '../providers/service/quanLyhoso';
+import { QuanLyThuTucService } from '../providers/service/quanLyThuTuc';
 //import { AuthService } from '../providers/service/utils/core/auth.service';
 
 export function createTranslateLoader(http: HttpClient) {
@@ -99,6 +100,7 @@ export function createTranslateLoader(http: HttpClient) {
     InAppBrowser,
     QuanLyHoSoService,
     AnNinhTratTuService,
+    QuanLyThuTucService,
     LanguageService,
     BarcodeScanner,
     // AuthService
