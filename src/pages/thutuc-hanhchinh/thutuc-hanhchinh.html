@@ -1,16 +1,16 @@
 <ion-header class="menu-header">
   <ion-navbar>
     <div class="wrapper2-3">
-      <input type="text" class="txt2-3" [(ngModel)]="txtSearch" [placeholder]="placeholder" />
+      <input type="text" class="txt2-3" [(ngModel)]="txtSearch" [placeholder]="placeholder" (keyup.enter)="timkiemThuTuc()"  />
       <span class="btn2-4">
         <ion-icon name="search"></ion-icon>
       </span>
     </div>
-    <ion-buttons end class="btn-filter">
+    <!-- <ion-buttons end class="btn-filter">
       <button (click)="presentPopover($event,txtSearch)">
         <ion-icon name="funnel"></ion-icon>
       </button>
-    </ion-buttons>
+    </ion-buttons> -->
   </ion-navbar>
   <ion-segment class="row2-2 tab-thutuc" [(ngModel)]="tabhanhchinh">
     <ion-segment-button class="btn2-1" value="0" (click)="onTabChange(0)">Tất cả</ion-segment-button>
@@ -23,105 +23,24 @@
   </ion-refresher>
   <ion-slides [ngClass]="{'first': firstLoad}" #Slides (ionSlideWillChange)="moveTab($event)">
     <ion-slide class="slide2-1">
-      <ion-list class="lst2-1">
-        <ion-list-header class="header2-2">Tôn giáo</ion-list-header>
-        <ion-item class="item2-1" (click)="goPage()" data-count="1">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn giáo
-          cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="2">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn giáo
-          cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="3">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn giáo
-          cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="4">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn
-          giáo cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="5">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn
-          giáo
-          cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="6">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn
-          giáo
-          cơ sở</ion-item>
-      </ion-list>
-      <ion-list class="lst2-1">
-        <ion-list-header class="header2-2">Tôn giáo</ion-list-header>
-        <ion-item class="item2-1" (click)="goPage()" data-count="1">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn giáo
-          cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="2">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn giáo
-          cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="3">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn giáo
-          cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="4">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn
-          giáo cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="5">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn
-          giáo
-          cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="6">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn
-          giáo
-          cơ sở</ion-item>
-      </ion-list>
-      <ion-list class="lst2-1">
-        <ion-list-header class="header2-2">Tôn giáo</ion-list-header>
-        <ion-item class="item2-1" (click)="goPage()" data-count="1">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn giáo
-          cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="2">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn giáo
-          cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="3">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn giáo
-          cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="4">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn
-          giáo cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="5">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn
-          giáo
-          cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="6">Chấp nhận tổ chức hội nghị thường niên,đại hội của tổ chức tôn
-          giáo
-          cơ sở</ion-item>
+      <ion-list class="lst2-1" *ngFor= "let item of data_dsthutuc_tatca; let i = index">
+        <ion-list-header class="header2-2">{{item.linhvucDTO.tenlinhvuc}}</ion-list-header>
+        <div *ngFor= "let thutuc of data_dsthutuc_tatca[i].danhSachThuTucs; let j = index">
+        <ion-item class="item2-1" (click)="goPage(j,item)" [attr.data-count]="j+1">
+            {{thutuc.thutucDTO.tenthutuc}}
+        </ion-item>
+        </div>
       </ion-list>
     </ion-slide>
     <ion-slide class="slide2-1 style2-2">
-      <ion-list class="lst2-1">
-        <ion-list-header class="header2-2">Tôn giáo</ion-list-header>
-        <ion-item class="item2-1" (click)="goPage()" data-count="1">Chấp nhận tổ chức hội nghị thường niên,đại hội của
-          tổ chức tôn giáo
-          cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="2">Chấp nhận tổ chức hội nghị thường niên,đại hội của
-          tổ chức tôn giáo
-          cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="3">Chấp nhận tổ chức hội nghị thường niên,đại hội của
-          tổ chức tôn giáo
-          cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="4">Chấp nhận tổ chức hội nghị thường niên,đại hội của
-          tổ chức tôn
-          giáo cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="5">Chấp nhận tổ chức hội nghị thường niên,đại hội của
-          tổ chức tôn
-          giáo
-          cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="6">Chấp nhận tổ chức hội nghị thường niên,đại hội của
-          tổ chức tôn
-          giáo
-          cơ sở</ion-item>
-      </ion-list>
-      <ion-list class="lst2-1">
-        <ion-list-header class="header2-2">Tôn giáo</ion-list-header>
-        <ion-item class="item2-1" (click)="goPage()" data-count="1">Chấp nhận tổ chức hội nghị thường niên,đại hội của
-          tổ chức tôn giáo
-          cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="2">Chấp nhận tổ chức hội nghị thường niên,đại hội của
-          tổ chức tôn giáo
-          cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="3">Chấp nhận tổ chức hội nghị thường niên,đại hội của
-          tổ chức tôn giáo
-          cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="4">Chấp nhận tổ chức hội nghị thường niên,đại hội của
-          tổ chức tôn
-          giáo cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="5">Chấp nhận tổ chức hội nghị thường niên,đại hội của
-          tổ chức tôn
-          giáo
-          cơ sở</ion-item>
-        <ion-item class="item2-1" (click)="goPage()" data-count="6">Chấp nhận tổ chức hội nghị thường niên,đại hội của
-          tổ chức tôn
-          giáo
-          cơ sở</ion-item>
-      </ion-list>
+        <ion-list class="lst2-1" *ngFor= "let item of data_dsthutuc_moithaydoi; let i = index">
+            <ion-list-header class="header2-2">{{item.linhvucDTO.tenlinhvuc}}</ion-list-header>
+            <div *ngFor= "let thutuc of data_dsthutuc_moithaydoi[i].danhSachThuTucs; let j = index">
+            <ion-item class="item2-1" (click)="goPage(j,item)" [attr.data-count]="j+1">
+                {{thutuc.thutucDTO.tenthutuc}}
+            </ion-item>
+            </div>
+          </ion-list>
       <ion-infinite-scroll (ionInfinite)="loadDS($event)" *ngIf="!isLoadMore">
         <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Đang tải dữ liệu...">
         </ion-infinite-scroll-content>

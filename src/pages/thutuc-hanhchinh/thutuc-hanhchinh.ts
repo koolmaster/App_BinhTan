@@ -15,8 +15,8 @@ export class ThutucHanhchinhPage {
   txtSearch = '';
   placeholder = "Tìm kiếm thủ tục";
   dsLinhVuc = [];
-  data_dsthutuc_tatca:any;
-  data_dsthutuc_moithaydoi:any;
+  data_dsthutuc_tatca:any =[];
+  data_dsthutuc_moithaydoi:any = [];
   noMoreItemsAvailable = false;
   isLoading = false;
   pageIndexTatCa = 1;
@@ -43,56 +43,40 @@ export class ThutucHanhchinhPage {
   loadDanhSachTatCa(){
     if (!this.isLoading && !this.noMoreItemsAvailable) {
 
-    var formTrinhTrangThuTuc = [{
-      id: '0',
-      choose: false,
-      cls: 'statusVTN',
-      name: 'Tất cả thủ tục'
-    }, {
-      id: '1',
-      choose: false,
-      cls: 'statusDXL',
-      name: 'Mới thay đổi'
-    }];
-
     var formDanhSachThuTuc = {
       PageNum: this.pageIndexTatCa,
       PageSize: this.pageSizeTatCa,
-      info: "",
+      info: this.txtSearch,
       searchContent: 0
     }
     this.quanlythutuc.postDanhSach(formDanhSachThuTuc).then(rep => {
-      debugger;
       if (rep != null ){
-      this.data_dsthutuc_tatca = rep;
-      this.data_dsthutuc_tatca = JSON.parse(this.data_dsthutuc_tatca);
-      this.data_dsthutuc_tatca =  this.data_dsthutuc_tatca.danhSachLinhVucs;
-      
-      //Lấy lĩnh vực
-      debugger;
-      var array = this.data_dsthutuc_tatca || [];
-        for (var i = 0; i < this.data_dsthutuc_tatca.length; i++) {
-          var item = {
-            "value": array[i].linhvucDTO.linhvucid,
-            "text": array[i].linhvucDTO.tenlinhvuc
-          }
-          this.dsLinhVuc.push(item);
+      let dataThuTuc:any = rep;
+      dataThuTuc = JSON.parse(dataThuTuc);
+      dataThuTuc = dataThuTuc.danhSachLinhVucs;
+      let k = 0;
+      for(var j = 0; j < dataThuTuc.length; j++ ){
+        if (dataThuTuc[j].danhSachThuTucs.length == 0){
+          k++;
+          dataThuTuc[j].linhvucDTO.tenlinhvuc == null;
+        }
+        else {
+        dataThuTuc[j].linhvucDTO.tenlinhvuc = dataThuTuc[j].linhvucDTO.tenlinhvuc.replace("Lĩnh vực ","");
         }
       }
-      // end Lấy lĩnh vực
-
+      if (k == dataThuTuc.length){
+        this.alert.showAlert("error", "Không tìm thấy thủ tục");
+        return
+      }
       // xử lý
-      var jsonProcedures = this.data_dsthutuc_tatca;
-
+      var jsonProcedures = dataThuTuc;
         (jsonProcedures.length < 20 || jsonProcedures.length <= 0) ? this.noMoreItemsAvailable = true : ++this.pageIndexTatCa;
         for (var i = 0; i < jsonProcedures.length; i++) {
-          var danhSachThuTucs = jsonProcedures[i].danhSachThuTucs;
-          if (danhSachThuTucs.length > 0) {
-            this.lstProcedures.push(jsonProcedures[i]);
-          }
+            this.data_dsthutuc_tatca.push(jsonProcedures[i]);
         }
       //xử lý
       console.log(rep);
+      }
     }, (err) => {
       this.alert.showAlert("error", "Không tìm thấy thủ tục");
     });
@@ -101,73 +85,50 @@ export class ThutucHanhchinhPage {
 
   }
 
-  // loadDanhSachMoiThayDoi(){
-  //   if (!this.isLoading && !this.noMoreItemsAvailable) {
+  loadDanhSachThayDoi(){
+    if (!this.isLoading && !this.noMoreItemsAvailable) {
 
-  //   var formTrinhTrangThuTuc = [{
-  //     id: '0',
-  //     choose: false,
-  //     cls: 'statusVTN',
-  //     name: 'Tất cả thủ tục'
-  //   }, {
-  //     id: '1',
-  //     choose: false,
-  //     cls: 'statusDXL',
-  //     name: 'Mới thay đổi'
-  //   }];
+    var formDanhSachThuTuc = {
+      PageNum: this.pageIndexThayDoi,
+      PageSize: this.pageSizeThayDoi,
+      info: this.txtSearch,
+      searchContent: 1
+    }
+    this.quanlythutuc.postDanhSach(formDanhSachThuTuc).then(rep => {
+      if (rep != null ){
+      let dataThuTuc:any = rep;
+      dataThuTuc = JSON.parse(dataThuTuc);
+      dataThuTuc = dataThuTuc.danhSachLinhVucs;
+      let k = 0;
+      for(var j = 0; j < dataThuTuc.length; j++ ){
+        if (dataThuTuc[j].danhSachThuTucs.length == 0){
+          k++;
+          dataThuTuc[j].linhvucDTO.tenlinhvuc == null;
+        }
+        else{
+        dataThuTuc[j].linhvucDTO.tenlinhvuc = dataThuTuc[j].linhvucDTO.tenlinhvuc.replace("Lĩnh vực ","");
+        }
+      }
+      if (k == dataThuTuc.length){
+        this.alert.showAlert("error", "Không tìm thấy thủ tục");
+        return
+      }
+      // xử lý
+      var jsonProcedures = dataThuTuc;
+        (jsonProcedures.length < 20 || jsonProcedures.length <= 0) ? this.noMoreItemsAvailable = true : ++this.pageIndexThayDoi;
+        for (var i = 0; i < jsonProcedures.length; i++) {
+            this.data_dsthutuc_moithaydoi.push(jsonProcedures[i]);
+        }
+      //xử lý
+      console.log(rep);
+      }
+    }, (err) => {
+      this.alert.showAlert("error", "Không tìm thấy thủ tục");
+    });
 
-  //   var formDanhSachThuTuc = [{
-  //     PageNum: this.pageIndexTatCa,
-  //     PageSize: this.pageSizeTatCa,
-  //     info: "",
-  //     searchContent: 0
-  //   },
-  //   {
-  //     PageNum: this.pageIndexThayDoi,
-  //     PageSize: this.pageSizeThayDoi,
-  //     info: "",
-  //     searchContent: 1
-  //   }]
-  //   this.quanlythutuc.postDanhSach(formDanhSachThuTuc).then(rep => {
-  //     debugger;
-  //     if (rep != null ){
-  //     this.data_dsthutuc = rep;
-  //     this.data_dsthutuc = JSON.parse(this.data_dsthutuc);
-  //     this.data_dsthutuc =  this.data_dsthutuc.danhSachLinhVucs;
-      
-  //     //Lấy lĩnh vực
-  //     debugger;
-  //     var array = this.data_dsthutuc || [];
-  //       for (var i = 0; i < this.data_dsthutuc.length; i++) {
-  //         var item = {
-  //           "value": array[i].linhvucDTO.linhvucid,
-  //           "text": array[i].linhvucDTO.tenlinhvuc
-  //         }
-  //         this.dsLinhVuc.push(item);
-  //       }
-  //     }
-  //     // end Lấy lĩnh vực
+  }
 
-  //     // xử lý
-  //     var jsonProcedures = this.data_dsthutuc;
-
-  //       (jsonProcedures.length < 20 || jsonProcedures.length <= 0) ? this.noMoreItemsAvailable = true : ++$scope.pageNo;
-  //       for (var i = 0; i < jsonProcedures.length; i++) {
-  //         var danhSachThuTucs = jsonProcedures[i].danhSachThuTucs;
-  //         if (danhSachThuTucs.length > 0) {
-  //           isData = true;
-  //           $scope.lstProcedures.push(jsonProcedures[i]);
-  //         }
-  //       }
-  //     //xử lý
-  //     console.log(rep);
-  //   }, (err) => {
-  //     this.alert.showAlert("error", "Không tìm thấy thủ tục");
-  //   });
-
-  // }
-
-  // }
+  }
 
   onTabChange(val) {
     this.slides.slideTo(val, 300);
@@ -185,12 +146,26 @@ export class ThutucHanhchinhPage {
         break;
 
       default:
-        this.placeholder = "Tìm kiếm thủ tục";
+        this.placeholder = "Tìm kiếm tất cả thủ tục";
         break;
     }
     this.doRefresh();
   }
-
+  timkiemThuTuc(){
+    this.noMoreItemsAvailable = false;
+    if ( this.tabhanhchinh == "1"){
+    this.pageIndexThayDoi = 1;
+    this.pageSizeThayDoi = 20;
+    this.data_dsthutuc_moithaydoi = [];
+    this.loadDanhSachThayDoi();
+    }
+    else {
+    this.pageIndexTatCa = 1;
+    this.pageSizeTatCa = 20;
+    this.data_dsthutuc_tatca = [];
+    this.loadDanhSachTatCa();
+    }
+  }
 
   presentPopover(myEvent, txtSearch) {
     let popover = this.popoverCtrl.create('FilterThutucPage', { search: txtSearch });
@@ -199,16 +174,35 @@ export class ThutucHanhchinhPage {
     });
   }
 
-  goPage() {
-    this.navCtrl.push('ChitietThutuchanhchinhPage');
+  goPage(index, item) {
+    debugger;
+    this.navCtrl.push('ChitietThutuchanhchinhPage', {
+      id: index,
+      item: item
+    });
   }
-
-  doRefresh(refresher?) {
-    this.txtSearch = '';
-    // this.isLoadMore = false;
-    // this.pageIndex = 1;
-    // this.lstThongBao = [];
-    // this.loadDS();
+  loadDS(event?){
+    if ( this.tabhanhchinh == "1"){
+      this.loadDanhSachThayDoi();
+      }
+      else {
+      this.loadDanhSachTatCa();
+      }
+  }
+  doRefresh(refresher?){
+    this.noMoreItemsAvailable = false;
+    if ( this.tabhanhchinh == "1"){
+    this.pageIndexThayDoi = 1;
+    this.pageSizeThayDoi = 20;
+    this.data_dsthutuc_moithaydoi = [];
+    this.loadDanhSachThayDoi();
+    }
+    else {
+    this.pageIndexTatCa = 1;
+    this.pageSizeTatCa = 20;
+    this.data_dsthutuc_tatca = [];
+    this.loadDanhSachTatCa();
+    }
     if (refresher) {
       refresher.complete();
     }

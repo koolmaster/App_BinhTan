@@ -9,8 +9,11 @@ import { IonicPage, NavController, NavParams, Navbar, ModalController } from 'io
 export class ChitietThutuchanhchinhPage {
   @ViewChild(Navbar) navBar: Navbar;
   elements = document.querySelectorAll(".tabbar");
+
   showTab = false;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    public modalCtrl: ModalController) {
     if (this.elements != null) {
       Object.keys(this.elements).map((key) => {
         this.elements[key].style.display = 'none';
@@ -31,6 +34,9 @@ export class ChitietThutuchanhchinhPage {
       this.showTab = true;
       this.navCtrl.pop();
     };
+    debugger;
+    var id:any;
+    id = this.navParams.get("params");
   }
 
 
