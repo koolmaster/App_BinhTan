@@ -79,7 +79,7 @@ page-chitiet-thutuchanhchinh {
         &.style2-1 {
             font-size: 1.5rem;
             line-height: 2.2rem;
-            color: #312c4c;
+            color: blue;
         }
 
         .wrapper2-1 {
@@ -111,6 +111,7 @@ page-chitiet-thutuchanhchinh {
                 display: block;
                 text-align: left;
             }
+            
         }
 
         .lbl2-12 {
@@ -122,6 +123,12 @@ page-chitiet-thutuchanhchinh {
         .lbl2-13 {
             font-weight: 600;
             color: #312c4c;
+            text-align: right;
+            width: calc(100% - 115px);
+        }
+        .lbl2-131 {
+            font-weight: 600;
+            color: red;
             text-align: right;
             width: calc(100% - 115px);
         }

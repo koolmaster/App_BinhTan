@@ -8,8 +8,8 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
-<ion-content>
-  <div class="lbl2-10">Trả lại tài sản</div>
+<ion-content *ngIf="dulieuChitiet.thutucDTO">
+  <div class="lbl2-10">{{dulieuChitiet.thutucDTO.tenthutuc}}</div>
   <div class="group2-1">
     <div class="header2-1">
       <span class="icon2-11 iconsprite2-thongtin"></span>
@@ -18,19 +18,19 @@
     <div class="content2-1">
       <div class="wrapper2-1">
         <span class="lbl2-12">Lĩnh vực</span>
-        <span class="lbl2-13">Trách nhiệm bồi thường của nhà nước trong hoạt động quản lý hành chính</span>
+        <span class="lbl2-131">{{dulieuChitiet.thutucDTO.tenlinhvuc}}</span>
       </div>
       <div class="wrapper2-1">
         <span class="lbl2-12">Cơ quan ban hành</span>
-        <span class="lbl2-13">Nhà nước</span>
+        <span class="lbl2-13">{{dulieuChitiet.thutucDTO.coquanbanhanh}}</span>
       </div>
       <div class="wrapper2-1">
         <span class="lbl2-12">Thời gian giải quyết</span>
-        <span class="lbl2-13">Trong thời gian 5 ngày làm việc , kể từ ngày quyết định thu giữ ,tạm giữ ,kẻ biên, tịch thu bị hủy bỏ</span>
+        <span class="lbl2-13">{{dulieuChitiet.thutucDTO.thoihangiaiquyet}}</span>
       </div>
       <div class="wrapper2-1">
         <span class="lbl2-12">Hình thức thực hiện</span>
-        <span class="lbl2-13">Tại trụ sở sơ quan đã ra quyết định thu giữ, tram giữ , kể biên, tịch thu tài sản hoặc nơi đang bảo quản tài sản</span>
+        <span class="lbl2-13">{{dulieuChitiet.thutucDTO.hinhthuctiepnhan}}</span>
       </div>
     </div>
   </div>
@@ -39,38 +39,26 @@
       <span class="icon2-11 iconsprite2-trinhtu"></span>
       <span class="lbl2-11">Trình tự thực hiện</span>
     </div>
-    <div class="content2-1 style2-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et elementum lacus. Quisque
-      dapibus felis interdum pharetra feugiat. Morbi accumsan ut eros rutrum lacinia. Mauris rutrum ligula at elit
-      iaculis interdum. Maecenas sit amet sollicitudin ex. Phasellus ullamcorper, eros et ornare imperdiet, orci velit
-      molestie lacus, eu accumsan tellus felis a sem. Maecenas sed rhoncus tellus. Aliquam ligula quam, dignissim eu
-      hendrerit gravida, congue et purus. Pellentesque et justo tincidunt, aliquam justo vitae, interdum mauris. Cras
-      porta libero sem, pulvinar ornare magna iaculis et. Aenean nisi nunc, convallis a dapibus in, viverra a tortor.
-      Fusce in scelerisque sapien.</div>
+    <div class="content2-1 style2-1" [innerHtml]="dulieuChitiet.thutucDTO.huongdan">
+    </div>
   </div>
   <div class="group2-1">
     <div class="header2-1">
       <span class="icon2-11 iconsprite2-thanhphan"></span>
       <span class="lbl2-11">Thành phần hồ sơ</span>
     </div>
-    <div class="content2-1 style2-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et elementum lacus. Quisque
-      dapibus felis interdum pharetra feugiat. Morbi accumsan ut eros rutrum lacinia. Mauris rutrum ligula at elit
-      iaculis interdum. Maecenas sit amet sollicitudin ex. Phasellus ullamcorper, eros et ornare imperdiet, orci velit
-      molestie lacus, eu accumsan tellus felis a sem. Maecenas sed rhoncus tellus. Aliquam ligula quam, dignissim eu
-      hendrerit gravida, congue et purus. Pellentesque et justo tincidunt, aliquam justo vitae, interdum mauris. Cras
-      porta libero sem, pulvinar ornare magna iaculis et. Aenean nisi nunc, convallis a dapibus in, viverra a tortor.
-      Fusce in scelerisque sapien.</div>
+    <div class="content2-1 style2-1" *ngFor="let item of dulieuChitiet.thanhphanhosoDTOs">
+      <p>- {{item.tenthanhphanhoso}}</p>
+
+    </div>
   </div>
   <div class="group2-1">
     <div class="header2-1">
       <span class="icon2-11 iconsprite2-cancuphaply"></span>
       <span class="lbl2-11">Căn cứ pháp lý</span>
     </div>
-    <div class="content2-1 style2-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et elementum lacus. Quisque
-      dapibus felis interdum pharetra feugiat. Morbi accumsan ut eros rutrum lacinia. Mauris rutrum ligula at elit
-      iaculis interdum. Maecenas sit amet sollicitudin ex. Phasellus ullamcorper, eros et ornare imperdiet, orci velit
-      molestie lacus, eu accumsan tellus felis a sem. Maecenas sed rhoncus tellus. Aliquam ligula quam, dignissim eu
-      hendrerit gravida, congue et purus. Pellentesque et justo tincidunt, aliquam justo vitae, interdum mauris. Cras
-      porta libero sem, pulvinar ornare magna iaculis et. Aenean nisi nunc, convallis a dapibus in, viverra a tortor.
-      Fusce in scelerisque sapien.</div>
+    <div class="content2-1 style2-1" *ngFor="let item of cancuphaply; let i = index">
+      <p>- {{item.ten}}</p>
+    </div>
   </div>
 </ion-content>

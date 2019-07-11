@@ -175,7 +175,7 @@ export class ThutucHanhchinhPage {
   }
 
   goPage(index, item) {
-    debugger;
+    
     this.navCtrl.push('ChitietThutuchanhchinhPage', {
       id: index,
       item: item
