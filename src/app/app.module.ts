@@ -40,7 +40,6 @@ import { LanguageService } from '../providers/service/utils/language.service';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 import { SkeletonModule } from '../skeleton/skeleton.module';
-import { QuanLyHoSoService } from '../providers/service/quanLyhoso';
 import { QuanLyThuTucService } from '../providers/service/quanLyThuTuc';
 //import { AuthService } from '../providers/service/utils/core/auth.service';
 
@@ -98,7 +97,6 @@ export function createTranslateLoader(http: HttpClient) {
     TinTucService,
     LoginService,
     InAppBrowser,
-    QuanLyHoSoService,
     AnNinhTratTuService,
     QuanLyThuTucService,
     LanguageService,

@@ -11,6 +11,7 @@ import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-sca
 @Component({
   selector: 'page-tracuu-hoso',
   templateUrl: 'tracuu-hoso.html',
+  providers: [QuanLyHoSoService]
 })
 export class TracuuHosoPage {
   show = false;
