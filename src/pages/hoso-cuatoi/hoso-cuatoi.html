@@ -20,7 +20,7 @@
     <ion-segment-button class="btn2-1" value="3" (click)="onTabChange(3)">Từ chối</ion-segment-button>
   </ion-segment>
 </ion-header>
-<ion-content>
+<ion-content class="fade-in-bottom">
   <ion-slides [ngClass]="{'first': firstLoad}" #Slides (ionSlideWillChange)="moveTab($event)">
     <ion-slide class="slide2-1">
       <ion-list class="lst2-1">
@@ -272,3 +272,4 @@
     </ion-slide>
   </ion-slides>
 </ion-content>
+<div class="wave-animation wave style2-2"></div>

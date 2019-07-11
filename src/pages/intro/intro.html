@@ -27,12 +27,12 @@
   <ion-content>
     <div id="step2" class="group2-1">
       <ion-icon name="barcode"></ion-icon>
-      <ion-input id="step5" type="text" [(ngModel)]="txtVBPL" class="txt2-1 intro-txt"
+      <ion-input id="typewriter" type="text" [(ngModel)]="txtVBPL" class="txt2-1 intro-txt"
         placeholder="Mã số tra cứu hoặc số biên nhận">
       </ion-input>
     </div>
     <div id='guide' class="section2-1">
-      <img id="step3" src="assets/imgs/qr.png" class="img2-1">
+      <img id="step4" src="assets/imgs/qr.png" class="img2-1">
       <div class="group2-2">
         <p class="lbl2-5">Nhập số biên bản ,
           mã tra cứu mà bạn nhận được từ hệ thống hoặc
@@ -43,10 +43,10 @@
           Bấm vào biểu tượng QR để quét mã
         </p>
         <p class="lbl2-6">HOẶC</p>
-        <span id="step4" class="lbl2-7">Soạn tin nhắn với cú pháp: <b>TC 00.54.H29</b> gửi đến <b>1022</b></span>
+        <span id="step5" class="lbl2-7">Soạn tin nhắn với cú pháp: <b>TC 00.54.H29</b> gửi đến <b>1022</b></span>
       </div>
     </div>
-    <div id="step6" class="hidden">
+    <div id="step3" class="hidden">
       <div class="section2-2">
         <span class="title2-1">Thông tin tra cứu</span>
         <div class="group2-3">
@@ -124,20 +124,20 @@
 </div>
 <div id="hoso" class="hoso-cuatoi hidden">
   <ion-header class="menu-header">
-    <ion-navbar>
-      <div id="step10" class="wrapper2-3">
+    <ion-navbar id="step9">
+      <div class="wrapper2-3">
         <input type="text" class="txt2-3" [(ngModel)]="txtSearch" placeholder="Tìm kiếm" />
         <span class="btn2-4">
           <ion-icon name="search"></ion-icon>
         </span>
       </div>
-      <ion-buttons id="step11" end class="btn-filter">
+      <ion-buttons end class="btn-filter">
         <button (click)="presentPopover($event,txtSearch)">
           <ion-icon name="funnel"></ion-icon>
         </button>
       </ion-buttons>
     </ion-navbar>
-    <ion-segment id="step9" class="row2-2 tab-hoso" [(ngModel)]="tabs">
+    <ion-segment id="step8" class="row2-2 tab-hoso" [(ngModel)]="tabs">
       <ion-segment-button class="btn2-1" value="0">Chưa nộp</ion-segment-button>
       <ion-segment-button class="btn2-1" value="1">Chờ giải quyết</ion-segment-button>
       <ion-segment-button class="btn2-1" value="2">Đã có kết quả</ion-segment-button>
@@ -145,7 +145,7 @@
     </ion-segment>
   </ion-header>
   <ion-content>
-    <ion-slides id="step8" #Slides>
+    <ion-slides id="step7" #Slides>
       <ion-slide class="slide2-1">
         <ion-list class="lst2-1">
           <ion-item class="item2-1" data-type="0">
@@ -350,10 +350,10 @@
       <ion-icon class="tab-button-icon icon icon-ios ion-ios-folder-outline"></ion-icon>
       <span class="tab-button-text">Thủ tục</span>
     </div>
-    <div id="step1" class="intro-tab-button has-icon has-title">
+    <div class="intro-tab-button has-icon has-title">
       <ion-icon class="tab-button-icon icon icon-ios ion-ios-custom-tracuu" ng-reflect-is-active="false"></ion-icon>
     </div>
-    <div id="step7" class="intro-tab-button has-icon has-title" aria-selected="true">
+    <div id="step6" class="intro-tab-button has-icon has-title" aria-selected="true">
       <ion-icon class="tab-button-icon icon icon-ios ion-ios-albums"></ion-icon>
       <span class="tab-button-text">HS của tôi</span>
     </div>
@@ -365,26 +365,26 @@
 </div>
 <div id="thutuc" class="thutuc-hanhchinh hidden">
   <ion-header class="menu-header">
-    <ion-navbar>
-      <div id="step15" class="wrapper2-3">
+    <ion-navbar id="step13">
+      <div class="wrapper2-3">
         <input type="text" class="txt2-3" [(ngModel)]="txtSearch" placeholder="Tìm kiếm thủ tục" />
         <span class="btn2-4">
           <ion-icon name="search"></ion-icon>
         </span>
       </div>
-      <ion-buttons id="step16" end class="btn-filter">
+      <ion-buttons end class="btn-filter">
         <button (click)="presentPopover($event,txtSearch)">
           <ion-icon name="funnel"></ion-icon>
         </button>
       </ion-buttons>
     </ion-navbar>
-    <ion-segment id="step14" class="row2-2 tab-thutuc" [(ngModel)]="tabhanhchinh">
+    <ion-segment id="step12" class="row2-2 tab-thutuc" [(ngModel)]="tabhanhchinh">
       <ion-segment-button class="btn2-1" value="0">Tất cả</ion-segment-button>
       <ion-segment-button class="btn2-1" value="1">Mới thay đổi</ion-segment-button>
     </ion-segment>
   </ion-header>
   <ion-content>
-    <ion-slides id="step13" #Slides>
+    <ion-slides id="step11" #Slides>
       <ion-slide class="slide2-1">
         <ion-list class="lst2-1">
           <ion-list-header class="header2-2">Tôn giáo</ion-list-header>
@@ -511,7 +511,7 @@
       <ion-icon class="tab-button-icon icon icon-ios ion-ios-archive-outline"></ion-icon>
       <span class="tab-button-text">Nộp hồ sơ</span>
     </div>
-    <div id="step12" class="intro-tab-button has-icon has-title" aria-selected="true">
+    <div id="step10" class="intro-tab-button has-icon has-title" aria-selected="true">
       <ion-icon class="tab-button-icon icon icon-ios ion-ios-folder"></ion-icon>
       <span class="tab-button-text">Thủ tục</span>
     </div>
@@ -528,80 +528,30 @@
     </div>
   </div>
 </div>
-<div id="step18" class="nophoso hidden">
-  <ion-header>
-    <ion-navbar>
-      <ion-title>Nộp hồ sơ</ion-title>
-    </ion-navbar>
-  </ion-header>
-  <ion-content>
-    <div class="wrapper2-2">
-      <div class="group2-2">
-        <span class="icon2-1 iconsprite2-register"></span>
-      </div>
-    </div>
-    <p class="lbl2-1">Thông tin người đứng tên hồ sơ</p>
-    <label class="group2-1">
-      <input type="text" class="txt2-1" placeholder="Tên người đứng tên hồ sơ">
-      <span class="lbl2-2">Họ và tên
-        <i class="lbl2-2b">(*)</i>
-      </span>
-    </label>
-    <div class="wrapper2-3">
-      <label class="group2-1">
-        <ion-select class="txt2-1" interface="popover" [disabled]="disabled">
-          <ion-option value="0">Nam</ion-option>
-          <ion-option value="1">Nữ</ion-option>
-          <ion-option value="2">Khác</ion-option>
-        </ion-select>
-        <span class="lbl2-2">Giới tính</span>
-      </label>
-      <label class="group2-1">
-        <ion-datetime class="txt2-1" displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="myDate"
-          cancelText="Đóng" doneText="Đồng ý" [disabled]="disabled"></ion-datetime>
-        <span class="lbl2-2">Ngày sinh</span>
-      </label>
-    </div>
-    <div class="wrapper2-3">
-      <label class="group2-1">
-        <input type="text" class="txt2-1" (keypress)="keyPress($event)" minlength=10 maxlength=10
-          placeholder="Số điện thoại">
-        <span class="lbl2-2">Số điện thoại
-          <i class="lbl2-2b">(*)</i>
-        </span>
-      </label>
-      <label class="group2-1">
-        <input type="text" class="txt2-1" placeholder="Thư điện tử">
-        <span class="lbl2-2">Thư điện tử</span>
-      </label>
-    </div>
-    <div class="wrapper2-3">
-      <label class="group2-1">
-        <ion-select class="txt2-1" interface="action-sheet" [disabled]="disabled">
-          <ion-option value="1" selected>Chứng minh nhân dân</ion-option>
-          <ion-option value="2">Hộ chiếu</ion-option>
-          <ion-option value="3">Chứng minh quân đội</ion-option>
-          <ion-option value="4">Chứng minh sĩ quan</ion-option>
-          <ion-option value="5">Căn cước công dân</ion-option>
-        </ion-select>
-        <span class="lbl2-2">Loại giấy tờ
-          <i class="lbl2-2b">(*)</i>
-        </span>
-      </label>
-      <label class="group2-1">
-        <input type="text" class="txt2-1">
-        <span class="lbl2-2">Số giấy tờ
-          <i class="lbl2-2b">(*)</i>
-        </span>
-      </label>
-    </div>
-    <label class="group2-1 style2-1">
-      <input type="text" class="txt2-1" placeholder="Hộ khẩu thường trú">
-      <span class="lbl2-2">Hộ khẩu thường trú</span>
-    </label>
-  </ion-content>
-  <div class="intro-tabbar show-tabbar tabs-ios">
-    <div id="step17" class="intro-tab-button has-icon has-title" aria-selected="true">
+<div id="step15" class="nophoso hidden">
+  <div class="backdrop-video"></div>
+  <div class="video2-1" id="nohsstep1">
+    <video id="video1" controls loop poster="assets/imgs/imgintro.jpg" #videoPlayer1>
+      <source src="assets/imgs/welcome/step1.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video2-1 hidden" id="step16">
+    <video id="video2" controls loop #videoPlayer2>
+      <source src="assets/imgs/welcome/step2.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video2-1 hidden" id="step17">
+    <video id="video1" controls loop #videoPlayer3>
+      <source src="assets/imgs/welcome/step3.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video2-1 hidden" id="step18">
+    <video id="video1" controls loop #videoPlayer4>
+      <source src="assets/imgs/welcome/step4.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div id="tabnophs" class="intro-tabbar show-tabbar tabs-ios">
+    <div id="step14" class="intro-tab-button has-icon has-title" aria-selected="true">
       <ion-icon class="tab-button-icon icon icon-ios ion-ios-archive"></ion-icon>
       <span class="tab-button-text">Nộp hồ sơ</span>
     </div>
@@ -626,7 +576,7 @@
   <ion-header>
     <ion-navbar>
       <ion-title>Mở rộng</ion-title>
-      <ion-buttons end class="btn-filter">
+      <ion-buttons id="step20" end class="btn-filter">
         <button (click)="gotoNo()">
           <ion-icon name="notifications"></ion-icon>
         </button>
@@ -639,7 +589,7 @@
       <span class="lbl2-1">Trịnh Quốc Thịnh</span>
     </div>
     <div class="content2-1">
-      <div id="step20" class="section2-1">
+      <div id="step21" class="section2-1">
         <span class="lbl2-2">Tài khoản</span>
         <div class="group2-2 style2-1" (click)="goPage(0)">
           <span class="icon2-3 iconsprite2-taikhoan"></span>
@@ -656,7 +606,7 @@
           <ion-icon class="icon2-2" name="arrow-forward"></ion-icon>
         </div>
       </div>
-      <div id="step21" class="section2-1">
+      <div id="step22" class="section2-1">
         <span class="lbl2-2">Chức năng mở rộng</span>
         <div class="group2-2 style2-1" (click)="goPage(2)">
           <span class="icon2-3 iconsprite2-tracuu"></span>
@@ -687,7 +637,7 @@
           <ion-icon class="icon2-2" name="arrow-forward"></ion-icon>
         </div>
       </div>
-      <div id="step22" class="section2-1">
+      <div id="step23" class="section2-1">
         <span class="lbl2-2">Cài đặt</span>
         <div class="group2-2 style2-1">
           <span class="icon2-3 iconsprite2-color"></span>
@@ -722,7 +672,7 @@
           <ion-toggle class="toggle2-1" [(ngModel)]="updatenotification" checked="false"></ion-toggle>
         </div>
       </div>
-      <div id="step23" class="section2-1">
+      <div id="step24" class="section2-1">
         <span class="lbl2-2">Ứng dụng</span>
         <div class="group2-2 style2-1" (click)="goPage(10)">
           <span class="icon2-3 iconsprite2-huongdan"></span>
@@ -746,7 +696,7 @@
           <ion-icon class="icon2-2" name="arrow-forward"></ion-icon>
         </div>
       </div>
-      <div id="step24" class="section2-1">
+      <div id="step25" class="section2-1">
         <div class="group2-2 style2-1" (click)="goPage(14)">
           <span class="icon2-3 iconsprite2-dangxuat"></span>
           <p class="wrapper2-3">
