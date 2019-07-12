@@ -7,6 +7,7 @@ export class QuanLyThuTucService {
     base = CONST.BASE_BINHTAN;
     objPostDanhSach = API_QuanLyThuTuc.postDanhSach; 
     objGetChiTiet = API_QuanLyThuTuc.getChiTiet;
+    ojbPostGopY = API_QuanLyThuTuc.gopYKien;
     constructor(public api: ApiProvider) {
 
     }
@@ -16,4 +17,7 @@ export class QuanLyThuTucService {
     getChiTiet(params) {
         return this.api.callBinhTan(this.base, this.objGetChiTiet, params);
       };
+    postGopY(params) {
+       return this.api.callBinhTan(this.base,this.ojbPostGopY, params);
+    };
 }
