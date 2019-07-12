@@ -15,30 +15,30 @@
     </div>
   </div>
   <label class="group2-1">
-    <input type="text" class="txt2-1" placeholder="Họ và tên">
+    <input type="text" class="txt2-1" placeholder="Họ và tên" [(ngModel)]="form_DongGop.hotennguoihoi">
     <span class="lbl2-2">Họ và tên
-      <i class="lbl2-2b">(*)</i>
+      <i class="lbl2-2b" >(*)</i>
     </span>
   </label>
   <div class="wrapper2-3">
     <label class="group2-1">
-      <input type="number" class="txt2-1" minlength=10 maxlength=10 placeholder="Số điện thoại">
+      <input type="number" class="txt2-1" minlength=10 maxlength=10 placeholder="Số điện thoại" [(ngModel)]="form_DongGop.dienthoainguoihoi">
       <span class="lbl2-2">Số điện thoại
         <i class="lbl2-2b">(*)</i>
       </span>
     </label>
     <label class="group2-1">
-      <input type="text" class="txt2-1" placeholder="Thư điện tử">
+      <input type="text" class="txt2-1" placeholder="Thư điện tử" [(ngModel)]="form_DongGop.emailnguoihoi">
       <span class="lbl2-2">Thư điện tử</span>
     </label>
   </div>
   <label class="group2-1">
-    <input type="text" class="txt2-1" placeholder="Tiêu đề">
+    <input type="text" class="txt2-1" placeholder="Tiêu đề" [(ngModel)]="form_DongGop.tieude">
     <span class="lbl2-2">Tiêu đề</span>
   </label>
   <ion-item class="group2-1">
     <ion-label floating class="lbl2-2">Nội dung đóng góp ý kiến...</ion-label>
-    <ion-textarea class="txt2-1" #msgInput id="myInput" rows="1" maxLength="500" (keyup)="resize()"></ion-textarea>
+    <ion-textarea class="txt2-1" #msgInput id="myInput" rows="1" maxLength="500" (keyup)="resize()" [(ngModel)]="form_DongGop.noidungtext"></ion-textarea>
   </ion-item>
-  <button class="btn2-1">Tạo mới</button>
+  <button class="btn2-1" (click)="postDongGop()">Tạo mới</button>
 </ion-content>
