@@ -3,7 +3,7 @@
     <ion-title>Nộp hồ sơ</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content>
+<ion-content class="fade-in-bottom">
   <ion-simple-wizard [(step)]="step" [showSteps]="false" (finish)="onFinish()" [finishIcon]="'done-all'"
     [(stepCondition)]="stepCondition" *ngIf="hosodetail">
     <ion-wizard-step>

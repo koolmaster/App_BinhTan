@@ -28,7 +28,7 @@ ion-tabs,
 }
 
 .wave {
-    animation: ripple 1s ease-out;
+    animation: ripple .8s ease-out;
 }
 
 @keyframes ripple {
@@ -52,7 +52,7 @@ ion-tabs,
     left: 50%;
     width: 50px;
     height: 50px;
-    background: rgba(255, 255, 255, .5);
+    background: rgba(255, 255, 255, .3);
     opacity: 0;
     border-radius: 100%;
     transform: scale(1, 1) translate(-50%);
