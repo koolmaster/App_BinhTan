@@ -133,6 +133,10 @@ body.swal2-height-auto.swal2-shown {
     .swal2-popup {
         box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1)
     }
+    #swal2-content{
+        white-space: pre;
+        font-size: 1.3rem;
+    }
 }
 
 //settings ios

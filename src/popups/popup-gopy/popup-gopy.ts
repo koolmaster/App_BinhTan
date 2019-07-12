@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { QuanLyThuTucService } from '../../providers/service/quanLyThuTuc';
 import { AlertService } from '../../providers/service/alertService';
+import Swal from 'sweetalert2'
 @IonicPage()
 @Component({
   selector: 'page-popup-gopy',
@@ -39,24 +40,39 @@ export class PopupGopyPage {
   postDongGop(){
 
     var _msg_err = '';
-    if (this.form_DongGop.hotennguoihoi.length <= 0) _msg_err += 'Chưa nhập tên</br>';
-    if (this.form_DongGop.emailnguoihoi.length <= 0) _msg_err += 'Chưa nhập email</br>';
-    if (this.form_DongGop.dienthoainguoihoi.length <= 0) _msg_err += 'Chưa nhập số điện thoại </br>';
-    if (this.form_DongGop.tieude.length <= 0) _msg_err += 'Chưa nhập tiêu đề</br>';
+    if (this.form_DongGop.hotennguoihoi.length <= 0) _msg_err += 'Chưa nhập tên \n';
+    if (this.form_DongGop.emailnguoihoi.length <= 0) _msg_err += 'Chưa nhập email \n';
+    if (this.form_DongGop.dienthoainguoihoi.length <= 0) _msg_err += 'Chưa nhập số điện thoại \n';
+    if (this.form_DongGop.tieude.length <= 0) _msg_err += 'Chưa nhập tiêu đề\n';
     // if (this.form_DongGop.linhvucid.length <= 0) _msg_err += 'Chưa nhập lĩnh vực </br>';
-    if (this.form_DongGop.noidungtext.length <= 0) _msg_err += 'Chưa nhập nội dung </br>';
+    if (this.form_DongGop.noidungtext.length <= 0) _msg_err += 'Chưa nhập nội dung \n';
     if (_msg_err !== '') {
-      this.alert.showAlert("error", _msg_err);
+      Swal.fire({
+        title: 'Thông báo',
+        text: _msg_err,
+        type: 'error',
+        confirmButtonText: 'Xác nhận'
+      })
       return;
     }
 
     this.quanlythutuc.postGopY(this.form_DongGop).then(rep => {
       if (rep != null ){
-        this.alert.showAlert("success", "Đóng góp ý kiến thành công");
+        Swal.fire({
+          title: 'Thông báo',
+          text: "Đóng góp ý kiến thành công",
+          type: 'success',
+          confirmButtonText: 'Xác nhận'
+        })
         this.navCtrl.pop();
       }
     }, (err) => {
-      this.alert.showAlert("error", "Không tìm thấy thủ tục");
+      Swal.fire({
+        title: 'Thông báo',
+        text: "Lỗi kết nối",
+        type: 'error',
+        confirmButtonText: 'Xác nhận'
+      })
     });
 
   }
